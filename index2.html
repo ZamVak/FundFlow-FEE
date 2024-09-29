@@ -87,12 +87,16 @@
             /* padding: 30px 0px 0px 30px; */
         }
 
-        #main_card {
-            position: relative;
+        main {
+            display: flex;
             height: fit-content;
             width: fit-content;
             align-self: center;
 
+        }
+
+        #main_card {
+            position: relative;
         }
 
         #main_card img {
@@ -131,22 +135,45 @@
             background-color: transparent;
             position: absolute;
             right: 0px;
+            top: 0px;
             padding: 0px 0px 2.0vh 1.4vw;
             box-sizing: border-box;
             align-items: end;
+            
         }
 
 
         .logsign_buttons {
             /* background-color: orangered; */
-            background: linear-gradient(#0d1117, #0d1117) padding-box, linear-gradient(to right, #F1D710,#F16B10 ,#A50EF1) border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             width: 9.4vw;
             height: 8.2vh;
-            /* border: 3.5px solid rgb(239, 197, 197); */
-            border: 3.5px solid transparent;
-            /* border-image: linear-gradient(to right, darkblue, darkorchid); */
-            border-radius: 60px;
             box-sizing: border-box;
+            border-radius: 60px;
+            font-family: 'Montserrat',cursive;
+            font-weight: 600;
+            font-size: 1.25em;
+        }
+
+        .Login_button {
+            background: linear-gradient(#0d1117, #0d1117) padding-box, linear-gradient(135deg, #F1D710, #F16B10, #A50EF1) border-box;
+            border: 3.5px solid transparent;
+            color: white;
+        }
+
+        .Signup_button {
+            background: linear-gradient(135deg, #FAB823, #F9A315, #F68D0C, #F3770D, #F16B10, #EE5F13);
+            font-weight: 700;
+        }
+
+        .Signup_button p {
+            background: linear-gradient(135deg, #585858, #0d1117);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+
         }
 
         #blobImage {
@@ -161,7 +188,7 @@
 </head>
 
 <body>
-    <div class="sidebar">
+    <section class="sidebar">
         <header>
             <div class="logo">
                 <img src="images/FundFlow_Logo.png" height="300px" alt="">
@@ -176,30 +203,36 @@
                     <li>&copy; 2024 FundFlow Inc.</li>
                 </ul>
                 <ul id="social_icons">
-                    <li> <a href="#"><img src="images/twitter.svg" width="20px" alt=""></a></li>
-                    <li><a href="#"><img src="images/linkdin.svg" width="23px" alt=""></a></li>
-                    <li><a href="#"><img src="images/instagram.svg" width="23px" alt=""></a></li>
-                    <li><a href="#"><img src="images/github.svg" width="23px" alt=""></a></li>
+                    <li> <a href="#"><img src="images/twitter.svg" width="20px" alt="X Logo"></a></li>
+                    <li><a href="#"><img src="images/linkdin.svg" width="23px" alt="LinkedIn logo"></a></li>
+                    <li><a href="#"><img src="images/instagram.svg" width="23px" alt="Instagram"></a></li>
+                    <li><a href="#"><img src="images/github.svg" width="23px" alt="Github logo"></a></li>
 
                 </ul>
 
             </div>
         </footer>
-    </div>
-    <div id="main_card">
-        <img src="images/MainCard_cropped.png" alt="">
-        <div class="tagLine">
-            <h1>TRACK</h1>
-            <h1>SAVE</h1>
-            <h1>THRIVE</h1>
-            <p>We Promise, No Migranes here.</p>
+    </section>
+    <main>
+        <div id="main_card">
+            <img src="images/MainCard_cropped.png" alt="">
+            <div class="tagLine">
+                <h1>TRACK</h1>
+                <h1>SAVE</h1>
+                <h1>THRIVE</h1>
+                <p>We Promise, No Migranes here.</p>
+            </div>
         </div>
-    </div>
-    <div id="buttons_container">
-        <div class="logsign_buttons"></div>
-        <div class="logsign_buttons"></div>
-    </div>
-    <img src="images/Blob.png" id="blobImage" alt="">
+        <div id="buttons_container">
+            <div class="logsign_buttons Login_button">
+                <p>Login</p>
+            </div>
+            <div class="logsign_buttons Signup_button">
+                <p>Signup</p>
+            </div>
+        </div>
+        <img src="images/Blob.png" id="blobImage" alt="">
+    </main>
 
 </body>
 
