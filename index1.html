@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            display: flex;
+            background-color: #0d1117;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        .sidebar {
+            height: fit-content;
+            width: 17vw;
+        }
+
+        header {
+            display: inline-block;
+        }
+
+        .logo {
+            height: fit-content;
+            width: fit-content;
+            padding: 30px 0px 0px 30px;
+        }
+
+        #main_card {
+            height: 91vh;
+            width: 81vw;
+            background-color: blanchedalmond;
+            align-self: center;
+            clip-path: polygon(0% 0%,73.5% 0%,75% 20%,100% 20%,100% 100%,0% 100%);
+            /* clip-path: polygon(0% 0%, 80% 0%, 80% 20%, 100% 20%,100% 100%,0% 100%); */
+        }
+
+        #buttons_container {
+            display: flex;
+            gap: 11px;
+            height: 16.5vh;
+            width: 23vw;
+            background-color: transparent;
+            position: absolute;
+            right: 0px;
+            padding: 0px 0px 4.1vh 1.8vw;
+            box-sizing: border-box;
+            align-items: end;
+        }
+
+
+        .logsign_buttons {
+            background-color: orangered;
+            width: 9.4vw;
+            height: 8.2vh;
+            border: 3px solid black;
+            border-radius: 60px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="sidebar">
+        <header>
+            <div class="logo">
+                <img src="images/FundFlow_Logo.png" height="300px" alt="">
+            </div>
+        </header>
+    </div>
+    <div id="main_card">
+
+    </div>
+    <div id="buttons_container">
+        <div class="logsign_buttons">
+
+        </div>
+        <div class="logsign_buttons">
+
+        </div>
+    </div>
+</body>
+
+</html>
