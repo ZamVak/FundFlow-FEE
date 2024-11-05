@@ -318,7 +318,7 @@
                 </div>
 
 
-                <form id="loginForm" action="">
+                <form onsubmit="redirectToPage()" id="loginForm" action="">
                     <div class="formRow">
                         <img id="InputTag_image" src="images/InputTag.svg" alt="">
                         <div class="labelInput_container">
@@ -340,9 +340,9 @@
                     </div>
                     <div id="SwipeCard_container">
                         <img id="SwipeCard_image" src="images/SwipeCard.svg" alt="">
-                        <button id="SwipeBtn" type="submit"><img id="SwipeBtn_image" src="images/SwipeBtn.png"
-                                alt=""></button>
-                        <p id="swipeText">Swipe to Begin</p>
+                        <button id="SwipeBtn" type="submit"><img id="SwipeBtn_image"
+                                src="images/SwipeBtn.png" alt=""></button>
+                        <p onclick="redirectToPage()" id="swipeText">Swipe to Begin</p>
                     </div>
                     <div class="Breakline">
                         <div class="thinLine"></div>
@@ -361,6 +361,12 @@
         </div>
 
     </main>
+    <script>
+        function redirectToPage() {
+            window.location.href = "Transaction.html";
+          }
+          
+    </script>
 </body>
 
 </html>

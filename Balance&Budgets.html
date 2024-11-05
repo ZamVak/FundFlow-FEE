@@ -166,6 +166,11 @@
 
         .walletsContainer img {
             width: 100%;
+            transition: width 0.2s;
+        }
+
+        .walletsContainer img:hover {
+            width: 105%;
         }
 
         .RightContentContainer {
@@ -184,7 +189,7 @@
             box-sizing: border-box;
             display: flex;
             justify-content: space-between;
-           align-items: end;
+            align-items: end;
         }
 
         .WalletInfoBox {
@@ -232,7 +237,7 @@
             position: relative;
             display: flex;
             flex-direction: column;
-            background-color: rgb(255, 255, 255,0.05);
+            background-color: rgb(255, 255, 255, 0.05);
             gap: 15px;
             padding: 18px 18px 0px 18px;
             box-sizing: border-box;
@@ -241,7 +246,8 @@
             overflow: hidden;
             border-radius: 25px;
         }
-        #BudgetsBlobImg{
+
+        #BudgetsBlobImg {
             width: 100%;
             position: absolute;
             z-index: -2;
@@ -274,7 +280,8 @@
             font-size: 0.65em;
             color: white;
         }
-        .budgetsScrollBox{
+
+        .budgetsScrollBox {
             height: calc(100% - (15px + 27.2px));
             display: flex;
             flex-direction: column;
@@ -283,6 +290,7 @@
             overflow-y: scroll;
             scrollbar-width: none;
         }
+
         .BudgetCardsList {
             display: flex;
             justify-content: space-between;
@@ -294,6 +302,12 @@
         .BudgetCardsList img {
             width: 18.7%;
             height: 18.7%;
+            transition: all 0.2s;
+        }
+
+        .BudgetCardsList img:hover {
+            width: 20%;
+            height: 20%;
         }
     </style>
 </head>
@@ -302,7 +316,7 @@
     <img id="CornerBlob" src="images/Corner Ellipse.svg" alt="">
     <header>
         <nav class="logo">
-            <img id="logo" src="images/Logo.png" alt="logo">
+            <a href="index.html"><img id="logo" src="images/Logo.png" alt="logo"></a>
         </nav>
         <div class="heading_searchboxContainer">
             <div class="heading">
@@ -322,11 +336,11 @@
             <div class="iconBars sidebarTop">
                 <img id="iconSelector" src="images/active icon selector.svg" alt="">
                 <a href="#" class="navIcon"><img src="images/dashboardimg.svg" alt=""></a>
-                <a href="#" class="navIcon"><img src="images/buy icon.svg" alt=""></a>
-                <a href="#" class="navIcon"><img src="images/Wallet icon.svg" alt=""></a>
+                <a href="Transaction.html" class="navIcon"><img src="images/buy icon.svg" alt=""></a>
+                <a href="Balance&Budgets.html" class="navIcon"><img src="images/Wallet icon active.svg" alt=""></a>
             </div>
             <div class="iconBars sidebarBottom">
-                <a href="#" class="navIcon"><img src="images/exit icon.svg" alt="" style="width:23px"></a>
+                <a href="LoginSignup.html" class="navIcon"><img src="images/signout_icon.svg" alt="" style=""></a>
                 <a href="#" class="navIcon"><img id="profileIcon" src="images/active icon profile.png" alt=""></a>
             </div>
         </nav>
