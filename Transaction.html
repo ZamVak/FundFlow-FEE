@@ -23,13 +23,15 @@
             flex-direction: column;
             gap: 31px;
         }
-        #CornerBlob{
+
+        #CornerBlob {
             position: absolute;
             left: 0px;
             top: 0px;
             z-index: -5;
             filter: blur(200px);
         }
+
         header {
             display: flex;
             align-items: center;
@@ -186,7 +188,7 @@
 
         .transactionTableHeader {
             display: flex;
-            justify-content: space-between;
+            /*justify-content: space-between;*/
             align-items: center;
             width: 100%;
             height: 52px;
@@ -203,8 +205,18 @@
             font-weight: 500;
         }
 
-        .transactionTableHeader #transaction {
-            width: 20vw;
+        .transactionTop {
+            display: flex;
+            margin-right: 23%;
+        }
+
+        .headingTop {
+            display: flex;
+            padding-right: 6vw;
+        }
+
+        .headingTop .ledgerSpaces {
+            padding-right: 5vw;
         }
 
         .transacsContainer {
@@ -215,6 +227,54 @@
             overflow: hidden;
             overflow-y: scroll;
             scrollbar-width: none;
+        }
+
+        #transaclogImg {
+            width: 88%;
+            position: relative;
+            right: 4px;
+            bottom: 5px;
+        }
+
+        .transacLedger {
+            display: flex;
+            /*justify-content: space-between; -->*/
+            border: 2px solid black;
+            border-radius: 40px;
+            /*background-color: rgb(255, 255, 255, 0.05);
+            background-image: linear-gradient(135deg, rgba(255, 255, 255, 0.70) 0%, rgba(153, 153, 153, 0.35) 100%);*/
+            box-sizing: border-box;
+            padding: 10px;
+            width: 100%;
+            height: 13%;
+        }
+
+        .backgroundImageTransacLedger {
+        
+        }
+
+        .transacLedger p {
+            color: #9198A1;
+            font-family: "Inter", serif;
+            font-size: 0.8em;
+        }
+
+        .persona {
+            display: flex;
+            margin-right: 7%;
+        }
+
+        .name {
+            width: 14vw;
+        }
+
+        .info {
+            display: flex;
+        }
+
+        .ledgerSpace {
+            padding-right: 10px;
+            padding-right: 6vw;
         }
 
         .transacsContainer img {
@@ -235,6 +295,56 @@
         #PreviewPanel {
             align-self: end;
             height: calc(100% - 9px);
+        }
+
+        #transactionPreview {
+            border: 2px solid rgb(255, 255, 255);
+            border-radius: 30px;
+            box-sizing: border-box;
+        }
+
+        .personInfo {
+            display: flex;
+            padding: 20px;
+            box-sizing: border-box;
+            background: linear-gradient(bottom, rgba(255, 255, 255, 0.21) 0%, rgba(255, 255, 255, 0.21) 100%);
+            border-top-right-radius: 30px;
+            border-top-left-radius: 30px;
+        }
+
+        .profileInfo #subHeading {
+            font-size: 72%;
+        }
+
+        .previewHeadings {
+            background: linear-gradient(135deg, #ffffff 0%, #ffffff 40%, #6b6b6b 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-family: "Ubuntu", sans-serif;
+            font-weight: 500;
+        }
+
+        .previewDetails {
+            width: 16vw;
+            height: fit-content;
+            margin-top: 6%;
+            display: flex;
+            justify-content: space-evenly;
+            color: white;
+            font-family: "Inter", serif;
+            font-size: x-small;
+            font-weight: 500;
+        }
+
+        .previewDetails p {
+            width: 6vw;
+        }
+
+        .lentAndBorrowed {
+            border-bottom: 2px solid grey;
+            font-size: medium;
+            padding: 10px 25px;
         }
     </style>
 </head>
@@ -267,7 +377,7 @@
                 <a href="Balance&Budgets.html" class="navIcon"><img src="images/Wallet icon.svg" alt=""></a>
             </div>
             <div class="iconBars sidebarBottom">
-                <a href="LoginSignup.html" class="navIcon"><img src="images/signout_icon.svg" alt="" ></a>
+                <a href="LoginSignup.html" class="navIcon"><img src="images/signout_icon.svg" alt=""></a>
                 <a href="#" class="navIcon"><img id="profileIcon" src="images/active icon profile.png" alt=""></a>
             </div>
         </nav>
@@ -279,15 +389,46 @@
                         <button>+ Add Transaction</button>
                     </div>
                     <div class="transactionTableHeader">
-                        <input type="checkbox">
-                        <p id="transaction">Transaction</p>
-                        <p>Account</p>
-                        <p>Amount</p>
-                        <p>Category</p>
-                        <p>Mode</p>
-                        <p>Status</p>
+                        <div class="transactionTop">
+                            <input type="checkbox">
+                            <p id="transaction" style="padding:0px 2px;">Transaction</p>
+                        </div>
+                        <div class="headingTop">
+                            <p class="ledgerSpaces">Amount</p>
+                            <p class="ledgerSpaces" style="width:7.2vw;">Account</p>
+                            <p class="ledgerSpaces">Category</p>
+                            <p class="ledgerSpaces">Mode</p>
+                            <p>Status</p>
+                        </div>
                     </div>
                     <div class="transacsContainer">
+                        <div class="transacLedger">
+                            
+                            <div class="persona">
+                                <div class="img"><img id="transaclogImg" src="images/Transaction icon.svg" alt=""></div>
+                                <div class="name">
+                                    <p>monthly Salary</p>
+                                    <p>2:30, sep25</p>
+                                </div>
+                            </div>
+                            <div class="info">
+                                <div class="amt ledgerSpace">
+                                    <p>90,000</p>
+                                </div>
+                                <div class="acc ledgerSpace">
+                                    <p>state bank of india</p>
+                                </div>
+                                <div class="category ledgerSpace">
+                                    <p>Salary</p>
+                                </div>
+                                <div class="mode ledgerSpace">
+                                    <p>gpay</p>
+                                </div>
+                                <div class="status ">
+                                    <p>done</p>
+                                </div>
+                            </div>
+                        </div>
                         <img src="images/Transaction log.svg" alt="">
                         <img src="images/Transaction log2.svg" alt="">
                         <img src="images/Transaction log 3.svg" alt="">
@@ -305,7 +446,71 @@
                         <img src="images/Transaction log 3.svg" alt="">
                     </div>
                 </div>
-                <img id="PreviewPanel" src="images/Transac Preview Panel.svg" alt="">
+
+                <div id="transactionPreview">
+                    <div class="personInfo">
+                        <div class="profilePic">
+                            <img src="images/Transaction Icon.svg" alt="" style="width: 72%;">
+                        </div>
+                        <div class="profileInfo previewHeadings">
+                            <p id="mainHeading">Monthly Salary</p>
+                            <p id="subHeading">2:30pm Sep,25</p>
+                        </div>
+                    </div>
+                    <div class="transacDetail">
+                        <div class="amount previewDetails">
+                            <p>Amount</p>
+                            <p>INR 90,000</p>
+                        </div>
+                        <div class="Type previewDetails">
+                            <p>Type</p>
+                            <p>Earning</p>
+                        </div>
+                        <div class="account previewDetails">
+                            <p>Account</p>
+                            <p>State Bank of India</p>
+                        </div>
+                        <div class="category previewDetails">
+                            <p>Category</p>
+                            <p>Food</p>
+                        </div>
+                        <div class="mode previewDetails">
+                            <p>Mode</p>
+                            <p>Google Pay</p>
+                        </div>
+                        <div class="status previewDetails">
+                            <p>Status</p>
+                            <p>Done</p>
+                        </div>
+                        <div class="description previewDetails">
+                            <p>Description</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        </div>
+                    </div>
+                    <div class="lentBorrowed">
+                        <h2 class="lentAndBorrowed previewHeadings">Lent/Borrowed</h2>
+                        <div class="toFrom previewDetails">
+                            <p>To/From</p>
+                            <p>Nigga white</p>
+                        </div>
+                        <div class="setteledOn previewDetails">
+                            <p>Settled On</p>
+                            <p>Not Yet</p>
+                        </div>
+                        <div class="dueDate previewDetails">
+                            <p>Due Date</p>
+                            <p>Sep 25</p>
+                        </div>
+                        <div class="phoneNo previewDetails">
+                            <p>Mobile</p>
+                            <p>+91 6283418139</p>
+                        </div>
+                        <div class="address previewDetails">
+                            <p>Address</p>
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </main>
     </section>

@@ -195,8 +195,6 @@
             font-weight: 300;
         }
 
-
-
         .forgotpass_container {
             margin: 6% 0%;
             line-height: 1em;
@@ -365,6 +363,15 @@
         function redirectToPage() {
             window.location.href = "Transaction.html";
           }
+          document.getElementById('signupText').addEventListener('click', () => {
+            document.getElementById('loginForm').style.display = 'none';
+            document.getElementById('signupForm').style.display = 'block';
+          });
+          
+          document.getElementById('loginText').addEventListener('click', () => {
+            document.getElementById('signupForm').style.display = 'none';
+            document.getElementById('loginForm').style.display = 'block';
+          });
           
     </script>
 </body>
