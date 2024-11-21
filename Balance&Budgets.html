@@ -277,14 +277,113 @@
             gap: 18px;
         }
 
+        .mainBalanceCard {
+            width: 68%;
+            height: 30vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 3%;
+            box-sizing: border-box;
+        }
+
+        .Balance {
+            text-align: end;
+        }
+
+        .Balance p:nth-child(1) {
+            font-family: 'Exo 2', sans-serif;
+            font-weight: 600;
+            font-size: 1.2em;
+            background: linear-gradient(135deg, #ffffff 0%, #ffffff 40%, #6b6b6b 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .Balance p:nth-child(2) {
+            font-family: 'Exo 2', sans-serif;
+            font-size: 2.4em;
+            color: white;
+        }
+
+        .depositAndSend {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .depositAndSend button {
+            width: 40%;
+            border: none;
+            background-color: #0d0d0d;
+            color: white;
+            border-radius: 30px;
+            padding: 3% 0%;
+            font-size: 20px;
+            font-family: "Ubuntu", serif;
+        }
+
+        .depositAndSend button:nth-child(2) {
+            width: 40%;
+            border: none;
+            background-color: #ffffff;
+            opacity: 40%;
+            color: #0d0d0d;
+            border-radius: 30px;
+            padding: 3% 0%;
+            font-size: 20px;
+        }
+
         .IncomeExpenseBox {
             display: flex;
             flex-direction: column;
             justify-content: space-between;
         }
 
+        .incomeCard {
+            box-sizing: border-box;
+            padding: 8%;
+        }
+
+        .incomeTextAndPic {
+            width: 60%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 5.2vw;
+        }
+
+        .incomeTextAndPic p {
+            color: white;
+            font-family: "Exo 2", serif;
+        }
+
+        .incomePicAmdIncome {
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+        }
+
         .IncomeExpenseBox img {
             width: 100%;
+        }
+
+        .incomePicAndIncome {
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .incomePicAndIncome p {
+            align-items: center;
+            display: flex;
+            font-size: larger;
+        }
+        .incomeText{
+            width: 55%;
+        }
+        .incomeText p {
+            font-size: 2em;
+            width: 59%;
         }
 
         .BudgetsBox {
@@ -417,7 +516,7 @@
                     <div class="addNewWalletBox">
                         <div class="addIcon"></div>
                     </div>
-                    <img src="images/Add Wallet box.svg" style="width: 80%;" alt="">
+                    <!-- <img src="images/Add Wallet box.svg" style="width: 80%;" alt=""> -->
                 </div>
                 <div class="RightContentContainer ">
                     <div class="WalletAndCardsBox">
@@ -426,9 +525,31 @@
                                 <h1>Cash</h1>
                             </div>
                             <div class="WalletContent">
-                                <img src="images/Total Balance Card.png" style="width: 60%;" alt="">
+                                <div class="mainBalanceCard">
+                                    <div class="Balance">
+                                        <p>Total Balance</p>
+                                        <p>INR 20,000</p>
+                                    </div>
+                                    <div class="depositAndSend">
+                                        <button>Deposit</button>
+                                        <button>Send</button>
+                                    </div>
+                                </div>
+                                <!-- <img src="images/Total Balance Card.png" style="width: 60%;" alt=""> -->
                                 <div class="IncomeExpenseBox">
-                                    <img src="images/Income Card.png" alt="">
+                                    <div class="incomeCard">
+                                        <div class="incomeTextAndPic">
+                                            <div class="incomePicAndIncome">
+                                                <img src="images/Icons income.svg" alt="" style="width: 34px;">
+                                                <p>Income</p>
+                                            </div>
+                                            <div class="incomeText">
+                                                <p>10,910</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="expenseCard"></div>
+                                    <!-- <img src="images/Income Card.png" alt=""> -->
                                     <img src="images/Expense Card.png" alt="">
                                 </div>
                             </div>
