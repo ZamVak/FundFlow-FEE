@@ -174,7 +174,7 @@
 
         .transactionListHeader p {}
 
-        .transactionListHeader button {
+        .transactionListHeader #addTransactionBtn {
             border-radius: 60px;
             padding: 10px;
             background: transparent;
@@ -185,6 +185,12 @@
             font-size: 0.85em;
             color: white;
         }
+
+        .transactionListHeader #addTransactionBtn:hover {
+            cursor: pointer;
+        }
+
+
 
         .transactionTableHeader {
             display: flex;
@@ -232,7 +238,7 @@
 
         .headingTop .ledgerSpaces {}
 
-        .transacsContainer {
+        #transacsContainer {
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -246,8 +252,16 @@
             scrollbar-width: none;
         }
 
+        #transacsContainer:hover {
+            cursor: grab;
+        }
+
+        #transacsContainer:active {
+            cursor: grabbing;
+        }
+
         #transaclogImg {
-            height: 78%;
+            width: 13%;
         }
 
         .transacLedger {
@@ -301,7 +315,6 @@
             align-items: center;
             width: 32.8%;
             gap: 15px;
-            height: 100%;
         }
 
         .name {
@@ -321,10 +334,20 @@
             font-family: 'Ubuntu';
         }
 
+        .deleteTransIcon {
+            height: 35%;
+            opacity: 1;
+        }
+
+        .deleteTransIcon:hover {
+            cursor: pointer;
+            /* opacity: 1; */
+        }
+
         .ledgerSpace {}
 
-        .transacsContainer img {
-            width: 100%;
+        #transacsContainer img {
+            /* width: 100%; */
 
         }
 
@@ -465,7 +488,9 @@
                 <div class="mainContainer">
                     <div class="transactionListHeader">
                         <p>1-9 of 18 transactions</p>
-                        <button>+ Add Transaction</button>
+                        <button id="addTransactionBtn"
+                            onclick="addTransaction('Monthly Salary',-50.75, 'State Bank of India', 'Food', 'Google Pay', '•Done')">+
+                            Add Transaction</button>
                     </div>
                     <div class="transactionTableHeader">
                         <div class="transactionTop">
@@ -480,8 +505,8 @@
                             <p>Status</p>
                         </div>
                     </div>
-                    <div class="transacsContainer">
-                        <div class="transacLedger">
+                    <div id="transacsContainer">
+                        <!-- <div class="transacLedger">
 
                             <div class="transacName">
                                 <img id="transaclogImg" src="images/Transaction icon.svg" alt="">
@@ -503,95 +528,17 @@
                                 <div class="modeTextInfo ledgerSpace">
                                     <p>Google Pay</p>
                                 </div>
-                                <div class="status ">
+                                <div class="status">
                                     <p>•Done</p>
                                 </div>
                             </div>
-                        </div>
-                        <div class="transacLedger">
+                        </div> -->
 
-                            <div class="transacName">
-                                <img id="transaclogImg" src="images/Transaction icon.svg" alt="">
-                                <div class="name">
-                                    <p id="nameText">Monthly Salary</p>
-                                    <p id="dateTimeText">2:30pm Sep 25</p>
-                                </div>
-                            </div>
-                            <div class="transacInfoRight">
-                                <div class="amountTextInfo ledgerSpace">
-                                    <p>90,000</p>
-                                </div>
-                                <div class="accountTextInfo ledgerSpace">
-                                    <p>State Bank of India</p>
-                                </div>
-                                <div class="categoryTextInfo ledgerSpace">
-                                    <p>Salary</p>
-                                </div>
-                                <div class="modeTextInfo ledgerSpace">
-                                    <p>Google Pay</p>
-                                </div>
-                                <div class="status ">
-                                    <p>•Done</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="transacLedger">
 
-                            <div class="transacName">
-                                <img id="transaclogImg" src="images/Transaction icon.svg" alt="">
-                                <div class="name">
-                                    <p id="nameText">Monthly Salary</p>
-                                    <p id="dateTimeText">2:30pm Sep 25</p>
-                                </div>
-                            </div>
-                            <div class="transacInfoRight">
-                                <div class="amountTextInfo ledgerSpace">
-                                    <p>90,000</p>
-                                </div>
-                                <div class="accountTextInfo ledgerSpace">
-                                    <p>State Bank of India</p>
-                                </div>
-                                <div class="categoryTextInfo ledgerSpace">
-                                    <p>Salary</p>
-                                </div>
-                                <div class="modeTextInfo ledgerSpace">
-                                    <p>Google Pay</p>
-                                </div>
-                                <div class="status ">
-                                    <p>•Done</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="transacLedger">
 
-                            <div class="transacName">
-                                <img id="transaclogImg" src="images/Transaction icon.svg" alt="">
-                                <div class="name">
-                                    <p id="nameText">Monthly Salary</p>
-                                    <p id="dateTimeText">2:30pm Sep 25</p>
-                                </div>
-                            </div>
-                            <div class="transacInfoRight">
-                                <div class="amountTextInfo ledgerSpace">
-                                    <p>90,000</p>
-                                </div>
-                                <div class="accountTextInfo ledgerSpace">
-                                    <p>State Bank of India</p>
-                                </div>
-                                <div class="categoryTextInfo ledgerSpace">
-                                    <p>Salary</p>
-                                </div>
-                                <div class="modeTextInfo ledgerSpace">
-                                    <p>Google Pay</p>
-                                </div>
-                                <div class="status ">
-                                    <p>•Done</p>
-                                </div>
-                            </div>
-                        </div>
-                        <img src="images/Transaction log.svg" alt="">
+                        <!-- <img src="images/Transaction log.svg" alt="">
                         <img src="images/Transaction log2.svg" alt="">
-                        <img src="images/Transaction log 3.svg" alt="">
+                        <img src="images/Transaction log 3.svg" alt=""> -->
                         <!-- <img src="images/Transaction log 4.svg" alt="">
                         <img src="images/Transaction log 5.svg" alt="">
                         <img src="images/Transaction log 6.svg" alt="">
@@ -673,6 +620,111 @@
             </div>
         </main>
     </section>
+    <script>
+        // Array to store transactions
+
+        let transactions = [];
+
+        // Function to add a transaction
+        function addTransaction(name, amount, bank, category, mode, status) {
+            const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+            const now = new Date();
+            const transaction = {
+                id: Date.now(), // Unique ID
+                name,
+                hours: now.getHours(),
+                minutes: now.getMinutes(),
+                date: now.getDate(),
+                month: monthNames[now.getMonth()],
+                year: now.getFullYear(),
+                mode,
+                amount: parseFloat(amount),
+                category,
+                bank,
+                status
+            };
+            transactions.push(transaction);
+            updateTransactionDisplay();
+        }
+
+        // Function to delete a transaction
+        function deleteTransaction(id) {
+            transactions = transactions.filter(transaction => transaction.id !== id);
+            updateTransactionDisplay();
+        }
+
+        // Function to render transactions as divs
+        function updateTransactionDisplay() {
+            const container = document.getElementById("transacsContainer");
+            container.innerHTML = ""; // Clear the container
+
+            transactions.forEach(transaction => {
+                // Create the transaction div
+                const transactionDiv = document.createElement("div");
+                transactionDiv.classList.add("transacLedger");
+                transactionDiv.setAttribute("data-id", transaction.id);
+
+
+
+                // transactionDiv.addEventListener('mouseout', function () {
+                //     const deleteBtn = document.getElementsByClassName("deleteTransIcon")
+
+                //     if (deleteBtn) {
+                //         deleteBtn.style.opacity = 0
+                //     }
+                //     else {
+                //         console.error(`Element with ID 'deleteTransIcon' not found.`)
+                //     }
+                // });
+
+                // Add child divs for transaction details
+                transactionDiv.innerHTML = `
+                <div class="transacName">
+                    <img id="transaclogImg" src="images/Transaction icon.svg" alt="">
+                    <div class="name">
+                        <p id="nameText">${transaction.name}</p>
+                        <p id="dateTimeText">${transaction.hours}:${transaction.minutes} ${transaction.month.slice(0, 3)} ${transaction.date}</p>
+                    </div>
+                </div>
+                <div class="transacInfoRight">
+                    <div class="amountTextInfo ledgerSpace ${transaction.amount < 0 ? 'expense' : 'income'}">
+                    <p>${transaction.amount < 0 ? '-' : ''}$${Math.abs(transaction.amount).toFixed(2)}</p></div>
+                    <div class="accountTextInfo ledgerSpace"><p>${transaction.bank}</p></div>
+                    <div class="categoryTextInfo ledgerSpace"><p>${transaction.category}</p></div>
+                    <div class="modeTextInfo ledgerSpace"><p>${transaction.mode}</p></div>
+                    <div class="status"><p>${transaction.status}</p></div>
+                 </div>   
+                    <img class="deleteTransIcon delBtn${transaction.id}" src="images/deleteBin Icon.svg" onclick="deleteTransaction(${transaction.id})" alt="">`;
+
+                container.prepend(transactionDiv);
+
+            });
+
+        }
+
+        // let transaction = document.getElementsByClassName("transacLedger")
+        // transaction.addEventListener('mouseover', function () {
+        //     showDeleteIcon();
+        // });
+
+        // Example usage
+        addTransaction("Monthly Salary", -50.75, "State Bank of India", "Food", "Google Pay", "•Done");
+        // addTransaction("Salary", 2000, "Income", "2024-11-21", "•Done");
+        // addTransaction("food", -400, "food", "2024-11-22", "•Done");
+        function showDeleteIcon() {
+
+            const deleteBtn = document.getElementsByClassName("deleteTransIcon")
+
+            if (deleteBtn) {
+                deleteBtn.style.opacity = 1
+            }
+            else {
+                console.error(`Element with ID 'deleteTransIcon' not found.`)
+            }
+        }
+
+
+    </script>
 </body>
 
 </html>
