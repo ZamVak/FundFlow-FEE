@@ -230,10 +230,23 @@
         }
 
         .transacInfoRight .status p {
-            background-color: #004C01;
             padding: 0px 7px;
             border-radius: 15px;
+        }
+
+        .statusDone {
+            background-color: #004C01;
             color: #00D181;
+        }
+
+        .statusPending {
+            background-color: #4c4400;
+            color: #FAB823;
+        }
+
+        .statusFailed {
+            background-color: #4c0000;
+            color: red;
         }
 
         .headingTop .ledgerSpaces {}
@@ -345,9 +358,10 @@
         .transacLedger:hover .deleteTransIcon {
             opacity: 1;
         }
-        .deleteTransIcon:hover{
+
+        .deleteTransIcon:hover {
             cursor: pointer;
-        } 
+        }
 
 
         .ledgerSpace {}
@@ -454,6 +468,114 @@
             font-size: medium;
             padding-bottom: 10px;
         }
+
+        /* Basic styling for form */
+        #transactionFormContainer {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* background-color: rgba(0, 0, 0, 0.5); */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            backdrop-filter: blur(10px);
+            transition: all 0.7s ease-in;
+        }
+
+        #transactionForm {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            background: #0d1117;
+            padding: 25px 20px 20px 20px;
+            border-radius: 30px;
+            width: 380px;
+            color: #9198a1;
+            box-sizing: border-box;
+            border: 1px solid rgb(115 123 139 / 30%);
+            font-weight: 400;
+            font-family: 'Ubuntu', sans-serif;
+            font-size: smaller;
+            letter-spacing: 0.65px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        #transactionForm h2 {
+            font-weight: 400;
+            font-size: larger;
+            margin-bottom: 10px;
+            color: white;
+        }
+
+        /* .hidden {
+            display: none;
+        } */
+
+        .formLabel {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            /* margin-top: 10px; */
+        }
+
+        select.formSelect {
+            background-color: #0d1117;
+            width: 60%;
+            height: 20px;
+            color: white;
+            box-sizing: content-box;
+            padding: 4px 10px;
+            border: 2px solid rgb(98 98 98 / 30%);
+            font-family: 'Ubuntu', sans-serif;
+            letter-spacing: 0.6px;
+            font-weight: 300;
+            border-radius: 10px;
+        }
+
+        #transactionForm label .formInput {
+            width: 60%;
+            height: 20px;
+            color: white;
+            box-sizing: content-box;
+            padding: 4px 10px;
+            border: 2px solid rgb(98 98 98 / 30%);
+            font-family: 'Ubuntu', sans-serif;
+            letter-spacing: 0.6px;
+            font-weight: 300;
+            /* border: none; */
+            background: rgb(0 0 0 / 10%);
+            border-radius: 10px;
+        }
+
+        .formBtnsContainer {
+            display: flex;
+            justify-content: right;
+            margin-top: 10px;
+            gap: 10px;
+        }
+
+        .formBtnsContainer .formButton {
+            padding: 8px 10px;
+            border: none;
+            border-radius: 13px;
+            cursor: pointer;
+            font-weight: 400;
+            font-family: 'Ubuntu', sans-serif;
+            font-size: smaller;
+            /* letter-spacing: 0.6px; */
+        }
+
+        .formBtnsContainer .cancelButton {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+
+        .formButton:hover {
+            background-color: #ddd;
+            color: black;
+        }
     </style>
 </head>
 
@@ -494,9 +616,7 @@
                 <div class="mainContainer">
                     <div class="transactionListHeader">
                         <p>1-9 of 18 transactions</p>
-                        <button id="addTransactionBtn"
-                            onclick="addTransaction('Monthly Salary',-50.75, 'State Bank of India', 'Food', 'Google Pay', '•Done')">+
-                            Add Transaction</button>
+                        <button id="addTransactionBtn">+ Add Transaction</button>
                     </div>
                     <div class="transactionTableHeader">
                         <div class="transactionTop">
@@ -539,8 +659,6 @@
                                 </div>
                             </div>
                         </div> -->
-
-
 
                         <!-- <img src="images/Transaction log.svg" alt="">
                         <img src="images/Transaction log2.svg" alt="">
@@ -626,6 +744,67 @@
             </div>
         </main>
     </section>
+
+    <!-- Transaction Form (Initially Hidden) -->
+    <div id="transactionFormContainer" style="display: none;">
+        <div id="transactionForm">
+            <h2>Add Transaction</h2>
+            <label class="formLabel" for="name">Name:<input class="formInput" type="text" id="name" required></label>
+
+            <label class="formLabel" for="amount">Amount:<input class="formInput" type="number" id="amount"
+                    required></label>
+
+
+            <label class="formLabel" for="bank">Bank:
+                <select class="formSelect" id="bank" required>
+                    <option value="" disabled selected>Select Bank</option>
+                    <option value="State Bank of India">State Bank of India</option>
+                    <option value="Union Bank of India">Union Bank of India</option>
+                    <option value="Axis Bank">Axis Bank</option>
+                    <option value="Punjab National Bank">Punjab National Bank</option>
+                </select>
+            </label>
+
+            <label class="formLabel" for="category">Category:
+                <select class="formSelect" id="category" required>
+                    <option value="" disabled selected>Select Category</option>
+                    <option value="Food">Food</option>
+                    <option value="Clothes">Clothes</option>
+                    <option value="Gifts">Gifts</option>
+                    <option value="Trips">Trips</option>
+                    <option value="Movies">Movies</option>
+                    <option value="Subscriptions">Subscriptions</option>
+                </select>
+            </label>
+
+            <label class="formLabel" for="mode">Mode:
+                <select class="formSelect" id="mode" required>
+                    <option value="" disabled selected>Select Mode</option>
+                    <option value="PhonePe">PhonePe</option>
+                    <option value="Google Pay">Google Pay</option>
+                    <option value="Paytm">Paytm</option>
+                    <option value="Fampay">Fampay</option>
+                </select>
+            </label>
+
+
+            <label class="formLabel" for="status">Status:
+                <select class="formSelect" id="status" required>
+                    <option value="" disabled selected>Select Status</option>
+                    <option value="Done" style="color: #00D181;">Done</option>
+                    <option value="Pending" style="color:#FAB823">Pending</option>
+                    <option value="Failed" style="color: red;">Failed</option>
+                </select>
+            </label>
+
+
+            <div class="formBtnsContainer">
+                <button class="formButton cancelButton" id="cancelTransactionBtn">Cancel</button>
+                <button class="formButton submitButton" id="submitTransactionBtn">Add</button>
+            </div>
+        </div>
+    </div>
+
     <script>
         // Array to store transactions
 
@@ -703,7 +882,32 @@
                     <img class="deleteTransIcon delBtn${transaction.id}" src="images/deleteBin Icon.svg" onclick="deleteTransaction(${transaction.id})" alt="">`;
 
                 container.prepend(transactionDiv);
+                updateStatusColor();
 
+            });
+
+        }
+        function updateStatusColor() {
+
+            transactions.forEach(transaction => {
+                // Create the transaction div
+                const statusParagraph = document.querySelector('.status p');
+
+                if (statusParagraph) {
+                    if (statusParagraph.textContent=== "•Pending") {
+                        // statusParagraph.classList.add('statusPending');
+                        statusParagraph.style.backgroundColor = '#4c4400';
+                        statusParagraph.style.color = '#FAB823';
+                    } else if (statusParagraph.textContent=== "•Failed") {
+                        statusParagraph.style.backgroundColor = '#4c0000';
+                        statusParagraph.style.color = 'red';
+                    } else {
+                        statusParagraph.style.backgroundColor = '#004C01';
+                        statusParagraph.style.color = '#00D181';
+                    }
+                } else {
+                    console.error("Status Para not found");
+                }
             });
 
         }
@@ -717,18 +921,50 @@
         addTransaction("Monthly Salary", -50.75, "State Bank of India", "Food", "Google Pay", "•Done");
         // addTransaction("Salary", 2000, "Income", "2024-11-21", "•Done");
         // addTransaction("food", -400, "food", "2024-11-22", "•Done");
-        function showDeleteIcon() {
 
-            const deleteBtn = document.getElementsByClassName("deleteTransIcon")
+        // Select elements
+        const addTransactionBtn = document.getElementById("addTransactionBtn");
+        const transactionFormContainer = document.getElementById("transactionFormContainer");
+        const submitTransactionBtn = document.getElementById("submitTransactionBtn");
+        const cancelTransactionBtn = document.getElementById("cancelTransactionBtn");
 
-            if (deleteBtn) {
-                deleteBtn.style.opacity = 1
+        // Show the form on "Add Transaction" button click
+        addTransactionBtn.addEventListener("click", () => {
+            transactionFormContainer.style.display = "flex";
+        });
+
+        // Hide the form on "Cancel" button click
+        cancelTransactionBtn.addEventListener("click", () => {
+            transactionFormContainer.style.display = "none";
+        });
+
+        // Handle form submission
+        submitTransactionBtn.addEventListener("click", () => {
+            // Collect input values
+            const name = document.getElementById("name").value;
+            const amount = document.getElementById("amount").value;
+            const bank = document.getElementById("bank").value;
+            const category = document.getElementById("category").value;
+            const mode = document.getElementById("mode").value;
+            const status = "•" + document.getElementById("status").value;
+
+            // Validate inputs
+            if (name && amount && bank && category && mode && status) {
+                // Call the addTransaction function
+                addTransaction(name, amount, bank, category, mode, status);
+
+                // Hide the form and reset inputs
+                transactionFormContainer.style.display = "none";
+                document.getElementById("name").value = "";
+                document.getElementById("amount").value = "";
+                document.getElementById("bank").value = "";
+                document.getElementById("category").value = "";
+                document.getElementById("mode").value = "";
+                document.getElementById("status").value = "";
+            } else {
+                alert("Please fill in all fields.");
             }
-            else {
-                console.error(`Element with ID 'deleteTransIcon' not found.`)
-            }
-        }
-
+        });
 
     </script>
 </body>

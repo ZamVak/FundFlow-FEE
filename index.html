@@ -158,25 +158,20 @@
             text-decoration: none;
         }
 
-        .Login_button {
+        .Login_buttonStyle {
             background: linear-gradient(#0d1117, #0d1117) padding-box, linear-gradient(135deg, #F1D710, #F16B10, #A50EF1) border-box;
             border: 3.5px solid transparent;
             color: white;
+            transition: all 0.7s ease-in;
         }
 
-        .Signup_button {
+        .Signup_buttonStyle {
             background: linear-gradient(135deg, #FAB823, #F9A315, #F68D0C, #F3770D, #F16B10, #EE5F13);
             font-weight: 700;
+            color: #0d1117;
+            transition: all 0.7s ease-in;
         }
-
-        .Signup_button p {
-            background: linear-gradient(135deg, #585858, #0d1117);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-
-        }
-
+ 
         #blobImage {
             position: absolute;
             right: 0px;
@@ -226,15 +221,36 @@
         </div>
         <div id="buttons_container">
 
-            <a href="LoginSignup.html" class="logsign_buttons Login_button">
+            <a href="LoginSignup.html" class="logsign_buttons Login_button Login_buttonStyle">
                 <p>Login</p>
             </a>
-            <a href="LoginSignup.html" class="logsign_buttons Signup_button">
+            <a href="LoginSignup.html" class="logsign_buttons Signup_button Signup_buttonStyle">
                 <p>Signup</p>
             </a>
         </div>
         <img src="images/Blob.png" id="blobImage" alt="">
     </main>
+
+    <script>
+        document.querySelector('.Login_button').addEventListener('mouseout', function () {
+            const signupButton = document.querySelector('.Signup_button');
+            const loginButton = document.querySelector('.Login_button');
+            loginButton.classList.add('Login_buttonStyle');
+            loginButton.classList.remove('Signup_buttonStyle');
+            signupButton.classList.add('Signup_buttonStyle');
+            signupButton.classList.remove('Login_buttonStyle');
+        });
+
+        document.querySelector('.Login_button').addEventListener('mouseover', function () {
+            const signupButton = document.querySelector('.Signup_button');
+            const loginButton = document.querySelector('.Login_button');
+            loginButton.classList.remove('Login_buttonStyle');
+            loginButton.classList.add('Signup_buttonStyle');
+            signupButton.classList.remove('Signup_buttonStyle');
+            signupButton.classList.add('Login_buttonStyle');
+        });
+
+    </script>
 
 </body>
 
