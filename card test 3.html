@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .cardsCointainer {
+            width: 37%;
+            height: 83%;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            box-sizing: border-box;
+        }
+
+        .containerForCard1 {
+            position: absolute;
+            padding: 25px;
+            border: 1px solid white;
+            border-radius: 16px;
+            width: 85%;
+            background: linear-gradient(to right, #000000, #434343);
+            display: flex;
+            flex-direction: column;
+            height: 59%;
+            row-gap: 11px;
+            margin-bottom: 10px;
+            z-index: 1;
+            transform-origin: bottom left;
+        }
+
+        .fixedCard {
+            position: relative;
+            z-index: 0;
+        }
+
+        .rotated4deg {
+            transform: rotate(4deg);
+        }
+
+        .rotated8deg {
+            transform: rotate(8deg);
+        }
+
+        .containerForCard1 p {
+            color: white;
+            font-family: "Exo 2", serif;
+        }
+
+        .cardHeader {
+            display: flex;
+            justify-content: end;
+        }
+
+        .cardHeader p {
+            font-family: sans-serif;
+        }
+
+        .wifiContactAndChip {
+            padding-top: 12%;
+        }
+
+        .card-details {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .name-number {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 46px;
+        }
+
+        .name-number p {
+            margin: 0;
+        }
+
+        .name-number p:nth-child(1) {
+            font-size: 16px;
+        }
+
+        .name-number p:nth-child(2) {
+            font-size: 18px;
+        }
+
+        .valid-date {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            font-size: 16px;
+            width: 80px;
+        }
+
+        .addCardButton {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #434343;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .form-container {
+            display: none;
+            position: absolute;
+            /* Make the form appear above other content */
+            top: 50px;
+            /* Adjust as needed */
+            z-index: 100;
+            /* Ensure the form stays on top of other elements */
+            margin-top: 20px;
+            width: 85%;
+            background-color: #f3f3f3;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-container label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .form-container input {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .form-container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #434343;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="cardsCointainer" id="cardsCointainer">
+            <div class="containerForCard1 fixedCard">
+                <div class="cardHeader">
+                    <p>Visa</p>
+                </div>
+                <div class="wifiContactAndChip">
+                    <img src="images/Wifi ContactCard.png" alt="" style="width:100%;">
+                </div>
+                <div class="card-details">
+                    <div class="name-number">
+                        <p class="name">Cute Nigga</p>
+                        <p class="number">**** **** **** 0911</p>
+                    </div>
+                    <div class="valid-date">
+                        <p>00/00</p>
+                    </div>
+                </div>
+            </div>
+            <button class="addCardButton" onclick="showForm()">Add New Card</button>
+
+            <div class="form-container" id="formContainer">
+                <form id="cardForm">
+                    <label for="accountNumber">Account Number</label>
+                    <input type="text" id="accountNumber" name="accountNumber" required>
+
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+
+                    <label for="validDate">Valid Date (MM/YY)</label>
+                    <input type="text" id="validDate" name="validDate" required>
+
+                    <label for="cvv">CVV</label>
+                    <input type="text" id="cvv" name="cvv" required>
+
+                    <button type="submit">Add Card</button>
+                </form>
+            </div>
+        </div>
+    </main>
+    <script>
+        const cardsArray = []; // Array to store card data
+
+        function showForm() {
+            document.getElementById('formContainer').style.display = 'block';
+        }
+
+        document.getElementById('cardForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const accountNumber = document.getElementById('accountNumber').value;
+            const name = document.getElementById('name').value;
+            const validDate = document.getElementById('validDate').value;
+            const cvv = document.getElementById('cvv').value;
+
+            if (accountNumber && name && validDate && cvv) {
+                const cardData = {
+                    accountNumber,
+                    name,
+                    validDate
+                };
+
+                cardsArray.unshift(cardData); // Add new card to the beginning of the array
+                renderCards(); // Re-render the cards
+
+                // Reset and hide the form
+                document.getElementById('cardForm').reset();
+                document.getElementById('formContainer').style.display = 'none';
+            }
+        });
+
+        function renderCards() {
+            const cardsContainer = document.getElementById('cardsCointainer');
+
+            // Remove old cards
+            const oldCards = document.querySelectorAll('.containerForCard1:not(.fixedCard)');
+            oldCards.forEach(card => card.remove());
+
+            // Render the top three cards
+            for (let i = 0; i < Math.min(cardsArray.length, 3); i++) {
+                const cardData = cardsArray[i];
+                const cardContainer = document.createElement('div');
+                cardContainer.classList.add('containerForCard1');
+
+                // Apply rotation based on the position
+                if (i === 1) {
+                    cardContainer.classList.add('rotated4deg'); // Rotate the second card by 4 degrees
+                } else if (i === 2) {
+                    cardContainer.classList.add('rotated8deg'); // Rotate the third card by 8 degrees
+                }
+
+                cardContainer.innerHTML = `
+                    <div class="cardHeader">
+                        <p>Visa</p>
+                    </div>
+                    <div class="wifiContactAndChip">
+                        <img src="images/Wifi ContactCard.png" alt="" style="width:100%;">
+                    </div>
+                    <div class="card-details">
+                        <div class="name-number">
+                            <p class="name">${cardData.name}</p>
+                            <p class="number">${cardData.accountNumber}</p>
+                        </div>
+                        <div class="valid-date">
+                            <p>${cardData.validDate}</p>
+                        </div>
+                    </div>
+                `;
+
+                cardsContainer.insertBefore(cardContainer, cardsContainer.firstChild);
+            }
+        }
+    </script>
+</body>
+</html>
