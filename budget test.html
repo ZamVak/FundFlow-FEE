@@ -739,6 +739,167 @@
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
         }
+
+        .main-container {
+            margin: 20px;
+        }
+
+        .row-wrapper {
+            margin-top: 20px;
+        }
+
+        .row {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            padding: 10px;
+        }
+
+        .BudgetCategoryBox {
+            margin-bottom: 20px;
+        }
+
+        .BudgetCardsList {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .BudgetCard {
+            padding: 10px;
+            background-color: #e7f3ff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+            background-image: url('path/to/your/background-image.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .popup-form {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 9;
+            background-color: #fff;
+            padding: 20px;
+            border: 2px solid #ddd;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .form-container {
+            max-width: 300px;
+        }
+
+        .form-container input[type=text],
+        .form-container input[type=number] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 10px 0;
+            border: none;
+            background: #f1f1f1;
+        }
+
+        .form-container input[type=text]:focus,
+        .form-container input[type=number]:focus {
+            background-color: #ddd;
+            outline: none;
+        }
+
+        .btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            margin-bottom: 10px;
+            border-radius: 8px;
+        }
+
+        .cancel {
+            background-color: red;
+        }
+
+        .details-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        .container {
+            display: flex;
+            width: 420px;
+            padding: 50px 0;
+            border-radius: 8px;
+            background: #0d0d0d;
+            row-gap: 30px;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .circular-progress {
+            position: relative;
+            height: 77%;
+            width: 89%;
+            border-radius: 50%;
+            background: conic-gradient(#0d0d 3.6deg, #0d0d0d 0deg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .circular-progress::before {
+            content: "";
+            position: absolute;
+            height: 70%;
+            width: 70%;
+            border-radius: 50%;
+            background-color: #0d0d0d;
+        }
+
+        .progress-value {
+            position: relative;
+            font-size: 15px;
+            font-weight: 600;
+            color: grey;
+        }
     </style>
 </head>
 
@@ -832,10 +993,12 @@
                                             </div>
                                         </div>
                                         <div class="progressBar">
-                                            <div class="progressBarOuter">
+                                            <!-- <div class="progressBarOuter">
                                                 <div class="progressBarInner"></div>
+                                            </div> -->
+                                            <div class="circular-progress">
+                                                <span class="progress-value">0%</span>
                                             </div>
-
                                         </div>
                                     </div>
                                     <div class="expenseCard"></div>
@@ -870,6 +1033,8 @@
                                     <!-- <img src="images/Add Budget Card.svg" style="width: 16.7%;" alt=""> -->
                                     <div id="details-container" class="details-container"></div>
                                     <!-- Hidden Form -->
+
+
                                     <div id="form-popup" class="form-popup">
                                         <form id="details-form" class="form-container">
                                             <h2>Enter Details</h2> <label for="category"><b>Category</b></label> <input
@@ -890,6 +1055,8 @@
                                     </div>
                                 </div>
                             </div>
+                            <button id="addRowButton">Add New Row</button>
+                            <div id="rowWrapper" class="row-wrapper"></div>
                             <div class="BudgetCategoryBox">
                                 <button class="buttonTopHeading">Entertainment</button>
                                 <div class="BudgetCardsList">
@@ -926,6 +1093,7 @@
         </main>
     </section>
     <script>
+
         function showForm() {
             document.getElementById('form-popup').style.display = 'block';
         }
@@ -1008,6 +1176,38 @@
 
         }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        let circularProgress = document.querySelector(".circular-progress"),
+            progressValue = document.querySelector(".progress-value");
+
+        let progressStartValue = 0,
+            progressEndValue = 90,
+            speed = 100;
+
+        let progress = setInterval(() => {
+            progressStartValue++;
+
+            progressValue.textContent = `${progressStartValue}%`
+            circularProgress.style.background = `conic-gradient(#7d2ae8 ${progressStartValue * 3.6}deg, #ededed 0deg)`
+
+            if (progressStartValue == progressEndValue) {
+                clearInterval(progress);
+            }
+        }, speed);
     </script>
 </body>
 
