@@ -163,9 +163,25 @@
             gap: 18px;
             align-items: center;
         }
-
-        .wallet1-Container {
+        .walletsContainer .wallet:nth-child(1){
             background-image: url(images/Wallet\ background\ 1.png);
+            
+        }
+        .walletsContainer .wallet:nth-child(2){
+            background-image: url(images/Wallet\ background\ 2.png);
+            
+        }
+        .walletsContainer .wallet:nth-child(3){
+            background-image: url(images/Wallet\ background\ 3.png);
+            
+        }
+        .walletsContainer .wallet:nth-child(4){
+            background-image: url(images/Wallet\ background\ 4.png);
+            
+        }
+
+        .wallet {
+            /* background-image: url(images/Wallet\ background\ 1.png); */
             background-size: cover;
             /* border: 1px solid white; */
             border-radius: 30px;
@@ -174,7 +190,7 @@
             width: 100%;
         }
 
-        .wallet1-Info {
+        .wallet-Info {
             display: flex;
             gap: 10px;
         }
@@ -185,6 +201,8 @@
             height: 50px;
             /* border: 1px solid white; */
             border-radius: 50%;
+            padding: 11px;
+            box-sizing: border-box;
         }
 
         .TextInfoContainer {
@@ -1351,20 +1369,58 @@
         <main>
             <div class="mainContainer">
                 <div class="walletsContainer">
-                    <div class="wallet1-Container">
+                    <div class="wallet">
                         <!-- <img src="images/Wallet background 1.png" alt=""> -->
-                        <div class="wallet1-Info">
-                            <div class="imageContainer"></div>
+                        <div class="wallet-Info">
+                            <div class="imageContainer">
+                                <img src="images/State Bank of India Logo.svg" alt="">
+                            </div>
                             <div class="TextInfoContainer">
                                 <p>Cash</p>
                                 <p>₹20,000</p>
                             </div>
                         </div>
                     </div>
-                    <img src="images/Wallet 1.png" alt="">
-                    <img src="images/Wallet 2.png" alt="">
-                    <img src="images/Wallet 3.png" alt="">
-                    <img src="images/Wallet 4.png" alt="">
+                    <div class="wallet">
+                        <!-- <img src="images/Wallet background 1.png" alt=""> -->
+                        <div class="wallet-Info">
+                            <div class="imageContainer">
+                                <img src="images/State Bank of India Logo.svg" alt="">
+                            </div>
+                            <div class="TextInfoContainer">
+                                <p>State Bank of India</p>
+                                <p>₹9,12,000</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="wallet">
+                        <!-- <img src="images/Wallet background 1.png" alt=""> -->
+                        <div class="wallet-Info">
+                            <div class="imageContainer">
+                                <img src="images/Union Bank of India Logo.svg" alt="">
+                            </div>
+                            <div class="TextInfoContainer">
+                                <p>Union Bank of India</p>
+                                <p>₹8,000</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="wallet">
+                        <!-- <img src="images/Wallet background 1.png" alt=""> -->
+                        <div class="wallet-Info">
+                            <div class="imageContainer">
+                                <img src="images/Axis Bank Logo.svg" alt="">
+                            </div>
+                            <div class="TextInfoContainer">
+                                <p>Axis Bank</p>
+                                <p>₹12,000</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <img src="images/Wallet 1.png" alt=""> -->
+                    <!-- <img src="images/Wallet 2.png" alt=""> -->
+                    <!-- <img src="images/Wallet 3.png" alt=""> -->
+                    <!-- <img src="images/Wallet 4.png" alt=""> -->
                     <div class="addNewWalletBox">
                         <div class="addIcon">
                             <img src="images/AddWalletIcon.svg" style="width: 40%;" alt="">
