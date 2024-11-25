@@ -73,7 +73,7 @@
             font-size: 0.7em;
         }
 
-        #search {
+        #searchBar {
             padding: 0.8em 1em;
             box-sizing: border-box;
             width: 260px;
@@ -229,6 +229,12 @@
             margin-right: 5px;
         }
 
+        .transacInfoRight .infoImgContainer {
+            height: 18px;
+            display: flex;
+            align-items: center;
+        }
+
         .transacInfoRight div {
             height: 30px;
         }
@@ -292,8 +298,8 @@
             background-image: linear-gradient(135deg, rgb(255 255 255 / 3.58%), rgb(153 153 153 / 1.78%));
         }
 
-        .highlightTransaction{
-            border:1px solid rgba(241, 106, 16, 0.5);
+        .highlightTransaction {
+            border: 2px solid rgba(241, 106, 16, 0.5);
         }
 
         .transacLedger p {
@@ -306,6 +312,9 @@
         .amountTextHead,
         .amountTextInfo {
             width: 22%;
+            display: flex;
+            align-items: flex-start;
+            gap: 5px;
         }
 
         .accountTextHead {
@@ -315,16 +324,24 @@
         .accountTextInfo {
             width: 28%;
             display: flex;
+            align-items: flex-start;
+            gap: 5px;
         }
 
         .categoryTextHead,
         .categoryTextInfo {
             width: 20%;
+            display: flex;
+            align-items: flex-start;
+            gap: 5px;
         }
 
         .modeTextHead,
         .modeTextInfo {
             width: 21%;
+            display: flex;
+            align-items: flex-start;
+            gap: 5px;
         }
 
         .statusTextHead,
@@ -341,6 +358,23 @@
             align-items: center;
             width: 32%;
             gap: 15px;
+        }
+
+        .transacProfileImg {
+            width: 13.5%;
+            aspect-ratio: 1;
+            border-radius: 50%;
+            font-family: 'Ubuntu';
+            background-image: linear-gradient(134deg, #FAB823 30%, #F9A315, #F68D0C, #F3770D, #F16B10, #EE5F13);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .transacProfileImg p{
+            color: white;
+            font-size: 0.7em;
+            font-weight: 500;
+            letter-spacing: 0.7px;
         }
 
         .name {
@@ -491,7 +525,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            backdrop-filter: blur(10px);
+            backdrop-filter: blur(20px);
             transition: all 0.7s ease-in;
         }
 
@@ -601,9 +635,9 @@
                 <h1>Transaction History</h1>
                 <p>Ready for today's challenges?</p>
             </div>
-            <div class="searchbar">
-                <label for="search"></label>
-                <input id="search" type="text" placeholder="Search for your transaction">
+            <div class="search">
+                <!-- <label for="searchBar"></label> -->
+                <input id="searchBar" type="text" placeholder="Search for your transaction">
             </div>
         </div>
 
@@ -613,9 +647,9 @@
         <nav class="navbar">
             <div class="iconBars sidebarTop">
                 <img id="iconSelector" src="images/active icon selector.svg" alt="">
-                <a href="#" class="navIcon"><img src="images/dashboardimg.svg" alt=""></a>
-                <a href="Transaction.html" class="navIcon"><img src="images/buy icon active.svg" alt=""></a>
-                <a href="Balance&Budgets.html" class="navIcon"><img src="images/Wallet icon.svg" alt=""></a>
+                <a href="Balance&Budgets.html" class="navIcon"><img src="images/dashboardimg.svg" alt=""></a>
+                <a href="#" class="navIcon"><img src="images/buy icon active.svg" alt=""></a>
+                <!-- <a href="Balance&Budgets.html" class="navIcon"><img src="images/Wallet icon.svg" alt=""></a> -->
             </div>
             <div class="iconBars sidebarBottom">
                 <a href="LoginSignup.html" class="navIcon"><img src="images/signout_icon.svg" alt=""></a>
@@ -780,7 +814,7 @@
                 <select class="formSelect" id="category" required>
                     <option value="" disabled selected>Select Category</option>
                     <option value="Food">Food</option>
-                    <option value="Clothes">Clothes</option>
+                    <option value="Shopping">Shopping</option>
                     <option value="Gifts">Gifts</option>
                     <option value="Trips">Trips</option>
                     <option value="Movies">Movies</option>
@@ -866,77 +900,78 @@
                 status
             };
             transactions.push(transaction);
-            updateTransactionDisplay();
+            filterTransactions("");
         }
 
         // Function to delete a transaction
         function deleteTransaction(id) {
             transactions = transactions.filter(transaction => transaction.id !== id);
-            updateTransactionDisplay();
+            filterTransactions("");
         }
 
         // Function to render transactions as divs
-        function updateTransactionDisplay() {
+        function filterTransactions(searchTerm) {
+            // console.log("Search Term:", searchTerm); // Debug log
+
             const container = document.getElementById("transacsContainer");
             container.innerHTML = ""; // Clear the container
 
-            transactions.forEach(transaction => {
-                // Create the transaction div
+            const lowerCaseSearchTerm = searchTerm.toLowerCase();
+
+            const filteredTransactions = transactions.filter(transaction => {
+                return (
+                    transaction.name.toLowerCase().includes(lowerCaseSearchTerm) ||
+                    transaction.bank.toLowerCase().includes(lowerCaseSearchTerm) ||
+                    transaction.category.toLowerCase().includes(lowerCaseSearchTerm) ||
+                    transaction.mode.toLowerCase().includes(lowerCaseSearchTerm) ||
+                    transaction.status.toLowerCase().includes(lowerCaseSearchTerm)
+                );
+            });
+
+            // console.log("Filtered Transactions:", filteredTransactions); // Debug log
+
+            if (filteredTransactions.length === 0) {
+                container.innerHTML = `<p>No transactions found.</p>`;
+                return;
+            }
+
+            filteredTransactions.forEach(transaction => {
                 const transactionDiv = document.createElement("div");
                 transactionDiv.classList.add("transacLedger");
                 transactionDiv.setAttribute("data-id", transaction.id);
 
-
-
-                // transactionDiv.addEventListener('mouseout', function () {
-                //     const deleteBtn = document.getElementsByClassName("deleteTransIcon")
-
-                //     if (deleteBtn) {
-                //         deleteBtn.style.opacity = 0
-                //     }
-                //     else {
-                //         console.error(`Element with ID 'deleteTransIcon' not found.`)
-                //     }
-                // });
-
-                // Add child divs for transaction details
                 transactionDiv.innerHTML = `
-                <div class="transacName">
-                    <img id="transaclogImg" src="images/Transaction icon.svg" alt="">
-                    <div class="name">
-                        <p id="nameText">${transaction.name}</p>
-                        <p id="dateTimeText">${transaction.hours}:${transaction.minutes} ${transaction.month.slice(0, 3)} ${transaction.date}</p>
-                    </div>
+            <div class="transacName">
+                <div class="transacProfileImg"><p>MS</p></div>
+                <img style="display:none;" id="transaclogImg" src="images/Transaction icon.svg" alt="">
+                <div class="name">
+                    <p id="nameText">${transaction.name}</p>
+                    <p id="dateTimeText">${transaction.hours}:${transaction.minutes.toString().padStart(2, '0')} ${transaction.month.slice(0, 3)} ${transaction.date}</p>
                 </div>
-                <div class="transacInfoRight">
-                    <div class="amountTextInfo ${transaction.amount < 0 ? 'expense' : 'income'}">
-                    <p>${transaction.amount < 0 ? '-' : ''}₹${Math.abs(transaction.amount).toFixed(2)}</p></div>
-                    <div class="accountTextInfo"><img class="" src="images/${transaction.bank} Logo.png" alt=""><p>${transaction.bank}</p></div>
-                    <div class="categoryTextInfo"><p>${transaction.category}</p></div>
-                    <div class="modeTextInfo"><p>${transaction.mode}</p></div>
-                    <div class="status statusTextInfo"><p>${transaction.status}</p></div>
-                 </div>   
-                    <img class="deleteTransIcon delBtn${transaction.id}" src="images/deleteBin Icon.svg" onclick="deleteTransaction(${transaction.id})" alt="">`;
+            </div>
+            <div class="transacInfoRight">
+                <div class="amountTextInfo ${transaction.amount < 0 ? 'expense' : 'income'}"><img class="" src="images/${transaction.amount < 0 ? 'Expense' : 'Income'} ArrowIcon.svg" alt="">
+                <p>₹${Math.abs(transaction.amount).toFixed(2)}</p></div>
+                <div class="accountTextInfo"><img class="" src="images/${transaction.bank} Logo.svg" alt=""><p>${transaction.bank}</p></div>
+                <div class="categoryTextInfo"><div class="infoImgContainer"><img class="" src="images/${transaction.category} Icon.svg" alt=""></div><p>${transaction.category}</p></div>
+                <div class="modeTextInfo"><div class="infoImgContainer"><img class="" src="images/${transaction.mode} Logo.svg" alt=""></div><p>${transaction.mode}</p></div>
+                <div class="status statusTextInfo"><p>${transaction.status}</p></div>
+            </div>
+            <img class="deleteTransIcon delBtn${transaction.id}" src="images/deleteBin Icon.svg" onclick="deleteTransaction(${transaction.id})" alt="">`;
 
-                // Add click event listener to show transaction details
                 transactionDiv.addEventListener("click", () => {
-                    // Remove highlight from previously selected transaction
                     const allTransactions = document.querySelectorAll(".transacLedger");
                     allTransactions.forEach(div => div.classList.remove("highlightTransaction"));
-
-                    // Highlight the clicked transaction
                     transactionDiv.classList.add("highlightTransaction");
-
-                    // Show transaction details in the preview card
                     showTransactionDetails(transaction);
                 });
 
                 container.prepend(transactionDiv);
                 updateStatusColor();
-
             });
 
         }
+
         function updateStatusColor() {
 
             transactions.forEach(transaction => {
@@ -955,7 +990,7 @@
                         statusParagraph.style.color = '#00D181';
                     }
                 } else {
-                    console.error("Status Para not found");
+                    console.error("statusParagraph not found");
                 }
             });
 
@@ -985,6 +1020,15 @@
         const transactionFormContainer = document.getElementById("transactionFormContainer");
         const submitTransactionBtn = document.getElementById("submitTransactionBtn");
         const cancelTransactionBtn = document.getElementById("cancelTransactionBtn");
+
+        // Add event listener for the search box
+        const searchBox = document.getElementById("searchBar");
+        searchBox.addEventListener("input", () => {
+            // console.log("Search Term:");
+
+            const searchTerm = searchBox.value;
+            filterTransactions(searchTerm);
+        });
 
         // Show the form on "Add Transaction" button click
         addTransactionBtn.addEventListener("click", () => {
@@ -1023,7 +1067,6 @@
                 alert("Please fill in all fields.");
             }
         });
-
     </script>
 </body>
 
