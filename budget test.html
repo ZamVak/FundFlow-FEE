@@ -367,7 +367,9 @@
         .incomeCard {
             display: flex;
             box-sizing: border-box;
-            padding: 8%;
+            padding: 5%;
+            background: url(images/Income\ Card.png);
+            background-size: contain;
         }
 
         .incomeTextAndPic {
@@ -442,11 +444,11 @@
 
         }
 
-        .addCreditCard {
+        /*.addCreditCard {
             top: 50%;
             position: absolute;
             right: 24%;
-        }
+        }*/
 
         .BudgetsBox {
             position: relative;
@@ -622,9 +624,56 @@
             padding: 20px;
             border: 2px solid #ddd;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
+
+            display: flex;
+            flex-direction: column;
+            height: 30vh;
+            width: 30vh;
+            background: linear-gradient(45deg, black, transparent);
+            backdrop-filter: blur(50px);
         }
 
+        .formContainer {
+            display: flex;
+            flex-direction: column;
+            /* width: 15%; */
+            height: 30vh;
+            display: flex;
+            flex-direction: column;
+            height: 30vh;
+            justify-content: space-around;
+        }
+
+        .formContainer p {
+            font-size: 1.5rem;
+        }
+
+        .formInputContainer {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 40%;
+        }
+
+        .formInputContainer label,
+        p {
+            color: white;
+            font-family: "Exo 2", serif;
+        }
+
+        .formInputContainer label {
+            width: 100%;
+        }
+
+        .categoryBox,
+        .usedBox,
+        .amtBox {
+            display: flex;
+        }
+        .btnBox{
+            display: flex;
+            justify-content: end;
+        }
         .form-container {
             max-width: 300px;
         }
@@ -696,11 +745,12 @@
             left: 50%;
             transform: translate(-50%, -50%);
             z-index: 9;
-            background-color: #fff;
+            width: 17.5vw;
             padding: 20px;
             border: 2px solid #ddd;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
+            border-radius: 30px;
+
         }
 
         .form-container {
@@ -883,7 +933,7 @@
         .circular-progress {
             position: relative;
             height: 77%;
-            width: 89%;
+            width: 82%;
             border-radius: 50%;
             background: conic-gradient(#0d0d 3.6deg, #0d0d0d 0deg);
             display: flex;
@@ -992,6 +1042,13 @@
             justify-content: center;
             font-size: 16px;
             width: 80px;
+        }
+
+        .AddCardIcon {
+            width: 2%;
+            position: absolute;
+            top: 50%;
+            right: 25%;
         }
 
         /*
@@ -1182,6 +1239,108 @@
             cursor: pointer;
             font-size: 16px;
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        .IncomeExpenseBox {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 48%;
+        }
+
+        .expenseCard {
+            display: flex;
+            box-sizing: border-box;
+            padding: 5%;
+            background: url(images/Income\ Card.png);
+            background-size: contain;
+        }
+
+        .expenseTextAndPic {
+            width: 60%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 5.2vw;
+        }
+
+        .expenseTextAndPic p {
+            color: white;
+            font-family: "Exo 2", serif;
+        }
+
+        .expensePicAmdIncome {
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .expenseExpenseBox img {
+            width: 100%;
+        }
+
+        .expensePicAndIncome {
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .expensePicAndIncome p {
+            align-items: center;
+            display: flex;
+            font-size: larger;
+        }
+
+        .expenseText {
+            width: 55%;
+        }
+
+        .expenseText p {
+            font-size: 2em;
+            width: 59%;
+        }
+
+        .progressBar {
+            width: 40%;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            flex-wrap: wrap;
+        }
+
+        .progressBarOuter {
+            border: 1px solid white;
+            height: 77%;
+            width: 89%;
+            border-radius: 50%;
+            position: relative;
+            box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15) -6px -6px 10px -1px rgba(255, 255, 255, 0.7);
+        }
+
+        .progressBarInner {
+            width: 70%;
+            height: 70%;
+            border: 1px solid white;
+            border-radius: 50%;
+            position: absolute;
+            top: 8px;
+            left: 8.5px;
+
+        }
     </style>
 </head>
 
@@ -1283,13 +1442,30 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="expenseCard"></div>
+                                    <div class="expenseCard">
+                                        <div class="expenseTextAndPic">
+                                            <div class="expensePicAndIncome">
+                                                <img src="images/Icons expense.svg" alt="" style="width: 34px;">
+                                                <p>Expense</p>
+                                            </div>
+                                            <div class="expenseText">
+                                                <p>2,090</p>
+                                            </div>
+                                        </div>
+                                        <div class="progressBar">
+
+                                            <div class="circular-progress">
+                                                <span class="progress-value">0%</span>
+                                            </div>
+                                        </div>
+                                    </div>
                                     <!-- <img src="images/Income Card.png" alt=""> -->
-                                    <img src="images/Expense Card.png" alt="">
+                                    <!-- <img src="images/Expense Card.png" alt=""> -->
                                 </div>
                             </div>
                         </div>
                         <!-- <img src="images/black Credit Cards.svg" style="width: 37%;" alt=""> -->
+                        <!-- Card Container Section -->
                         <div class="cardsCointainer" id="cardsCointainer">
                             <div class="containerForCard1 fixedCard">
                                 <div class="cardHeader">
@@ -1300,33 +1476,43 @@
                                 </div>
                                 <div class="card-details">
                                     <div class="name-number">
-                                        <p class="name">Cute Nigga</p>
-                                        <p class="number">**** **** **** 0911</p>
+                                        <p class="name">Name</p>
+                                        <p class="number">**** **** **** 0000</p>
                                     </div>
                                     <div class="valid-date">
                                         <p>00/00</p>
                                     </div>
                                 </div>
                             </div>
-                            <button class="addCardButton" onclick="showForm()">Add New Card</button>
+                        </div>
 
-                            <div class="form-container" id="formContainer">
-                                <form id="cardForm">
-                                    <label for="accountNumber">Account Number</label>
-                                    <input type="text" id="accountNumber" name="accountNumber" required>
+                        <!-- Add New Card Button Section -->
+                        <div id="addCardButtonSection">
+                            <button id="btnForAddNewCard" onclick="showCardForm()">
+                                <div class="addBudgetIcon AddCardIcon">
+                                    <img src="images/AddWalletIcon.svg" style="width: 35%;" alt="">
+                                </div>
+                            </button>
+                        </div>
 
-                                    <label for="name">Name</label>
-                                    <input type="text" id="name" name="name" required>
+                        <!-- Card Form Section -->
+                        <div class="form-container" id="formContainer">
+                            <form id="cardForm">
+                                <label for="accountNumber">Account Number</label>
+                                <input type="text" id="accountNumber" name="accountNumber" required>
 
-                                    <label for="validDate">Valid Date (MM/YY)</label>
-                                    <input type="text" id="validDate" name="validDate" required>
+                                <label for="name">Name</label>
+                                <input type="text" id="name" name="name" required>
 
-                                    <label for="cvv">CVV</label>
-                                    <input type="text" id="cvv" name="cvv" required>
+                                <label for="validDate">Valid Date (MM/YY)</label>
+                                <input type="text" id="validDate" name="validDate" required>
 
-                                    <button type="submit">Add Card</button>
-                                </form>
-                            </div>
+                                <label for="cvv">CVV</label>
+                                <input type="text" id="cvv" name="cvv" required>
+
+                                <button type="submit">Add Card</button>
+                                <button type="button" onclick="hideCardForm()">Cancel</button>
+                            </form>
                         </div>
                     </div>
                     <div class="BudgetsBox">
@@ -1355,28 +1541,49 @@
                                     <!-- Hidden Form -->
 
 
-                                    <div id="form-popup" class="form-popup">
-                                        <form id="details-form" class="form-container">
-                                            <h2>Enter Details</h2> <label for="category"><b>Category</b></label> <input
-                                                type="text" id="category" name="category" required> <label
-                                                for="amount"><b>Amount</b></label> <input type="number" id="amount"
-                                                name="amount" required> <label for="Used">Amount Spent</label> <input
-                                                type="number" id="Used" name="Used" required><button type="button"
-                                                onclick="hideForm()">Close</button> <button type="button"
-                                                class="btn cancel" onclick="addDetails()">Submit</button>
-                                        </form>
+                                    <!-- Budget Form Popup Section -->
+                                    <div class="form-popup" id="form-popup">
+                                        <div class="formContainer">
+                                            <p>Add Budget Card</p>
+                                            <div class="formInputContainer">
+                                                <div class="categoryBox">
+                                                    <label for="category">Category</label>
+                                                    <input type="text" id="category" name="category" required>
+                                                </div>
+
+                                                <div class="amtBox">
+                                                    <label for="amount">Amount</label>
+                                                    <input type="number" id="amount" name="amount" required>
+                                                </div>
+
+                                                <div class="usedBox">
+                                                    <label for="Used">Used</label>
+                                                    <input type="number" id="Used" name="Used" required>
+                                                </div>
+                                            </div>
+
+                                            <div class="btnBox">
+                                                <button id="addDetaisMiniCard" type="button" onclick="addDetails()">Add
+                                                    Details</button>
+                                                <button id="addDetaisMiniCard" type="button"
+                                                    onclick="hideBudgetForm()">Cancel</button>
+                                            </div>
+
+                                        </div>
                                     </div>
+
+                                    <!-- Add New Budget Button Section -->
                                     <div class="addNewBudgetBox">
-                                        <button id="btnForAddNewCard" onclick="showForm()">
+                                        <button id="btnForAddNewCard" onclick="showBudgetForm()">
                                             <div class="addBudgetIcon" style="width: 3vw;">
                                                 <img src="images/AddWalletIcon.svg" style="width: 35%;" alt="">
                                             </div>
                                         </button>
                                     </div>
+
                                 </div>
                             </div>
-                            <button id="addRowButton">Add New Row</button>
-                            <div id="rowWrapper" class="row-wrapper"></div>
+
                             <div class="BudgetCategoryBox">
                                 <button class="buttonTopHeading">Entertainment</button>
                                 <div class="BudgetCardsList">
@@ -1410,91 +1617,91 @@
                         </div>
                     </div>
                 </div>
+            </div>
         </main>
     </section>
     <script>
+        const cardsArray = []; // Array to store card data
 
-        function showForm() {
-            document.getElementById('form-popup').style.display = 'block';
+        function showCardForm() {
+            document.getElementById("formContainer").style.display = "block";
         }
 
-        function hideForm() {
-            document.getElementById('form-popup').style.display = 'none';
+        function hideCardForm() {
+            document.getElementById("formContainer").style.display = "none";
         }
 
-        function addDetails() {
-            // Get form values
-            const category = document.getElementById('category').value;
-            const amount = parseFloat(document.getElementById('amount').value);
-            const usedAmount = parseFloat(document.getElementById('Used').value);
+        document
+            .getElementById("cardForm")
+            .addEventListener("submit", function (event) {
+                event.preventDefault();
 
-            // Validate inputs
-            if (category && amount) {
-                // Calculate percentage
-                const percentage = (usedAmount / amount) * 100;
+                const accountNumber = document.getElementById("accountNumber").value;
+                const name = document.getElementById("name").value;
+                const validDate = document.getElementById("validDate").value;
+                const cvv = document.getElementById("cvv").value;
 
-                // Determine the color based on the percentage range
-                let color;
-                if (percentage <= 60) {
-                    color = 'green';
-                } else if (percentage <= 80) {
-                    color = 'yellow';
-                } else {
-                    color = 'red';
+                if (accountNumber && name && validDate && cvv) {
+                    const cardData = {
+                        accountNumber,
+                        name,
+                        validDate,
+                    };
+
+                    cardsArray.unshift(cardData); // Add new card to the beginning of the array
+                    renderCards(); // Re-render the cards
+
+                    // Reset and hide the form
+                    document.getElementById("cardForm").reset();
+                    hideCardForm();
+                }
+            });
+
+        function renderCards() {
+            const cardsContainer = document.getElementById("cardsCointainer");
+
+            // Remove old cards
+            const oldCards = document.querySelectorAll(
+                ".containerForCard1:not(.fixedCard)"
+            );
+            oldCards.forEach((card) => card.remove());
+
+            // Render the top three cards
+            for (let i = 0; i < Math.min(cardsArray.length, 3); i++) {
+                const cardData = cardsArray[i];
+                const cardContainer = document.createElement("div");
+                cardContainer.classList.add("containerForCard1");
+
+                // Apply rotation based on the position
+                if (i === 1) {
+                    cardContainer.classList.add("rotated4deg"); // Rotate the second card by 4 degrees
+                } else if (i === 2) {
+                    cardContainer.classList.add("rotated8deg"); // Rotate the third card by 8 degrees
                 }
 
-                // Create a new div to hold the details
-                const detailsDiv = document.createElement("div");
-                detailsDiv.className = "BudgetCard"; // Apply the existing BudgetCard class
-
-                // Populate the new div with the input values
-                detailsDiv.innerHTML = `
-                <div class="IconAndPercentage">
-                  <div class="BudgetIcon"></div>
-                  <p style="color: ${color}">${percentage.toFixed(2)}%</p>
+                cardContainer.innerHTML = `
+            <div class="cardHeader">
+                <p>Visa</p>
+            </div>
+            <div class="wifiContactAndChip">
+                <img src="images/Wifi ContactCard.png" alt="" style="width:100%;">
+            </div>
+            <div class="card-details">
+                <div class="name-number">
+                    <p class="name">${cardData.name}</p>
+                    <p class="number">${cardData.accountNumber}</p>
                 </div>
-                <div class="NameAndAmount">
-                  <p>${category}</p>
-                  <p id="amountText">${usedAmount} out of ₹${amount}</p>
-                </div>`;
+                <div class="valid-date">
+                    <p>${cardData.validDate}</p>
+                </div>
+            </div>
+        `;
 
-                // Find the addNewBudgetBox div
-                const addNewBudgetBox = document.querySelector('.addNewBudgetBox');
-
-                // Insert the new card before the addNewBudgetBox div
-                addNewBudgetBox.parentNode.insertBefore(detailsDiv, addNewBudgetBox);
-
-                // Clear the form
-                document.getElementById('category').value = '';
-                document.getElementById('amount').value = '';
-                document.getElementById('Used').value = '';
-
-                // Hide the form
-                hideForm();
-            } else {
-                alert("All fields are required!");
+                cardsContainer.insertBefore(cardContainer, cardsContainer.firstChild);
             }
         }
 
-        function editAmount(Used) {
-            const amountText = button.previousElementSibling;
-            const currentAmount = parseFloat(amountText.innerText.split(' ')[0]); // Extract the current amount
-            const maxAmount = parseFloat(amountText.innerText.split('₹')[1]); // Extract the maximum amount
 
-
-            const newAmount = parseFloat(input.value);
-            const newPercentage = (newAmount / maxAmount) * 100;
-
-            // Determine the color based on the new percentage range
-            let newColor = newPercentage <= 60 ? 'green' : (newPercentage <= 80 ? 'yellow' : 'red')
-
-
-            // Update the percentage display with the correct color
-            const percentageText = button.parentNode.previousElementSibling.querySelector('p');
-            percentageText.innerHTML = `${newPercentage.toFixed(2)}%`;
-            percentageText.style.color = newColor;
-
-        }
 
 
 
@@ -1549,79 +1756,90 @@
 
 
 
-
-        const cardsArray = []; // Array to store card data
-
-        function showForm() {
-            document.getElementById('formContainer').style.display = 'block';
+        function showBudgetForm() {
+            document.getElementById("form-popup").style.display = "block";
         }
 
-        document.getElementById('cardForm').addEventListener('submit', function (event) {
-            event.preventDefault();
+        function hideBudgetForm() {
+            document.getElementById("form-popup").style.display = "none";
+        }
 
-            const accountNumber = document.getElementById('accountNumber').value;
-            const name = document.getElementById('name').value;
-            const validDate = document.getElementById('validDate').value;
-            const cvv = document.getElementById('cvv').value;
+        function addDetails() {
+            // Get form values
+            const category = document.getElementById("category").value;
+            const amount = parseFloat(document.getElementById("amount").value);
+            const usedAmount = parseFloat(document.getElementById("Used").value);
 
-            if (accountNumber && name && validDate && cvv) {
-                const cardData = {
-                    accountNumber,
-                    name,
-                    validDate
-                };
+            // Validate inputs
+            if (category && amount) {
+                // Calculate percentage
+                const percentage = (usedAmount / amount) * 100;
 
-                cardsArray.unshift(cardData); // Add new card to the beginning of the array
-                renderCards(); // Re-render the cards
-
-                // Reset and hide the form
-                document.getElementById('cardForm').reset();
-                document.getElementById('formContainer').style.display = 'none';
-            }
-        });
-
-        function renderCards() {
-            const cardsContainer = document.getElementById('cardsCointainer');
-
-            // Remove old cards
-            const oldCards = document.querySelectorAll('.containerForCard1:not(.fixedCard)');
-            oldCards.forEach(card => card.remove());
-
-            // Render the top three cards
-            for (let i = 0; i < Math.min(cardsArray.length, 3); i++) {
-                const cardData = cardsArray[i];
-                const cardContainer = document.createElement('div');
-                cardContainer.classList.add('containerForCard1');
-
-                // Apply rotation based on the position
-                if (i === 1) {
-                    cardContainer.classList.add('rotated4deg'); // Rotate the second card by 4 degrees
-                } else if (i === 2) {
-                    cardContainer.classList.add('rotated8deg'); // Rotate the third card by 8 degrees
+                // Determine the color based on the percentage range
+                let color;
+                if (percentage <= 60) {
+                    color = "green";
+                } else if (percentage <= 80) {
+                    color = "yellow";
+                } else {
+                    color = "red";
                 }
 
-                cardContainer.innerHTML = `
-                    <div class="cardHeader">
-                        <p>Visa</p>
-                    </div>
-                    <div class="wifiContactAndChip">
-                        <img src="images/Wifi ContactCard.png" alt="" style="width:100%;">
-                    </div>
-                    <div class="card-details">
-                        <div class="name-number">
-                            <p class="name">${cardData.name}</p>
-                            <p class="number">${cardData.accountNumber}</p>
-                        </div>
-                        <div class="valid-date">
-                            <p>${cardData.validDate}</p>
-                        </div>
-                    </div>
-                `;
+                // Create a new div to hold the details
+                const detailsDiv = document.createElement("div");
+                detailsDiv.className = "BudgetCard"; // Apply the existing BudgetCard class
 
-                cardsContainer.insertBefore(cardContainer, cardsContainer.firstChild);
+                // Populate the new div with the input values
+                detailsDiv.innerHTML = `
+                  <div class="IconAndPercentage">
+                    <div class="BudgetIcon"></div>
+                    <p style="color: ${color}">${percentage.toFixed(2)}%</p>
+                  </div>
+                  <div class="NameAndAmount">
+                    <p>${category}</p>
+                    <p id="amountText">${usedAmount} out of ₹${amount}</p>
+                  </div>`;
+
+                // Find the addNewBudgetBox div
+                const addNewBudgetBox = document.querySelector(".addNewBudgetBox");
+
+                // Insert the new card before the addNewBudgetBox div
+                addNewBudgetBox.parentNode.insertBefore(detailsDiv, addNewBudgetBox);
+
+                // Clear the form
+                document.getElementById("category").value = "";
+                document.getElementById("amount").value = "";
+                document.getElementById("Used").value = "";
+
+                // Hide the form
+                hideBudgetForm();
+            } else {
+                alert("All fields are required!");
             }
-        }// End of renderCards function
+        }
+
+        function editAmount(Used) {
+            const amountText = button.previousElementSibling;
+            const currentAmount = parseFloat(amountText.innerText.split(" ")[0]); // Extract the current amount
+            const maxAmount = parseFloat(amountText.innerText.split("₹")[1]); // Extract the maximum amount
+
+            const newAmount = parseFloat(input.value);
+            const newPercentage = (newAmount / maxAmount) * 100;
+
+            // Determine the color based on the new percentage range
+            let newColor =
+                newPercentage <= 60 ? "green" : newPercentage <= 80 ? "yellow" : "red";
+
+            // Update the percentage display with the correct color
+            const percentageText =
+                button.parentNode.previousElementSibling.querySelector("p");
+            percentageText.innerHTML = `${newPercentage.toFixed(2)}%`;
+            percentageText.style.color = newColor;
+        }
+
     </script>
+    <!-- <script src="cardForm.js"></script>
+    <script src="budgetForm.js"></script> -->
 </body>
 
 </html>
