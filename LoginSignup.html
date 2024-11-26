@@ -299,7 +299,7 @@
         <img id="BlobBottom_img" src="images/LoginBlob Bottom.png" alt="">
         <div class="main_card">
             <div class="MainContentBox">
-                <button class="cross_btn" type="reset" form="loginForm">
+                <button class="cross_btn cancelButton" type="reset" form="loginForm">
                     <img src="images/cross.svg" alt="cross_icon">
                 </button>
                 <img id="MainCard_image" src="images/LoginSignup Main Card.svg" alt="">
@@ -387,11 +387,13 @@
             if (username === storedUsername && password === storedPassword) {
                 //alert('Login Successful!');
                 // Redirect to another page 
-                window.location.href = 'Transaction.html'; L 
+                window.location.href = 'Balance&Budgets.html'; L 
             } else {
                 alert('Invalid Username or Password');
             }
         });
+
+        document.querySelector(".cancelButton").addEventListener('click', function() { window.location.href = 'index.html'; });
 
     </script>
 </body>
