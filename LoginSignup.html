@@ -316,7 +316,7 @@
                 </div>
 
 
-                <form onsubmit="redirectToPage()" id="loginForm" action="">
+                <form id="loginForm" action="">
                     <div class="formRow">
                         <img id="InputTag_image" src="images/InputTag.svg" alt="">
                         <div class="labelInput_container">
@@ -338,8 +338,8 @@
                     </div>
                     <div id="SwipeCard_container">
                         <img id="SwipeCard_image" src="images/SwipeCard.svg" alt="">
-                        <button id="SwipeBtn" type="submit"><img id="SwipeBtn_image"
-                                src="images/SwipeBtn.png" alt=""></button>
+                        <button id="SwipeBtn" type="submit"><img id="SwipeBtn_image" src="images/SwipeBtn.png"
+                                alt=""></button>
                         <p onclick="redirectToPage()" id="swipeText">Swipe to Begin</p>
                     </div>
                     <div class="Breakline">
@@ -360,19 +360,39 @@
 
     </main>
     <script>
-        function redirectToPage() {
+        /*function redirectToPage() {
             window.location.href = "Transaction.html";
-          }
-          document.getElementById('signupText').addEventListener('click', () => {
+        }
+        document.getElementById('signupText').addEventListener('click', () => {
             document.getElementById('loginForm').style.display = 'none';
             document.getElementById('signupForm').style.display = 'block';
-          });
-          
-          document.getElementById('loginText').addEventListener('click', () => {
+        });
+
+        document.getElementById('loginText').addEventListener('click', () => {
             document.getElementById('signupForm').style.display = 'none';
             document.getElementById('loginForm').style.display = 'block';
-          });
-          
+        });
+*/
+
+
+        document.getElementById('SwipeBtn_image').addEventListener('click', function (event) {
+            event.preventDefault();
+            // Prevent form submission 
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            // Retrieve stored user input from localStorage 
+            const storedUsername = localStorage.getItem('username');
+            const storedPassword = localStorage.getItem('password');
+            // Check if the entered credentials match the stored credentials 
+            if (username === storedUsername && password === storedPassword) {
+                //alert('Login Successful!');
+                // Redirect to another page 
+                window.location.href = 'Transaction.html'; L 
+            } else {
+                alert('Invalid Username or Password');
+            }
+        });
+
     </script>
 </body>
 
