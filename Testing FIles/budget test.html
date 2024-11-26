@@ -8,9 +8,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Londrina+Sketch&family=Pacifico&family=Sarabun:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
-        rel="stylesheet">
-    <link
         href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
         rel="stylesheet">
     <style>
@@ -76,7 +73,7 @@
             font-size: 0.7em;
         }
 
-        #walletSearchBar {
+        #search {
             padding: 0.8em 1em;
             box-sizing: border-box;
             width: 260px;
@@ -99,7 +96,7 @@
         #iconSelector {
             position: absolute;
             width: 52px;
-            top: 5.5px;
+            bottom: 4px;
             filter: drop-shadow(0px 2px 6px #F16B10);
         }
 
@@ -107,7 +104,6 @@
             display: flex;
             height: calc(100vh - 159px);
             gap: 2.3em;
-            position: relative;
         }
 
         .navbar {
@@ -116,46 +112,6 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-        }
-
-        #userInfo {
-            /* width: 15 */
-            width: 0%;
-            background: linear-gradient(136deg, rgb(255 255 255 / 5%) 40%, rgb(153 153 153 / 0.5%) 100%);
-            height: 50px;
-            position: absolute;
-            border: 1px solid rgb(115 123 139 / 30%);
-            border-radius: 30px;
-            /* border: 2px solid rgb(241 107 16 / 50%); */
-            border: none;
-            bottom: 4px;
-            display: flex;
-            flex-direction: column;
-            overflow: hidden;
-            justify-content: space-between;
-            /* padding: 7px 20px; */
-            left: 65px;
-            font-family: "Exo 2", serif;
-            /* box-sizing: border-box; */
-            transition: all 0.3s ease-in-out;
-        }
-
-        #userInfo p:nth-child(1) {
-            font-size: medium;
-            font-weight: 600;
-            /* background: linear-gradient(135deg, #ffffff 0%, #6b6b6b 100%); */
-            background: linear-gradient(135deg, #FAB823, #F9A315, #F68D0C, #F3770D, #F16B10, #EE5F13);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin: 6px 20px 0px 20px;
-        }
-
-
-        #userInfo p:nth-child(2) {
-            color: #9198a1;
-            font-size: 0.8em;
-            font-weight: 300;
-            margin: 0px 20px 6px 20px;
         }
 
         .iconBars {
@@ -236,11 +192,6 @@
             box-sizing: border-box;
             padding: 1.1rem;
             width: 100%;
-            transition: all 0.3s ease-in-out;
-        }
-
-        .walletsContainer .wallet:hover {
-            width: 105%;
         }
 
         .wallet-Info {
@@ -283,16 +234,15 @@
 
         .addNewWalletBox {
             background: linear-gradient(227deg, rgb(255 255 255 / 5%) 40%, rgb(153 153 153 / 0.5%) 100%);
-            border: 2px dashed rgb(115 123 139 / 30%);
+            border: 2px solid rgb(115 123 139 / 30%);
+            ;
             border-radius: 28px;
             display: flex;
             justify-content: center;
             align-content: center;
             flex-wrap: wrap;
             width: 75%;
-            height: 50px;
-            cursor: pointer;
-            transition: all 0.3s ease-in-out;
+            height: 55px;
         }
 
         .addIcon {
@@ -300,19 +250,13 @@
             /* border: 2px solid white; */
             border-radius: 50%;
             /* height: 10%; */
-            width: 16%;
+            width: 18%;
             aspect-ratio: 1;
             font-size: 30px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-weight: bolder;
-            transition: all 0.2s ease-in;
-            cursor: pointer;
-        }
-
-        .addNewWalletBox:hover {
-            width: 80%;
         }
 
         .walletsContainer img {
@@ -424,11 +368,6 @@
             /* padding: 3% 0%; */
             font-size: 20px;
             font-family: "Ubuntu", serif;
-            transition: all 0.2s ease-in-out;
-        }
-
-        .depositAndSend button:hover {
-            transform: translateY(-4px);
         }
 
         .depositAndSend button:nth-child(2) {
@@ -447,14 +386,13 @@
             justify-content: space-between;
         }
 
-        .incomeCard,
-        .expenseCard {
+        .incomeCard {
             display: flex;
             box-sizing: border-box;
             padding: 5%;
-            height: 48%;
+            height: 45%;
             border-radius: 25px;
-            border: 2px solid rgb(115 123 139 / 30%);
+            border: 2px solid rgb(145 152 161 / 30%);
             /* background: url(images/Income Card.png); */
             background-size: contain;
             background-image: radial-gradient(circle at top left, #fc9393 -300%, #ffffff0d);
@@ -473,7 +411,16 @@
             font-family: "Exo 2", serif;
         }
 
+        .incomePicAmdIncome {
+            width: 100%;
+            display: flex;
+            /* justify-content: space-around; */
+            gap: 10px;
+        }
 
+        .IncomeExpenseBox img {
+            width: 100%;
+        }
 
         .PicAndAmount {
             width: 100%;
@@ -497,9 +444,8 @@
         }
 
         .IncomeExpenseBox .amount p {
-            font-size: 1.9em;
+            font-size: 2em;
             width: 59%;
-            padding-left: 3px;
         }
 
         .progressBar {
@@ -617,11 +563,6 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            transition: all 0.2s ease-in-out;
-        }
-
-        .BudgetCardsList .BudgetCard:hover {
-            transform: translateY(-8px);
         }
 
         .IconAndPercentage {
@@ -639,9 +580,6 @@
             aspect-ratio: 1;
             width: 24%;
             border-radius: 50%;
-            overflow: hidden;
-            box-sizing: border-box;
-            padding: 5px;
         }
 
         .NameAndAmount p:nth-child(1) {
@@ -667,10 +605,9 @@
             justify-content: center;
             align-content: center;
             flex-wrap: wrap;
-            width: 14.7%;
+            width: 15.7%;
             /* height: 55px; */
             aspect-ratio: 1;
-            transition: all 0.3s ease-in-out;
         }
 
         .addBudgetIcon {
@@ -691,13 +628,17 @@
             background-color: none;
             background: none;
             border: none;
-            width: 26%;
-            transition: all 0.2s ease-in;
-            cursor: pointer;
         }
 
-        .addNewBudgetBox:hover #btnForAddNewCard {
-            width: 30%;
+        .BudgetCardsList img {
+            width: 18.7%;
+            height: 18.7%;
+            transition: all 0.2s;
+        }
+
+        .BudgetCardsList img:hover {
+            width: 20%;
+            height: 20%;
         }
 
         #details-container {
@@ -767,14 +708,39 @@
             justify-content: end;
         }
 
+        .form-container {
+            max-width: 300px;
+        }
 
+        .form-container input[type=text],
+        .form-container input[type=number] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 10px 0;
+            border: none;
+            background: #f1f1f1;
+        }
 
+        .form-container input[type=text]:focus,
+        .form-container input[type=number]:focus {
+            background-color: #ddd;
+            outline: none;
+        }
 
+        .form-container .btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            margin-bottom: 10px;
+            border-radius: 8px;
+        }
 
-
-
-
-
+        .form-container .cancel {
+            background-color: red;
+        }
 
         .budgetsScrollBox {
             display: flex;
@@ -821,15 +787,39 @@
 
         }
 
+        .form-container {
+            max-width: 300px;
+        }
 
+        .form-container input[type=text],
+        .form-container input[type=number] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 10px 0;
+            border: none;
+            background: #f1f1f1;
+        }
 
+        .form-container input[type=text]:focus,
+        .form-container input[type=number]:focus {
+            background-color: #ddd;
+            outline: none;
+        }
 
+        .form-container .btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            margin-bottom: 10px;
+            border-radius: 8px;
+        }
 
-
-
-
-
-
+        .form-container .cancel {
+            background-color: red;
+        }
 
         .details-container {
             display: flex;
@@ -864,8 +854,7 @@
         .BudgetCardsList {
             display: flex;
             flex-wrap: wrap;
-            row-gap: 25px;
-            column-gap: 9px;
+            gap: 10px;
         }
 
         .BudgetCard {
@@ -879,11 +868,38 @@
             background-repeat: no-repeat;
         }
 
+        .popup-form {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 9;
+            background-color: #fff;
+            padding: 20px;
+            border: 2px solid #ddd;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
 
+        .form-container {
+            max-width: 300px;
+        }
 
+        .form-container input[type=text],
+        .form-container input[type=number] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 10px 0;
+            border: none;
+            background: #f1f1f1;
+        }
 
-
-
+        .form-container input[type=text]:focus,
+        .form-container input[type=number]:focus {
+            background-color: #ddd;
+            outline: none;
+        }
 
         .btn {
             background-color: #4CAF50;
@@ -921,8 +937,7 @@
             align-items: center;
         }
 
-        .circular-progress-income,
-        .circular-progress-expense {
+        .circular-progress {
             position: relative;
             height: 77%;
             width: 82%;
@@ -933,8 +948,7 @@
             justify-content: center;
         }
 
-        .circular-progress-income::before,
-        .circular-progress-expense::before {
+        .circular-progress::before {
             content: "";
             position: absolute;
             height: 70%;
@@ -943,8 +957,7 @@
             background-color: #0d0d0d;
         }
 
-        .progress-value-income,
-        .progress-value-expense {
+        .progress-value {
             position: relative;
             font-size: 15px;
             font-weight: 600;
@@ -977,7 +990,7 @@
 
         .containerForCard1 p {
             color: white;
-            font-family: "Sarabun", serif;
+            font-family: "Exo 2", serif;
         }
 
         .cardHeader {
@@ -1026,12 +1039,6 @@
             position: absolute;
             top: 86%;
             left: 2%;
-            cursor: pointer;
-            transition: all 0.2s ease-in;
-        }
-
-        .AddCardIcon:hover {
-            width: 9%;
         }
 
         /*
@@ -1095,7 +1102,7 @@
         .containerForCard1 {
             position: absolute;
             padding: 25px;
-            border: 1px solid #737b8b;
+            border: 1px solid white;
             border-radius: 16px;
             width: 85%;
             background: linear-gradient(to right, #000000, #434343);
@@ -1182,9 +1189,46 @@
             font-size: 16px;
         }
 
+        .form-container {
+            display: none;
+            position: absolute;
+            /* Make the form appear above other content */
+            top: 50px;
+            /* Adjust as needed */
+            z-index: 100;
+            /* Ensure the form stays on top of other elements */
+            margin-top: 20px;
+            width: 85%;
+            background-color: #f3f3f3;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
 
+        .form-container label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
 
+        .form-container input {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
 
+        .form-container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #434343;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
 
 
         .IncomeExpenseBox {
@@ -1194,6 +1238,13 @@
             width: 48%;
         }
 
+        .expenseCard {
+            display: flex;
+            box-sizing: border-box;
+            padding: 5%;
+            background: url(images/Income\ Card.png);
+            background-size: contain;
+        }
 
         .expenseTextAndPic {
             width: 60%;
@@ -1266,115 +1317,6 @@
             left: 8.5px;
 
         }
-
-        .form-container,
-        .budget-form-container {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 10;
-            /* background-color: rgba(0, 0, 0, 0.5); */
-            display: none;
-            justify-content: center;
-            align-items: center;
-            backdrop-filter: blur(20px);
-            transition: all 0.7s ease-in;
-        }
-
-        #cardForm {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            background: #0d1117;
-            padding: 25px 20px 20px 20px;
-            border-radius: 30px;
-            width: 380px;
-            color: #9198a1;
-            box-sizing: border-box;
-            border: 1px solid rgb(115 123 139 / 30%);
-            font-weight: 400;
-            font-family: 'Ubuntu', sans-serif;
-            font-size: smaller;
-            letter-spacing: 0.65px;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-        }
-
-        #cardForm h2 {
-            font-weight: 400;
-            font-size: larger;
-            margin-bottom: 10px;
-            color: white;
-        }
-
-        /* .hidden {
-            display: none;
-        } */
-
-        .formLabel {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            /* margin-top: 10px; */
-        }
-
-        select.formSelect {
-            background-color: #0d1117;
-            width: 60%;
-            height: 20px;
-            color: white;
-            box-sizing: content-box;
-            padding: 4px 10px;
-            border: 2px solid rgb(98 98 98 / 30%);
-            font-family: 'Ubuntu', sans-serif;
-            letter-spacing: 0.6px;
-            font-weight: 300;
-            border-radius: 10px;
-        }
-
-        #cardForm label .formInput {
-            width: 50%;
-            height: 20px;
-            color: white;
-            box-sizing: content-box;
-            padding: 4px 10px;
-            border: 2px solid rgb(98 98 98 / 30%);
-            font-family: 'Ubuntu', sans-serif;
-            letter-spacing: 0.6px;
-            font-weight: 300;
-            /* border: none; */
-            background: rgb(0 0 0 / 10%);
-            border-radius: 10px;
-        }
-
-        .formBtnsContainer {
-            display: flex;
-            justify-content: right;
-            margin-top: 10px;
-            gap: 10px;
-        }
-
-        .formBtnsContainer .formButton {
-            padding: 8px 10px;
-            border: none;
-            border-radius: 13px;
-            cursor: pointer;
-            font-weight: 400;
-            font-family: 'Ubuntu', sans-serif;
-            font-size: smaller;
-            /* letter-spacing: 0.6px; */
-        }
-
-        .formBtnsContainer .cancelButton {
-            background: rgba(255, 255, 255, 0.1);
-            color: white;
-        }
-
-        .formButton:hover {
-            background-color: #ddd;
-            color: black;
-        }
     </style>
 </head>
 
@@ -1390,8 +1332,8 @@
                 <p>Ready for today's challenges?</p>
             </div>
             <div class="searchbar">
-                <label for="walletSearchBar"></label>
-                <input id="walletSearchBar" type="text" placeholder="Search for your wallet">
+                <label for="search"></label>
+                <input id="search" type="text" placeholder="Search for your transaction">
             </div>
         </div>
 
@@ -1401,17 +1343,15 @@
         <nav class="navbar">
             <div class="iconBars sidebarTop">
                 <img id="iconSelector" src="images/active icon selector.svg" alt="">
-                <a href="#" class="navIcon"><img src="images/dashboard IMG active.svg" alt=""></a>
+                <a href="#" class="navIcon"><img src="images/dashboardimg.svg" alt=""></a>
                 <a href="Transaction.html" class="navIcon"><img src="images/buy icon.svg" alt=""></a>
-                <!-- <a href="Balance&Budgets.html" class="navIcon" ><img src="images/Wallet icon active.svg"  alt=""></a> -->
+                <a href="Balance&Budgets.html" class="navIcon"><img src="images/Wallet icon active.svg" alt=""></a>
             </div>
             <div class="iconBars sidebarBottom">
-                <a href="LoginSignup.html" class="navIcon"><img src="images/signout_icon.svg" alt="" style="width: 85%;"></a>
-                <a href="#" class="navIcon profilePic"><img id="profileIcon" src="images/active icon profile.png"
-                        alt=""></a>
+                <a href="LoginSignup.html" class="navIcon"><img src="images/signout_icon.svg" alt="" style=""></a>
+                <a href="#" class="navIcon"><img id="profileIcon" src="images/active icon profile.png" alt=""></a>
             </div>
         </nav>
-        <div id="userInfo"><p>Nigga White</p><p>niggawhite@gmail.com</p></div>
         <main>
             <div class="mainContainer">
                 <div class="walletsContainer">
@@ -1487,10 +1427,10 @@
                                         <p>₹20,000</p>
                                     </div>
                                     <div class="depositAndSend">
-                                        <button id="DepositButton">Deposit
+                                        <button>Deposit
                                             <img src="images/Deposit Icon.svg" alt="">
                                         </button>
-                                        <button id="SendButton">Send
+                                        <button>Send
                                             <img src="images/Send Icon.svg" alt="">
                                         </button>
                                     </div>
@@ -1504,32 +1444,37 @@
                                                 <p>Income</p>
                                             </div>
                                             <div class="amount">
-                                                <p>₹10,910</p>
+                                                <p>10,910</p>
                                             </div>
                                         </div>
                                         <div class="progressBar">
-                                            <div class="circular-progress-income">
-                                                <span class="progress-value-income">0%</span>
+                                            <!-- <div class="progressBarOuter">
+                                                <div class="progressBarInner"></div>
+                                            </div> -->
+                                            <div class="circular-progress">
+                                                <span class="progress-value">0%</span>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="expenseCard">
-                                        <div class="TextAndPic">
-                                            <div class="PicAndAmount">
-                                                <img src="images/Icons expense.svg" alt="" style="width: 30px;">
+                                        <div class="expenseTextAndPic">
+                                            <div class="expensePicAndIncome">
+                                                <img src="images/Icons expense.svg" alt="" style="width: 34px;">
                                                 <p>Expense</p>
                                             </div>
-                                            <div class="amount">
-                                                <p>₹8,100</p>
+                                            <div class="expenseText">
+                                                <p>2,090</p>
                                             </div>
                                         </div>
                                         <div class="progressBar">
-                                            <div class="circular-progress-expense">
-                                                <span class="progress-value-expense">0%</span>
+
+                                            <div class="circular-progress">
+                                                <span class="progress-value">0%</span>
                                             </div>
                                         </div>
                                     </div>
-
+                                    <!-- <img src="images/Income Card.png" alt=""> -->
+                                    <!-- <img src="images/Expense Card.png" alt=""> -->
                                 </div>
                             </div>
                         </div>
@@ -1538,7 +1483,7 @@
                         <div class="cardsCointainer" id="cardsCointainer">
                             <div class="containerForCard1 fixedCard">
                                 <div class="cardHeader">
-                                    <img src="images/VISA Logo.svg" alt="">
+                                    <p>Visa</p>
                                 </div>
                                 <div class="wifiContactAndChip">
                                     <img src="images/Wifi ContactCard.png" alt="" style="width:100%;">
@@ -1564,29 +1509,32 @@
 
                         </div>
 
+                        <!-- Add New Card Button Section
+                        <div id="addCardButtonSection">
+                            <button id="btnForAddNewCard" onclick="showCardForm()">
+                                <div class="addBudgetIcon AddCardIcon">
+                                    <img src="images/AddWalletIcon.svg" style="width: 35%;" alt="">
+                                </div>
+                            </button>
+                        </div> -->
 
                         <!-- Card Form Section -->
                         <div class="form-container" id="formContainer">
                             <form id="cardForm">
-                                <h2>Add Card</h2>
-                                <label class="formLabel" for="accountNumber">Account Number
-                                    <input class="formInput" type="number" id="accountNumber" name="accountNumber"
-                                        required></label>
+                                <label for="accountNumber">Account Number</label>
+                                <input type="text" id="accountNumber" name="accountNumber" required>
 
-                                <label class="formLabel" for="name">Name
-                                    <input class="formInput" type="text" id="name" name="name" required></label>
+                                <label for="name">Name</label>
+                                <input type="text" id="name" name="name" required>
 
-                                <label class="formLabel" for="validDate">Valid Thru (MM/YY)
-                                    <input class="formInput" type="number" id="validDate" name="validDate"
-                                        required></label>
+                                <label for="validDate">Valid Date (MM/YY)</label>
+                                <input type="text" id="validDate" name="validDate" required>
 
-                                <label class="formLabel" for="cvv">CVV
-                                    <input class="formInput" type="number" id="cvv" name="cvv" required></label>
-                                <div class="formBtnsContainer">
-                                    <button class="formButton cancelButton" type="button"
-                                        onclick="hideCardForm()">Cancel</button>
-                                    <button class="formButton submitButton" type="submit">Add Card</button>
-                                </div>
+                                <label for="cvv">CVV</label>
+                                <input type="text" id="cvv" name="cvv" required>
+
+                                <button type="submit">Add Card</button>
+                                <button type="button" onclick="hideCardForm()">Cancel</button>
                             </form>
                         </div>
                     </div>
@@ -1599,9 +1547,7 @@
                                 <div class="BudgetCardsList">
                                     <div class="BudgetCard">
                                         <div class="IconAndPercentage">
-                                            <div class="BudgetIcon"><img src="images/Budget Card Image.png"
-                                                    style="width: 100%; height: auto;" alt="">
-                                            </div>
+                                            <div class="BudgetIcon"></div>
                                             <p>35%</p>
                                         </div>
                                         <div class="NameAndAmount">
@@ -1609,121 +1555,91 @@
                                             <p>₹1000 out of ₹3500</p>
                                         </div>
                                     </div>
-                                    <div class="BudgetCard">
-                                        <div class="IconAndPercentage">
-                                            <div class="BudgetIcon"><img src="images/Budget Card Image.png"
-                                                    style="width: 100%; height: auto;" alt="">
+                                    <!-- <img src="images/Budget card 1.png" alt=""> -->
+                                    <!-- <img src="images/Budget card 2.png" alt=""> -->
+                                    <!-- <img src="images/Budget card 1.png" alt=""> -->
+                                    <!-- <img src="images/Budget card 3.png" alt=""> -->
+                                    <!-- <img src="images/Add Budget Card.svg" style="width: 16.7%;" alt=""> -->
+                                    <div id="details-container" class="details-container"></div>
+                                    <!-- Hidden Form -->
+
+
+                                    <!-- Budget Form Popup Section -->
+                                    <div class="form-popup" id="form-popup">
+                                        <div class="formContainer">
+                                            <p>Add Budget Card</p>
+                                            <div class="formInputContainer">
+                                                <div class="categoryBox">
+                                                    <label for="category">Category</label>
+                                                    <input type="text" id="category" name="category" required>
+                                                </div>
+
+                                                <div class="amtBox">
+                                                    <label for="amount">Amount</label>
+                                                    <input type="number" id="amount" name="amount" required>
+                                                </div>
+
+                                                <div class="usedBox">
+                                                    <label for="Used">Used</label>
+                                                    <input type="number" id="Used" name="Used" required>
+                                                </div>
                                             </div>
-                                            <p>16%</p>
-                                        </div>
-                                        <div class="NameAndAmount">
-                                            <p>Subscriptions</p>
-                                            <p>₹500 out of ₹3000</p>
+
+                                            <div class="btnBox">
+                                                <button id="addDetaisMiniCard" type="button" onclick="addDetails()">Add
+                                                    Details</button>
+                                                <button id="addDetaisMiniCard" type="button"
+                                                    onclick="hideBudgetForm()">Cancel</button>
+                                            </div>
+
                                         </div>
                                     </div>
-                                    <div class="BudgetCard">
-                                        <div class="IconAndPercentage">
-                                            <div class="BudgetIcon"><img src="images/Budget Card Image.png"
-                                                    style="width: 100%; height: auto;" alt="">
-                                            </div>
-                                            <p>20%</p>
-                                        </div>
-                                        <div class="NameAndAmount">
-                                            <p>Food</p>
-                                            <p>₹500 out of ₹2500</p>
-                                        </div>
-                                    </div>
-                                    <div class="BudgetCard">
-                                        <div class="IconAndPercentage">
-                                            <div class="BudgetIcon"><img src="images/Budget Card Image.png"
-                                                    style="width: 100%; height: auto;" alt="">
-                                            </div>
-                                            <p>58%</p>
-                                        </div>
-                                        <div class="NameAndAmount">
-                                            <p>Shopping</p>
-                                            <p>₹2000 out of ₹3500</p>
-                                        </div>
-                                    </div>
+
                                     <!-- Add New Budget Button Section -->
                                     <div class="addNewBudgetBox">
                                         <button id="btnForAddNewCard" onclick="showBudgetForm()">
-                                            <div class="addBudgetIcon" style="width: 100%;">
+                                            <div class="addBudgetIcon" style="width: 3vw;">
                                                 <img src="images/AddWalletIcon.svg" style="width: 35%;" alt="">
                                             </div>
                                         </button>
                                     </div>
 
-
-
-                                    <!-- Budget Form Popup Section -->
-
-                                    <div class="budget-form-container">
-                                        <div id="cardForm">
-                                            <h2>Add Budget Card</h2>
-
-                                            <label class="formLabel" for="category">Category
-                                                <input class="formInput" type="text" id="category" name="category"
-                                                    required></label>
-
-                                            <label class="formLabel" for="amount">Amount
-                                                <input class="formInput" type="number" id="amount" name="amount"
-                                                    required></label>
-
-                                            <label class="formLabel" for="Used">Used
-                                                <input class="formInput" type="number" id="Used" name="Used"
-                                                    required></label>
-
-                                            <div class="formBtnsContainer">
-                                                <button class="formButton cancelButton" id="addDetaisMiniCard"
-                                                    type="button" onclick="hideBudgetForm()">Cancel</button>
-                                                <button class="formButton submitButton" id="addDetaisMiniCard"
-                                                    type="button" onclick="addDetails()">Add
-                                                    Details</button>
-                                            </div>
-                                        </div>
-                                    </div>
                                 </div>
+                            </div>
 
-
-
-
+                            <div class="BudgetCategoryBox">
+                                <button class="buttonTopHeading">Entertainment</button>
+                                <div class="BudgetCardsList">
+                                    <img src="images/Budget card 1.png" alt="">
+                                    <img src="images/Budget card 2.png" alt="">
+                                    <img src="images/Budget card 1.png" alt="">
+                                    <img src="images/Budget card 3.png" alt="">
+                                    <img src="images/Add Budget Card.svg" style="width: 16.7%;" alt="">
+                                </div>
+                            </div>
+                            <div class="BudgetCategoryBox">
+                                <button class="buttonTopHeading">Entertainment</button>
+                                <div class="BudgetCardsList">
+                                    <img src="images/Budget card 1.png" alt="">
+                                    <img src="images/Budget card 2.png" alt="">
+                                    <img src="images/Budget card 1.png" alt="">
+                                    <img src="images/Budget card 3.png" alt="">
+                                    <img src="images/Add Budget Card.svg" style="width: 16.7%;" alt="">
+                                </div>
+                            </div>
+                            <div class="BudgetCategoryBox">
+                                <button class="buttonTopHeading">Entertainment</button>
+                                <div class="BudgetCardsList">
+                                    <img src="images/Budget card 1.png" alt="">
+                                    <img src="images/Budget card 2.png" alt="">
+                                    <img src="images/Budget card 1.png" alt="">
+                                    <img src="images/Budget card 3.png" alt="">
+                                    <img src="images/Add Budget Card.svg" style="width: 16.7%;" alt="">
+                                </div>
                             </div>
                         </div>
-
-                        <!-- <div class="BudgetCategoryBox">
-                                <button class="buttonTopHeading">Entertainment</button>
-                                <div class="BudgetCardsList">
-                                    <img src="images/Budget card 1.png" alt="">
-                                    <img src="images/Budget card 2.png" alt="">
-                                    <img src="images/Budget card 1.png" alt="">
-                                    <img src="images/Budget card 3.png" alt="">
-                                    <img src="images/Add Budget Card.svg" style="width: 16.7%;" alt="">
-                                </div>
-                            </div>
-                            <div class="BudgetCategoryBox">
-                                <button class="buttonTopHeading">Entertainment</button>
-                                <div class="BudgetCardsList">
-                                    <img src="images/Budget card 1.png" alt="">
-                                    <img src="images/Budget card 2.png" alt="">
-                                    <img src="images/Budget card 1.png" alt="">
-                                    <img src="images/Budget card 3.png" alt="">
-                                    <img src="images/Add Budget Card.svg" style="width: 16.7%;" alt="">
-                                </div>
-                            </div>
-                            <div class="BudgetCategoryBox">
-                                <button class="buttonTopHeading">Entertainment</button>
-                                <div class="BudgetCardsList">
-                                    <img src="images/Budget card 1.png" alt="">
-                                    <img src="images/Budget card 2.png" alt="">
-                                    <img src="images/Budget card 1.png" alt="">
-                                    <img src="images/Budget card 3.png" alt="">
-                                    <img src="images/Add Budget Card.svg" style="width: 16.7%;" alt="">
-                                </div>
-                            </div> -->
                     </div>
                 </div>
-            </div>
             </div>
         </main>
     </section>
@@ -1731,7 +1647,7 @@
         const cardsArray = []; // Array to store card data
 
         function showCardForm() {
-            document.getElementById("formContainer").style.display = "flex";
+            document.getElementById("formContainer").style.display = "block";
         }
 
         function hideCardForm() {
@@ -1788,7 +1704,7 @@
 
                 cardContainer.innerHTML = `
             <div class="cardHeader">
-                <img src="images/VISA Logo.svg" alt="">
+                <p>Visa</p>
             </div>
             <div class="wifiContactAndChip">
                 <img src="images/Wifi ContactCard.png" alt="" style="width:100%;">
@@ -1808,50 +1724,30 @@
             }
         }
 
-        let IncomecircularProgress = document.querySelector(".circular-progress-income"),
-            progressValueIncome = document.querySelector(".progress-value-income");
+        let circularProgress = document.querySelector(".circular-progress"),
+            progressValue = document.querySelector(".progress-value");
 
-        let ExpensecircularProgress = document.querySelector(".circular-progress-expense"),
-            progressValueExpense = document.querySelector(".progress-value-expense");
+        let progressStartValue = 0,
+            progressEndValue = 90,
+            speed = 100;
 
-        let IncomeprogressStartValue = 0,
-            ExpenseprogressStartValue = 0;
+        let progress = setInterval(() => {
+            progressStartValue++;
 
-        let IncomeProgressEndValue = 90, // Target end value for income
-            ExpenseProgressEndValue = 75, // Target end value for expense
-            speed = 20;
+            progressValue.textContent = `${progressStartValue}%`
+            circularProgress.style.background = `conic-gradient(#7d2ae8 ${progressStartValue * 3.6}deg, #ededed 0deg)`
 
-        // Income progress interval
-        let progressIncome = setInterval(() => {
-            if (IncomeprogressStartValue < IncomeProgressEndValue) {
-                IncomeprogressStartValue++;
-
-                progressValueIncome.textContent = `${IncomeprogressStartValue}%`;
-                IncomecircularProgress.style.background = `conic-gradient(#1aff79 ${IncomeprogressStartValue * 3.6}deg, #373737 0deg)`;
-            } else {
-                clearInterval(progressIncome);
+            if (progressStartValue == progressEndValue) {
+                clearInterval(progress);
             }
         }, speed);
 
-        // Expense progress interval
-        let progressExpense = setInterval(() => {
-            if (ExpenseprogressStartValue < ExpenseProgressEndValue) {
-                ExpenseprogressStartValue++;
-
-                progressValueExpense.textContent = `${ExpenseprogressStartValue}%`;
-                ExpensecircularProgress.style.background = `conic-gradient(#ff7e70 ${ExpenseprogressStartValue * 3.6}deg, #373737 0deg)`;
-            } else {
-                clearInterval(progressExpense);
-            }
-        }, speed)
-
-
         function showBudgetForm() {
-            document.querySelector(".budget-form-container").style.display = "flex";
+            document.getElementById("form-popup").style.display = "block";
         }
 
         function hideBudgetForm() {
-            document.querySelector(".budget-form-container").style.display = "none";
+            document.getElementById("form-popup").style.display = "none";
         }
 
         function addDetails() {
@@ -1882,7 +1778,7 @@
                 // Populate the new div with the input values
                 detailsDiv.innerHTML = `
                   <div class="IconAndPercentage">
-                    <div class="BudgetIcon"><img src="images/Budget Card Image.png" style="width: 100%; height: auto;" alt=""></div>
+                    <div class="BudgetIcon"></div>
                     <p style="color: ${color}">${percentage.toFixed(2)}%</p>
                   </div>
                   <div class="NameAndAmount">
@@ -1936,18 +1832,9 @@
             // Fetch transactions from Local Storage
             const transactions = JSON.parse(localStorage.getItem("transactions")) || [];
 
-            // Select wallets container, search bar, and add wallet button
+            // Select wallets container and add wallet button
             const walletsContainer = document.querySelector(".walletsContainer");
             const addNewWalletBox = document.querySelector(".addNewWalletBox");
-            const walletSearchBar = document.querySelector("#walletSearchBar");
-
-            // Select WalletInfoBox elements
-            const walletHeader = document.querySelector("#WalletHeader h1");
-            const walletBalance = document.querySelector(".Balance p:nth-child(2)");
-            const depositButton = document.querySelector("#DepositButton");
-            const sendButton = document.querySelector("#SendButton");
-
-            let selectedWallet = null; // Variable to track the currently selected wallet
 
             // Recalculate wallet balances if needed
             if (!localStorage.getItem("walletsInitialized")) {
@@ -1958,15 +1845,6 @@
             // Render existing wallets
             renderWallets();
 
-            // Display the first wallet's info by default
-            displayDefaultWallet();
-
-            // Add event listener for the search bar
-            walletSearchBar.addEventListener("input", (e) => {
-                const searchQuery = e.target.value.toLowerCase();
-                renderWallets(searchQuery);
-            });
-
             // Add Wallet button functionality
             addNewWalletBox.addEventListener("click", () => {
                 const walletName = prompt("Enter the name of the wallet:");
@@ -1974,122 +1852,34 @@
                     wallets[walletName] = 0; // Initialize with zero balance
                     saveWallets();
                     renderWallets();
-                    displayDefaultWallet(); // Update the WalletInfoBox if it's the first wallet
                 } else if (wallets[walletName]) {
                     alert("Wallet already exists!");
                 }
             });
 
-            // Deposit functionality
-            depositButton.addEventListener("click", () => {
-                if (!selectedWallet) {
-                    alert("Please select a wallet first.");
-                    return;
-                }
-
-                const depositAmount = parseFloat(prompt("Enter the deposit amount:"));
-                if (isNaN(depositAmount) || depositAmount <= 0) {
-                    alert("Please enter a valid positive number.");
-                    return;
-                }
-
-                // Update wallet balance
-                wallets[selectedWallet] += depositAmount;
-
-                // Save to Local Storage and update UI
-                saveWallets();
-                updateWalletInfoBox(selectedWallet, wallets[selectedWallet]);
-                renderWallets();
-            });
-
-            // Send functionality
-            sendButton.addEventListener("click", () => {
-                if (!selectedWallet) {
-                    alert("Please select a wallet first.");
-                    return;
-                }
-
-                const recipientWallet = prompt("Enter the wallet name to transfer money to:");
-                if (!recipientWallet || !wallets[recipientWallet]) {
-                    alert("The specified wallet does not exist.");
-                    return;
-                }
-
-                const transferAmount = parseFloat(prompt("Enter the transfer amount:"));
-                if (isNaN(transferAmount) || transferAmount <= 0) {
-                    alert("Please enter a valid positive number.");
-                    return;
-                }
-
-                if (wallets[selectedWallet] < transferAmount) {
-                    alert("Insufficient balance in the selected wallet.");
-                    return;
-                }
-
-                // Perform the transfer
-                wallets[selectedWallet] -= transferAmount;
-                wallets[recipientWallet] += transferAmount;
-
-                // Save to Local Storage and update UI
-                saveWallets();
-                updateWalletInfoBox(selectedWallet, wallets[selectedWallet]);
-                renderWallets();
-
-            });
-
-            // Function to render wallets with optional filtering
-            function renderWallets(filter = "") {
+            // Function to render wallets
+            function renderWallets() {
                 // Clear all wallet divs except the Add Wallet button
                 const walletElements = Array.from(walletsContainer.querySelectorAll(".wallet"));
                 walletElements.forEach(wallet => wallet.remove());
 
-                // Render each wallet that matches the filter
+                // Render each wallet from the wallets object
                 for (const walletName in wallets) {
-                    if (walletName.toLowerCase().includes(filter)) {
-                        const walletDiv = document.createElement("div");
-                        walletDiv.className = "wallet";
+                    const walletDiv = document.createElement("div");
+                    walletDiv.className = "wallet";
 
-                        walletDiv.innerHTML = `
-                    <div class="wallet-Info">
-                        <div class="imageContainer">
-                            <img src="images/${walletName} Logo.svg" alt="${walletName}">
-                        </div>
-                        <div class="TextInfoContainer">
-                            <p>${walletName}</p>
-                            <p>₹${Math.round(wallets[walletName])}</p>
-                        </div>
-                    </div>
-                `;
-
-                        // Add click event listener to update WalletInfoBox
-                        walletDiv.addEventListener("click", () => {
-                            updateWalletInfoBox(walletName, wallets[walletName]);
-                            selectedWallet = walletName; // Set the selected wallet
-                        });
-
-                        walletsContainer.insertBefore(walletDiv, addNewWalletBox); // Insert before Add Wallet box
-                    }
-                }
-            }
-
-            // Function to update WalletInfoBox
-            function updateWalletInfoBox(name, balance) {
-                walletHeader.textContent = name || ""; // Empty if no name
-                walletBalance.textContent = `₹${Math.round(balance)}`; // Always show whole numbers
-            }
-
-            // Function to display the first wallet by default
-            function displayDefaultWallet() {
-                const walletNames = Object.keys(wallets);
-                if (walletNames.length > 0) {
-                    // Display the first wallet's info
-                    const firstWallet = walletNames[0];
-                    updateWalletInfoBox(firstWallet, wallets[firstWallet]);
-                    selectedWallet = firstWallet; // Set the first wallet as selected
-                } else {
-                    // Display empty wallet info if no wallets exist
-                    updateWalletInfoBox("", 0);
-                    selectedWallet = null;
+                    walletDiv.innerHTML = `
+            <div class="wallet-Info">
+                <div class="imageContainer">
+                    <img src="images/${walletName} Logo.svg" alt="${walletName}">
+                </div>
+                <div class="TextInfoContainer">
+                    <p>${walletName}</p>
+                    <p>₹${wallets[walletName].toFixed(2)}</p>
+                </div>
+            </div>
+        `;
+                    walletsContainer.insertBefore(walletDiv, addNewWalletBox); // Insert before Add Wallet box
                 }
             }
 
@@ -2118,34 +1908,6 @@
             function saveWallets() {
                 localStorage.setItem("wallets", JSON.stringify(wallets));
             }
-        });
-
-
-        const toggleDiv = document.querySelector(".profilePic");
-        const profileInfoDiv = document.getElementById("userInfo");
-        const profileInfoParagraphs = profileInfoDiv.querySelectorAll("p"); // Select all <p> tags inside #userInfo
-
-        // Flag to track the state
-        let isOpen = false;
-
-        toggleDiv.addEventListener("click", () => {
-            console.log("clicked");
-            if (isOpen) {
-                // Close the div and hide paragraphs
-                profileInfoDiv.style.width = "0px";
-                profileInfoParagraphs.forEach((p) => {
-                    p.style.display = "none";
-                });
-                profileInfoDiv.style.border="none";
-            } else {
-                // Open the div and show paragraphs
-                profileInfoDiv.style.width = "15%";
-                profileInfoParagraphs.forEach((p) => {
-                    p.style.display = "block";
-                });
-                profileInfoDiv.style.border="2px solid rgb(241 107 16 / 50%)";
-            }
-            isOpen = !isOpen; // Toggle the state
         });
 
     </script>
