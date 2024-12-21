@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .result {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: conic-gradient(green 0%, green 0%, transparent 0%);
+        }
+    </style>
+</head>
+<body>
+    <form id="myForm">
+        <label for="textInput">Amount:</label>
+        <input type="text" id="textInput" name="textInput"><br><br>
+
+        <label for="selectInput">Category:</label>
+        <select id="selectInput" name="selectInput">
+            <option value="income">Income</option>
+            <option value="expense">Expense</option>
+        </select><br><br>
+
+        <button type="button" onclick="calculatePercentage()">Submit</button>
+    </form>
+
+    <div class="result" id="result"></div>
+
+    <script>
+        function calculatePercentage() {
+            const amount = parseFloat(document.getElementById('textInput').value);
+            const category = document.getElementById('selectInput').value;
+            const numerator = 50; // Example numerator value
+
+            if (isNaN(amount) || amount === 0) {
+                alert('Please enter a valid amount.');
+                return;
+            }
+
+            const percentage = (numerator / amount) * 100;
+            document.getElementById('result').style.background = `conic-gradient(green 0%, green ${percentage}%, transparent ${percentage}%)`;
+        }
+    </script>
+</body>
+</html>

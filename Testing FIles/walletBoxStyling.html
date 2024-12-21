@@ -1,0 +1,1430 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #0d1117;
+            padding: 31px 54px 43px 54px;
+            display: flex;
+            flex-direction: column;
+            gap: 31px;
+        }
+
+        #CornerBlob {
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            z-index: -5;
+            filter: blur(200px);
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+        }
+
+        #logo {
+            width: 50px;
+            margin-right: 2.9em;
+        }
+
+        .heading_searchboxContainer {
+            width: 66vw;
+            color: #ffffff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .heading {
+            height: fit-content;
+            background: linear-gradient(135deg, #ffffff 0%, #ffffff 40%, #6b6b6b 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-family: "Exo 2", sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+        }
+
+        .heading h1 {
+            font-size: 1.4em;
+            font-weight: 600;
+        }
+
+        .heading p {
+            font-weight: 400;
+            font-size: 0.7em;
+        }
+
+        #search {
+            padding: 0.8em 1em;
+            box-sizing: border-box;
+            width: 260px;
+            border-radius: 50px;
+            outline: none;
+            border: 2px solid #3d444deb;
+            color: #9198a1;
+            font-family: "Exo 2", sans-serif;
+            font-weight: 300;
+            background: linear-gradient(135deg, rgb(255, 255, 255, 0.15) 0%, rgba(153, 153, 153, 0.1) 100%);
+        }
+
+        input::placeholder {
+            color: #9198a1;
+            font-size: 1.25em;
+            font-family: "Exo 2", sans-serif;
+            font-weight: 300;
+        }
+
+        #iconSelector {
+            position: absolute;
+            width: 52px;
+            bottom: 4px;
+            filter: drop-shadow(0px 2px 6px #F16B10);
+        }
+
+        .navandMainContainer {
+            display: flex;
+            height: calc(100vh - 159px);
+            gap: 2.9em;
+        }
+
+        .navbar {
+            height: 100%;
+            width: fit-content;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .iconBars {
+            position: relative;
+            background-color: rgb(255, 255, 255, 0.05);
+            width: 60px;
+            height: fit-content;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 46px;
+            border-radius: 60px;
+            padding: 16px 0px;
+            overflow: hidden;
+        }
+
+        .navIcon {
+            width: 30px;
+            height: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2;
+        }
+
+        #profileIcon {
+            position: absolute;
+            bottom: 4px;
+            width: 52px;
+        }
+
+        main {
+            height: 100%;
+            width: fit-content;
+        }
+
+        .mainContainer {
+            height: 100%;
+            width: 86vw;
+            display: flex;
+        }
+
+        .walletsContainer {
+            width: 25.2%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            align-items: center;
+        }
+
+        .walletsContainer .wallet:nth-child(1) {
+            background-image: url(images/Wallet\ background\ 1.png);
+
+        }
+
+        .walletsContainer .wallet:nth-child(2) {
+            background-image: url(images/Wallet\ background\ 2.png);
+
+        }
+
+        .walletsContainer .wallet:nth-child(3) {
+            background-image: url(images/Wallet\ background\ 3.png);
+
+        }
+
+        .walletsContainer .wallet:nth-child(4) {
+            background-image: url(images/Wallet\ background\ 4.png);
+
+        }
+
+        .wallet {
+            /* background-image: url(images/Wallet\ background\ 1.png); */
+            background-size: cover;
+            /* border: 1px solid white; */
+            border-radius: 30px;
+            box-sizing: border-box;
+            padding: 1.1rem;
+            width: 100%;
+        }
+
+        .wallet-Info {
+            display: flex;
+            gap: 10px;
+        }
+
+        .imageContainer {
+            background: linear-gradient(135deg, rgb(255 255 255 / 20%) 0%, rgb(153 153 153 / 20%) 100%);
+            width: 50px;
+            height: 50px;
+            /* border: 1px solid white; */
+            border-radius: 50%;
+            padding: 11px;
+            box-sizing: border-box;
+        }
+
+        .TextInfoContainer {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            font-family: 'Exo 2', sans-serif;
+            font-weight: 600;
+            font-size: 1.4em;
+
+        }
+
+        .TextInfoContainer p:nth-child(1) {
+            font-size: 20px;
+            background: linear-gradient(135deg, #ffffff 0%, #6b6b6b 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .TextInfoContainer p:nth-child(2) {
+            font-size: 16.5px;
+            color: #9198a1;
+            font-weight: 500;
+        }
+
+        .addNewWalletBox {
+            background: linear-gradient(227deg, rgb(255 255 255 / 5%) 40%, rgb(153 153 153 / 0.5%) 100%);
+            border: 2px solid rgb(115 123 139 / 30%);
+            ;
+            border-radius: 28px;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            flex-wrap: wrap;
+            width: 75%;
+            height: 55px;
+        }
+
+        .addIcon {
+            background: linear-gradient(134deg, rgb(255 255 255 / 20%) 0%, rgb(153 153 153 / 20%) 100%);
+            /* border: 2px solid white; */
+            border-radius: 50%;
+            /* height: 10%; */
+            width: 18%;
+            aspect-ratio: 1;
+            font-size: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bolder;
+        }
+
+        .walletsContainer img {
+            width: 100%;
+            transition: width 0.2s;
+        }
+
+        .walletsContainer img:hover {
+            width: 105%;
+        }
+
+        .RightContentContainer {
+            width: calc(100% - 25.2%);
+            height: 100%;
+            box-sizing: border-box;
+            padding-left: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .WalletAndCardsBox {
+            width: 100%;
+            height: 288.075px;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+        }
+
+        .WalletInfoBox {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            width: 61.7%;
+            height: fit-content;
+        }
+
+        #WalletHeader {
+            width: 100%;
+            height: 46px;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid rgb(115, 123, 139, 0.4);
+        }
+
+        #WalletHeader h1 {
+            font-family: 'Exo 2', sans-serif;
+            font-weight: 600;
+            font-size: 1.4em;
+            background: linear-gradient(135deg, #ffffff 0%, #ffffff 40%, #6b6b6b 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .WalletContent {
+            height: fit-content;
+            display: flex;
+            gap: 18px;
+        }
+
+        .mainBalanceCard {
+            background-image: url(images/Total\ Balance\ Backgorund.png);
+            background-size: cover;
+            border-radius: 27px;
+            width: 80%;
+            height: 30vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 3%;
+            box-sizing: border-box;
+        }
+
+        .Balance {
+            text-align: end;
+        }
+
+        .Balance p:nth-child(1) {
+            font-family: 'Exo 2', sans-serif;
+            font-weight: 600;
+            font-size: 1.2em;
+            background: linear-gradient(135deg, #ffffff 0%, #ffffff 40%, #6b6b6b 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .Balance p:nth-child(2) {
+            font-family: 'Exo 2', sans-serif;
+            font-size: 2.4em;
+            color: white;
+        }
+
+        .depositAndSend {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .depositAndSend button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 47%;
+            border: none;
+            background-color: #0d0d0d;
+            color: white;
+            height: 43px;
+            border-radius: 30px;
+            /* padding: 3% 0%; */
+            font-size: 20px;
+            font-family: "Ubuntu", serif;
+        }
+
+        .depositAndSend button:nth-child(2) {
+            width: 47%;
+            border: none;
+            background-color: rgba(255, 255, 255, 0.4);
+            color: #000000;
+            border-radius: 30px;
+            /* padding: 3% 0%; */
+            font-size: 20px;
+        }
+
+        .IncomeExpenseBox {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .incomeCard {
+            display: flex;
+            box-sizing: border-box;
+            padding: 5%;
+            height: 45%;
+            border-radius: 25px;
+            border: 2px solid rgb(145 152 161 / 30%);
+            /* background: url(images/Income Card.png); */
+            background-size: contain;
+            background-image: radial-gradient(circle at top left, #fc9393 -300%, #ffffff0d);
+        }
+
+        .TextAndPic {
+            width: 60%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 5.2vw;
+        }
+
+        .TextAndPic p {
+            color: white;
+            font-family: "Exo 2", serif;
+        }
+
+        .incomePicAmdIncome {
+            width: 100%;
+            display: flex;
+            /* justify-content: space-around; */
+            gap: 10px;
+        }
+
+        .IncomeExpenseBox img {
+            width: 100%;
+        }
+
+        .PicAndAmount {
+            width: 100%;
+            display: flex;
+            /* justify-content: space-around; */
+            gap: 7px;
+        }
+
+        .PicAndAmount p {
+            align-items: center;
+            display: flex;
+            font-weight: 600;
+            font-size: large;
+            background: linear-gradient(135deg, #ffffff 0%, #6b6b6b 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .IncomeExpenseBox .amount {
+            width: 55%;
+        }
+
+        .IncomeExpenseBox .amount p {
+            font-size: 2em;
+            width: 59%;
+        }
+
+        .progressBar {
+            width: 40%;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            flex-wrap: wrap;
+        }
+
+        .progressBarOuter {
+            border: 1px solid white;
+            height: 77%;
+            width: 89%;
+            border-radius: 50%;
+            position: relative;
+            box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15) -6px -6px 10px -1px rgba(255, 255, 255, 0.7);
+        }
+
+        .progressBarInner {
+            width: 70%;
+            height: 70%;
+            border: 1px solid white;
+            border-radius: 50%;
+            position: absolute;
+            top: 8px;
+            left: 8.5px;
+
+        }
+
+        /*.addCreditCard {
+            top: 50%;
+            position: absolute;
+            right: 24%;
+        }*/
+
+        .BudgetsBox {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            background-color: rgb(255, 255, 255, 0.05);
+            gap: 15px;
+            padding: 18px 18px 0px 18px;
+            box-sizing: border-box;
+            width: 100%;
+            height: calc(100% - (288.075px + 18px));
+            overflow: hidden;
+            border-radius: 25px;
+        }
+
+        #BudgetsBlobImg {
+            width: 100%;
+            position: absolute;
+            z-index: -2;
+            bottom: 0;
+            left: 0;
+            filter: blur(30px);
+        }
+
+        .BudgetsBox h1 {
+            font-family: 'Exo 2', sans-serif;
+            font-weight: 600;
+            font-size: 1.4em;
+            background: linear-gradient(135deg, #ffffff 0%, #ffffff 40%, #6b6b6b 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .BudgetCategoryBox {
+            width: 100%;
+        }
+
+        .BudgetCategoryBox .buttonTopHeading {
+            border-radius: 60px;
+            padding: 10px;
+            background: transparent;
+            background-image: linear-gradient(135deg, #FAB823, #F9A315, #F68D0C, #F3770D, #F16B10, #EE5F13);
+            text-decoration: none;
+            border: none;
+            font-family: 'Ubuntu', sans-serif;
+            font-size: 0.65em;
+            color: white;
+        }
+
+        .budgetsScrollBox {
+            height: calc(100% - (15px + 27.2px));
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            overflow: hidden;
+            overflow-y: scroll;
+            scrollbar-width: none;
+        }
+
+        .BudgetCardsList {
+            display: flex;
+            /* justify-content: space-between; */
+            gap: 18px;
+            align-items: center;
+            width: 100%;
+            margin-top: 15px;
+        }
+
+        .BudgetCardsList .BudgetCard {
+            background: url(images/BudgetCard\ BG1.png);
+            background-size: contain;
+            width: 14.7%;
+            /* height: 18.7%; */
+            transition: all 0.2s;
+            /* background-color: gray; */
+            aspect-ratio: 1;
+            border-radius: 28px;
+            padding: 20px;
+            font-family: 'Exo 2', sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .IconAndPercentage {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.9em;
+            font-weight: 500;
+            color: #ff1e00;
+        }
+
+        .IconAndPercentage .BudgetIcon {
+            background: linear-gradient(134deg, rgb(255 255 255 / 20%) 0%, rgb(153 153 153 / 20%) 100%);
+            aspect-ratio: 1;
+            width: 24%;
+            border-radius: 50%;
+        }
+
+        .NameAndAmount p:nth-child(1) {
+            font-weight: 600;
+            font-size: 1.1em;
+            margin-bottom: 8px;
+            background: linear-gradient(135deg, #ffffff 0%, #6b6b6b 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .NameAndAmount p:nth-child(2) {
+            color: #9198a1;
+            font-size: 0.87em;
+            font-weight: 500;
+        }
+
+        .addNewBudgetBox {
+            background: linear-gradient(227deg, rgb(255 255 255 / 5%) 40%, rgb(153 153 153 / 0.5%) 100%);
+            border: 2px dashed rgb(115 123 139 / 30%);
+            border-radius: 28px;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            flex-wrap: wrap;
+            width: 15.7%;
+            /* height: 55px; */
+            aspect-ratio: 1;
+        }
+
+        .addBudgetIcon {
+            background: linear-gradient(134deg, rgb(255 255 255 / 20%) 0%, rgb(153 153 153 / 20%) 100%);
+            /* border: 2px solid white; */
+            border-radius: 50%;
+            /* height: 10%; */
+            width: 27%;
+            aspect-ratio: 1;
+            font-size: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bolder;
+        }
+
+        #btnForAddNewCard {
+            background-color: none;
+            background: none;
+            border: none;
+        }
+
+        .BudgetCardsList img {
+            width: 18.7%;
+            height: 18.7%;
+            transition: all 0.2s;
+        }
+
+        .BudgetCardsList img:hover {
+            width: 20%;
+            height: 20%;
+        }
+
+        #details-container {
+            margin-top: 20px;
+        }
+
+        .form-popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 9;
+            background-color: #fff;
+            padding: 20px;
+            border: 2px solid #ddd;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+            display: flex;
+            flex-direction: column;
+            height: 30vh;
+            width: 30vh;
+            background: linear-gradient(45deg, black, transparent);
+            backdrop-filter: blur(50px);
+        }
+
+        .formContainer {
+            display: flex;
+            flex-direction: column;
+            /* width: 15%; */
+            height: 30vh;
+            display: flex;
+            flex-direction: column;
+            height: 30vh;
+            justify-content: space-around;
+        }
+
+        .formContainer p {
+            font-size: 1.5rem;
+        }
+
+        .formInputContainer {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 40%;
+        }
+
+        .formInputContainer label,
+        p {
+            color: white;
+            font-family: "Exo 2", serif;
+        }
+
+        .formInputContainer label {
+            width: 100%;
+        }
+
+        .categoryBox,
+        .usedBox,
+        .amtBox {
+            display: flex;
+        }
+
+        .btnBox {
+            display: flex;
+            justify-content: end;
+        }
+
+        .form-container {
+            max-width: 300px;
+        }
+
+        .form-container input[type=text],
+        .form-container input[type=number] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 10px 0;
+            border: none;
+            background: #f1f1f1;
+        }
+
+        .form-container input[type=text]:focus,
+        .form-container input[type=number]:focus {
+            background-color: #ddd;
+            outline: none;
+        }
+
+        .form-container .btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            margin-bottom: 10px;
+            border-radius: 8px;
+        }
+
+        .form-container .cancel {
+            background-color: red;
+        }
+
+        .budgetsScrollBox {
+            display: flex;
+            flex-direction: column;
+            overflow-y: auto;
+            height: 500px;
+        }
+
+        .BudgetCategoryBox {
+            margin-bottom: 20px;
+        }
+
+        .BudgetCardsList {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .BudgetCard {
+            padding: 10px;
+            background-color: #e7f3ff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+            /* Ensure it takes only as much space as needed */
+            background-image: url('path/to/your/background-image.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+
+        }
+
+        .form-popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 9;
+            width: 17.5vw;
+            padding: 20px;
+            border: 2px solid #ddd;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 30px;
+
+        }
+
+        .form-container {
+            max-width: 300px;
+        }
+
+        .form-container input[type=text],
+        .form-container input[type=number] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 10px 0;
+            border: none;
+            background: #f1f1f1;
+        }
+
+        .form-container input[type=text]:focus,
+        .form-container input[type=number]:focus {
+            background-color: #ddd;
+            outline: none;
+        }
+
+        .form-container .btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            margin-bottom: 10px;
+            border-radius: 8px;
+        }
+
+        .form-container .cancel {
+            background-color: red;
+        }
+
+        .details-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .main-container {
+            margin: 20px;
+        }
+
+        .row-wrapper {
+            margin-top: 20px;
+        }
+
+        .row {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            padding: 10px;
+        }
+
+        .BudgetCategoryBox {
+            margin-bottom: 20px;
+        }
+
+        .BudgetCardsList {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .BudgetCard {
+            padding: 10px;
+            background-color: #e7f3ff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+            background-image: url('path/to/your/background-image.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .popup-form {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 9;
+            background-color: #fff;
+            padding: 20px;
+            border: 2px solid #ddd;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .form-container {
+            max-width: 300px;
+        }
+
+        .form-container input[type=text],
+        .form-container input[type=number] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 10px 0;
+            border: none;
+            background: #f1f1f1;
+        }
+
+        .form-container input[type=text]:focus,
+        .form-container input[type=number]:focus {
+            background-color: #ddd;
+            outline: none;
+        }
+
+        .btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            margin-bottom: 10px;
+            border-radius: 8px;
+        }
+
+        .cancel {
+            background-color: red;
+        }
+
+        .details-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+
+        .container {
+            display: flex;
+            width: 420px;
+            padding: 50px 0;
+            border-radius: 8px;
+            background: #0d0d0d;
+            row-gap: 30px;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .circular-progress {
+            position: relative;
+            height: 77%;
+            width: 82%;
+            border-radius: 50%;
+            background: conic-gradient(#0d0d 3.6deg, #0d0d0d 0deg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .circular-progress::before {
+            content: "";
+            position: absolute;
+            height: 70%;
+            width: 70%;
+            border-radius: 50%;
+            background-color: #0d0d0d;
+        }
+
+        .progress-value {
+            position: relative;
+            font-size: 15px;
+            font-weight: 600;
+            color: grey;
+        }
+
+        .cardsCointainer {
+            width: 37%;
+            height: 83%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            box-sizing: border-box;
+        }
+
+        .containerForCard1 {
+            position: relative;
+            padding: 25px;
+            border: 1px solid white;
+            border-radius: 16px;
+            width: 85%;
+            background: linear-gradient(to right, #000000, #434343);
+            /* justify-content: space-between; */
+            display: flex;
+            flex-direction: column;
+            height: 59%;
+            row-gap: 11px;
+        }
+
+        .containerForCard1 p {
+            color: white;
+            font-family: "Exo 2", serif;
+        }
+
+        .cardHeader {
+            display: flex;
+            justify-content: end;
+        }
+
+        .cardHeader p {
+            font-family: sans-serif;
+        }
+
+        .wifiContactAndChip {
+            padding-top: 12%;
+        }
+
+        .card-details {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .name-number {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 46px;
+        }
+
+        .name-number p:nth-child(1) {
+            font-size: 16px;
+        }
+
+        .name-number p:nth-child(2) {
+            font-size: 18px;
+        }
+
+        .valid-date {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            font-size: 16px;
+            width: 80px;
+        }
+
+        .AddCardIcon {
+            width: 8%;
+            position: absolute;
+            top: 86%;
+            left: 2%;
+        }
+
+        /*
+        header,
+        .cardLogo {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .cardLogo img {
+            width: 48px;
+            margin-right: 10px;
+        }
+
+        h5 {
+            font-size: 16px;
+            font-weight: 400;
+            color: #fff;
+        }
+
+        header .chip {
+            width: 60px;
+        }
+
+        h6 {
+            color: #fff;
+            font-size: 10px;
+            font-weight: 400;
+        }
+
+        h5.number {
+            margin-top: 4px;
+            font-size: 18px;
+            letter-spacing: 1px;
+        }
+
+        h5.name {
+            margin-top: 20px;
+        }
+
+        .container .card-details {
+            margin-top: 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }*/
+
+
+        .cardsCointainer {
+            width: 37%;
+            height: 83%;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            box-sizing: border-box;
+        }
+
+        .containerForCard1 {
+            position: absolute;
+            padding: 25px;
+            border: 1px solid white;
+            border-radius: 16px;
+            width: 85%;
+            background: linear-gradient(to right, #000000, #434343);
+            display: flex;
+            flex-direction: column;
+            height: 59%;
+            row-gap: 11px;
+            margin-bottom: 10px;
+            z-index: 1;
+            transform-origin: bottom left;
+        }
+
+        .fixedCard {
+            position: relative;
+            z-index: 0;
+        }
+
+        .rotated4deg {
+            transform: rotate(4deg);
+        }
+
+        .rotated8deg {
+            transform: rotate(8deg);
+        }
+
+        .containerForCard1 p {
+            color: white;
+            font-family: "Exo 2", serif;
+        }
+
+        .cardHeader {
+            display: flex;
+            justify-content: end;
+        }
+
+        .cardHeader p {
+            font-family: sans-serif;
+        }
+
+        .wifiContactAndChip {
+            padding-top: 12%;
+        }
+
+        .card-details {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .name-number {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 46px;
+        }
+
+        .name-number p {
+            margin: 0;
+        }
+
+        .name-number p:nth-child(1) {
+            font-size: 16px;
+        }
+
+        .name-number p:nth-child(2) {
+            font-size: 18px;
+        }
+
+        .valid-date {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            font-size: 16px;
+            width: 80px;
+        }
+
+        .addCardButton {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #434343;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .form-container {
+            display: none;
+            position: absolute;
+            /* Make the form appear above other content */
+            top: 50px;
+            /* Adjust as needed */
+            z-index: 100;
+            /* Ensure the form stays on top of other elements */
+            margin-top: 20px;
+            width: 85%;
+            background-color: #f3f3f3;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-container label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .form-container input {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .form-container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #434343;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+
+        .IncomeExpenseBox {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 48%;
+        }
+
+        .expenseCard {
+            display: flex;
+            box-sizing: border-box;
+            padding: 5%;
+            background: url(images/Income\ Card.png);
+            background-size: contain;
+        }
+
+        .expenseTextAndPic {
+            width: 60%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 5.2vw;
+        }
+
+        .expenseTextAndPic p {
+            color: white;
+            font-family: "Exo 2", serif;
+        }
+
+        .expensePicAmdIncome {
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .expenseExpenseBox img {
+            width: 100%;
+        }
+
+        .expensePicAndIncome {
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .expensePicAndIncome p {
+            align-items: center;
+            display: flex;
+            font-size: larger;
+        }
+
+        .expenseText {
+            width: 55%;
+        }
+
+        .expenseText p {
+            font-size: 2em;
+            width: 59%;
+        }
+
+        .progressBar {
+            width: 40%;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            flex-wrap: wrap;
+        }
+
+        .progressBarOuter {
+            border: 1px solid white;
+            height: 77%;
+            width: 89%;
+            border-radius: 50%;
+            position: relative;
+            box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15) -6px -6px 10px -1px rgba(255, 255, 255, 0.7);
+        }
+
+        .progressBarInner {
+            width: 70%;
+            height: 70%;
+            border: 1px solid white;
+            border-radius: 50%;
+            position: absolute;
+            top: 8px;
+            left: 8.5px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="walletsContainer">
+
+        <!-- Example Wallet -->
+        <!-- <div class="wallet">
+            <div class="wallet-Info">
+                <div class="imageContainer">
+                    <img src="images/State Bank of India Logo.svg" alt="">
+                </div>
+                <div class="TextInfoContainer">
+                    <p>Cash</p>
+                    <p>₹20,000</p>
+                </div>
+            </div>
+        </div> -->
+
+        <div class="addNewWalletBox">
+            <div class="addIcon">
+                <img src="images/AddWalletIcon.svg" style="width: 40%;" alt="">
+            </div>
+        </div>
+
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // Fetch wallets from Local Storage or initialize an empty object
+            const wallets = JSON.parse(localStorage.getItem("wallets")) || {};
+
+            // Fetch transactions from Local Storage
+            const transactions = JSON.parse(localStorage.getItem("transactions")) || [];
+
+            // Select wallets container and add wallet button
+            const walletsContainer = document.querySelector(".walletsContainer");
+            const addNewWalletBox = document.querySelector(".addNewWalletBox");
+
+            // Recalculate wallet balances if needed
+            if (!localStorage.getItem("walletsInitialized")) {
+                recalculateWalletBalances();
+                localStorage.setItem("walletsInitialized", "true");
+            }
+
+            // Render existing wallets
+            renderWallets();
+
+            // Add Wallet button functionality
+            addNewWalletBox.addEventListener("click", () => {
+                const walletName = prompt("Enter the name of the wallet:");
+                if (walletName && !wallets[walletName]) {
+                    wallets[walletName] = 0; // Initialize with zero balance
+                    saveWallets();
+                    renderWallets();
+                } else if (wallets[walletName]) {
+                    alert("Wallet already exists!");
+                }
+            });
+
+            // Function to render wallets
+            function renderWallets() {
+                // Clear all wallet divs except the Add Wallet button
+                const walletElements = Array.from(walletsContainer.querySelectorAll(".wallet"));
+                walletElements.forEach(wallet => wallet.remove());
+
+                // Render each wallet from the wallets object
+                for (const walletName in wallets) {
+                    const walletDiv = document.createElement("div");
+                    walletDiv.className = "wallet";
+
+                    walletDiv.innerHTML = `
+                <div class="wallet-Info">
+                    <div class="imageContainer">
+                        <img src="images/${walletName} Logo.svg" alt="${walletName}">
+                    </div>
+                    <div class="TextInfoContainer">
+                        <p>${walletName}</p>
+                        <p>₹${wallets[walletName].toFixed(2)}</p>
+                    </div>
+                </div>
+            `;
+                    walletsContainer.insertBefore(walletDiv, addNewWalletBox); // Insert before Add Wallet box
+                }
+            }
+
+            // Function to recalculate wallet balances
+            function recalculateWalletBalances() {
+                // Reset all wallet balances to zero
+                for (const walletName in wallets) {
+                    wallets[walletName] = 0;
+                }
+
+                // Process transactions to update wallet balances
+                transactions.forEach(transaction => {
+                    const walletName = transaction.bank; // Ensure transaction has "bank" and "amount" keys
+                    if (!walletName || typeof transaction.amount !== "number") return;
+
+                    if (!wallets[walletName]) {
+                        wallets[walletName] = 0; // Initialize wallet if it doesn't exist
+                    }
+                    wallets[walletName] += transaction.amount;
+                });
+
+                saveWallets();
+            }
+
+            // Function to save wallets to Local Storage
+            function saveWallets() {
+                localStorage.setItem("wallets", JSON.stringify(wallets));
+            }
+        });
+
+    </script>
+</body>
+
+</html>
