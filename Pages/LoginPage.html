@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Stylesheets/LoginPage.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+        rel="stylesheet">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <main>
+        <img id="BlobTop_img" src="/Images/LoginBlob top.png" alt="">
+        <img id="BlobBottom_img" src="/Images/LoginBlob Bottom.pngss" alt="">
+        <div class="main_card">
+            <div class="MainContentBox">
+                <button class="cross_btn cancelButton" type="reset" form="loginForm">
+                    <img src="/Images/cross.svg" alt="cross_icon">
+                </button>
+                <img id="MainCard_image" src="/Images/LoginSignup Main Card.svg" alt="">
+                <div class="btn_container">
+                    <img id="containerImg" src="/Images/logsin btn box.svg" alt="">
+                    <img id="btn_borderImg" src="/Images/loginsingup selector.png" alt="">
+                    <a href="LoginSignup.html" id="loginText">Login</a>
+                    <a href="SignupPage.html" id="signupText">Sign Up</a>
+                </div>
+
+                <div class="welcome">
+                    <p>Welcome Back !</p>
+                    <p>Enter your details to sign in.</p>
+                </div>
+
+
+                <form id="loginForm" action="">
+                    <div class="formRow">
+                        <img id="InputTag_image" src="/Images/InputTag.svg" alt="">
+                        <div class="labelInput_container">
+                            <label for="username"></label>
+                            <input type="text" id="username" placeholder="Username" required>
+                        </div>
+                    </div>
+                    <div class="formRow">
+                        <img id="InputTag_image" src="/Images/InputTag.svg" alt="">
+                        <div class="labelInput_container">
+                            <label for="password"></label>
+                            <input type="password" id="password" placeholder="Password" required>
+                        </div>
+                    </div>
+                    <div class="forgotpass_container">
+                        <p>Forgot Password?</p>
+                        <label class="RememberLabel">
+                            <p>Remember Me?</p><input id="remember_chechmark" type="radio"><label>
+                    </div>
+                    <div id="SwipeCard_container">
+                        <img id="SwipeCard_image" src="/Images/SwipeCard.svg" alt="">
+                        <button id="SwipeBtn" type="submit"><img id="SwipeBtn_image" src="/Images/SwipeBtn.png"
+                                alt=""></button>
+                        <p onclick="redirectToPage()" id="swipeText">Swipe to Begin</p>
+                    </div>
+                    <div class="Breakline">
+                        <div class="thinLine"></div>
+                        <p>OR</p>
+                        <div class="thinLine"></div>
+                    </div>
+
+                    <div class="socialMediaIcon">
+                        <a href=""><img src="/Images/apple.svg" alt=""></a>
+                        <a href=""><img src="/Images/google.svg" alt=""></a>
+                        <a href=""><img src="/Images/x logo.svg" alt=""></a>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
+    </main>
+
+
+    <script src="/Javascript/LoginPage.js"></script>
+</body>
+
+</html>

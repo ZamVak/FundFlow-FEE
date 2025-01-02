@@ -1,0 +1,1335 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #0d1117;
+    padding: 31px 54px 43px 54px;
+    display: flex;
+    flex-direction: column;
+    gap: 31px;
+}
+
+#CornerBlob {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: -5;
+    filter: blur(200px);
+}
+
+header {
+    display: flex;
+    align-items: center;
+}
+
+#logo {
+    width: 50px;
+    margin-right: 2.9em;
+}
+
+.heading_searchboxContainer {
+    width: 66vw;
+    color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.heading {
+    height: fit-content;
+    background: linear-gradient(135deg, #ffffff 0%, #ffffff 40%, #6b6b6b 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-family: "Exo 2", sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.heading h1 {
+    font-size: 1.4em;
+    font-weight: 600;
+}
+
+.heading p {
+    font-weight: 400;
+    font-size: 0.7em;
+}
+
+#walletSearchBar {
+    padding: 0.8em 1em;
+    box-sizing: border-box;
+    width: 260px;
+    border-radius: 50px;
+    outline: none;
+    border: 2px solid #3d444deb;
+    color: #9198a1;
+    font-family: "Exo 2", sans-serif;
+    font-weight: 300;
+    background: linear-gradient(135deg, rgb(255, 255, 255, 0.15) 0%, rgba(153, 153, 153, 0.1) 100%);
+}
+
+input::placeholder {
+    color: #9198a1;
+    font-size: 1.25em;
+    font-family: "Exo 2", sans-serif;
+    font-weight: 300;
+}
+
+#iconSelector {
+    position: absolute;
+    width: 52px;
+    top: 5.5px;
+    filter: drop-shadow(0px 2px 6px #F16B10);
+}
+
+.navandMainContainer {
+    display: flex;
+    height: calc(100vh - 159px);
+    gap: 2.3em;
+    position: relative;
+}
+
+.navbar {
+    height: 100%;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#userInfo {
+    /* width: 15 */
+    width: 0%;
+    background: linear-gradient(136deg, rgb(255 255 255 / 5%) 40%, rgb(153 153 153 / 0.5%) 100%);
+    height: 50px;
+    position: absolute;
+    border: 1px solid rgb(115 123 139 / 30%);
+    border-radius: 30px;
+    /* border: 2px solid rgb(241 107 16 / 50%); */
+    border: none;
+    bottom: 4px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    justify-content: space-between;
+    /* padding: 7px 20px; */
+    left: 65px;
+    font-family: "Exo 2", serif;
+    /* box-sizing: border-box; */
+    transition: all 0.3s ease-in-out;
+}
+
+#userInfo p:nth-child(1) {
+    font-size: medium;
+    font-weight: 600;
+    /* background: linear-gradient(135deg, #ffffff 0%, #6b6b6b 100%); */
+    background: linear-gradient(135deg, #FAB823, #F9A315, #F68D0C, #F3770D, #F16B10, #EE5F13);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 6px 20px 0px 20px;
+}
+
+
+#userInfo p:nth-child(2) {
+    color: #9198a1;
+    font-size: 0.8em;
+    font-weight: 300;
+    margin: 0px 20px 6px 20px;
+}
+
+.iconBars {
+    position: relative;
+    background-color: rgb(255, 255, 255, 0.05);
+    width: 60px;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 46px;
+    border-radius: 60px;
+    padding: 16px 0px;
+    overflow: hidden;
+}
+
+.navIcon {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+#profileIcon {
+    position: absolute;
+    bottom: 4px;
+    width: 52px;
+}
+
+main {
+    height: 100%;
+    width: fit-content;
+}
+
+.mainContainer {
+    height: 100%;
+    width: 86vw;
+    display: flex;
+}
+
+.walletsContainer {
+    width: 25.2%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    align-items: center;
+}
+
+.walletsContainer .wallet:nth-child(1) {
+    background-image: url(/Images/Wallet\ background\ 1.png);
+
+}
+
+.walletsContainer .wallet:nth-child(2) {
+    background-image: url(/Images/Wallet\ background\ 2.png);
+
+}
+
+.walletsContainer .wallet:nth-child(3) {
+    background-image: url(/Images/Wallet\ background\ 3.png);
+
+}
+
+.walletsContainer .wallet:nth-child(4) {
+    background-image: url(/Images/Wallet\ background\ 4.png);
+
+}
+
+.wallet {
+    /* background-image: url(/Images/Wallet\ background\ 1.png); */
+    background-size: cover;
+    /* border: 1px solid white; */
+    border-radius: 30px;
+    box-sizing: border-box;
+    padding: 1.1rem;
+    width: 100%;
+    transition: all 0.3s ease-in-out;
+}
+
+.walletsContainer .wallet:hover {
+    width: 105%;
+}
+
+.wallet-Info {
+    display: flex;
+    gap: 10px;
+}
+
+.imageContainer {
+    background: linear-gradient(135deg, rgb(255 255 255 / 20%) 0%, rgb(153 153 153 / 20%) 100%);
+    width: 50px;
+    height: 50px;
+    /* border: 1px solid white; */
+    border-radius: 50%;
+    padding: 11px;
+    box-sizing: border-box;
+}
+
+.TextInfoContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-family: 'Exo 2', sans-serif;
+    font-weight: 600;
+    font-size: 1.4em;
+
+}
+
+.TextInfoContainer p:nth-child(1) {
+    font-size: 20px;
+    background: linear-gradient(135deg, #ffffff 0%, #6b6b6b 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.TextInfoContainer p:nth-child(2) {
+    font-size: 16.5px;
+    color: #9198a1;
+    font-weight: 500;
+}
+
+.addNewWalletBox {
+    background: linear-gradient(227deg, rgb(255 255 255 / 5%) 40%, rgb(153 153 153 / 0.5%) 100%);
+    border: 2px dashed rgb(115 123 139 / 30%);
+    border-radius: 28px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+    width: 75%;
+    height: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.addIcon {
+    background: linear-gradient(134deg, rgb(255 255 255 / 20%) 0%, rgb(153 153 153 / 20%) 100%);
+    /* border: 2px solid white; */
+    border-radius: 50%;
+    /* height: 10%; */
+    width: 16%;
+    aspect-ratio: 1;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bolder;
+    transition: all 0.2s ease-in;
+    cursor: pointer;
+}
+
+.addNewWalletBox:hover {
+    width: 80%;
+}
+
+.walletsContainer img {
+    width: 100%;
+    transition: width 0.2s;
+}
+
+.walletsContainer img:hover {
+    width: 105%;
+}
+
+.RightContentContainer {
+    width: calc(100% - 25.2%);
+    height: 100%;
+    box-sizing: border-box;
+    padding-left: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.WalletAndCardsBox {
+    width: 100%;
+    height: 288.075px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
+
+.WalletInfoBox {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    width: 61.7%;
+    height: fit-content;
+}
+
+#WalletHeader {
+    width: 100%;
+    height: 46px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid rgb(115, 123, 139, 0.4);
+}
+
+#WalletHeader h1 {
+    font-family: 'Exo 2', sans-serif;
+    font-weight: 600;
+    font-size: 1.4em;
+    background: linear-gradient(135deg, #ffffff 0%, #ffffff 40%, #6b6b6b 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.WalletContent {
+    height: fit-content;
+    display: flex;
+    gap: 18px;
+}
+
+.mainBalanceCard {
+    background-image: url(/Images/Total\ Balance\ Backgorund.png);
+    background-size: cover;
+    border-radius: 27px;
+    width: 80%;
+    height: 225px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 3%;
+    box-sizing: border-box;
+}
+
+.Balance {
+    text-align: end;
+}
+
+.Balance p:nth-child(1) {
+    font-family: 'Exo 2', sans-serif;
+    font-weight: 600;
+    font-size: 1.2em;
+    background: linear-gradient(135deg, #ffffff 0%, #ffffff 40%, #6b6b6b 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.Balance p:nth-child(2) {
+    font-family: 'Exo 2', sans-serif;
+    font-size: 2.4em;
+    color: white;
+}
+
+.depositAndSend {
+    display: flex;
+    justify-content: space-between;
+}
+
+.depositAndSend button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 47%;
+    border: none;
+    background-color: #0d0d0d;
+    color: white;
+    height: 43px;
+    border-radius: 30px;
+    /* padding: 3% 0%; */
+    font-size: 20px;
+    font-family: "Ubuntu", serif;
+    transition: all 0.2s ease-in-out;
+}
+
+.depositAndSend button:hover {
+    transform: translateY(-4px);
+}
+
+.depositAndSend button:nth-child(2) {
+    width: 47%;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.4);
+    color: #000000;
+    border-radius: 30px;
+    /* padding: 3% 0%; */
+    font-size: 20px;
+}
+
+.IncomeExpenseBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.incomeCard,
+.expenseCard {
+    display: flex;
+    box-sizing: border-box;
+    padding: 5%;
+    height: 48%;
+    border-radius: 25px;
+    border: 2px solid rgb(115 123 139 / 30%);
+    /* background: url(/Images/Income Card.png); */
+    background-size: contain;
+    background-image: radial-gradient(circle at top left, #fc9393 -300%, #ffffff0d);
+}
+
+.TextAndPic {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 5.2vw;
+}
+
+.TextAndPic p {
+    color: white;
+    font-family: "Exo 2", serif;
+}
+
+
+
+.PicAndAmount {
+    width: 100%;
+    display: flex;
+    /* justify-content: space-around; */
+    gap: 7px;
+}
+
+.PicAndAmount p {
+    align-items: center;
+    display: flex;
+    font-weight: 600;
+    font-size: large;
+    background: linear-gradient(135deg, #ffffff 0%, #6b6b6b 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.IncomeExpenseBox .amount {
+    width: 55%;
+}
+
+.IncomeExpenseBox .amount p {
+    font-size: 1.9em;
+    width: 59%;
+    padding-left: 3px;
+}
+
+.progressBar {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
+.progressBarOuter {
+    border: 1px solid white;
+    height: 77%;
+    width: 89%;
+    border-radius: 50%;
+    position: relative;
+    box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15) -6px -6px 10px -1px rgba(255, 255, 255, 0.7);
+}
+
+.progressBarInner {
+    width: 70%;
+    height: 70%;
+    border: 1px solid white;
+    border-radius: 50%;
+    position: absolute;
+    top: 8px;
+    left: 8.5px;
+
+}
+
+/*.addCreditCard {
+    top: 50%;
+    position: absolute;
+    right: 24%;
+}*/
+
+.BudgetsBox {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(255, 255, 255, 0.05);
+    gap: 15px;
+    padding: 18px 18px 0px 18px;
+    box-sizing: border-box;
+    width: 100%;
+    height: calc(100% - (288.075px + 18px));
+    overflow: hidden;
+    border-radius: 25px;
+}
+
+#BudgetsBlobImg {
+    width: 100%;
+    position: absolute;
+    z-index: -2;
+    bottom: 0;
+    left: 0;
+    filter: blur(30px);
+}
+
+.BudgetsBox h1 {
+    font-family: 'Exo 2', sans-serif;
+    font-weight: 600;
+    font-size: 1.4em;
+    background: linear-gradient(135deg, #ffffff 0%, #ffffff 40%, #6b6b6b 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.BudgetCategoryBox {
+    width: 100%;
+}
+
+.BudgetCategoryBox .buttonTopHeading {
+    border-radius: 60px;
+    padding: 10px;
+    background: transparent;
+    background-image: linear-gradient(135deg, #FAB823, #F9A315, #F68D0C, #F3770D, #F16B10, #EE5F13);
+    text-decoration: none;
+    border: none;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 0.65em;
+    color: white;
+}
+
+.budgetsScrollBox {
+    height: calc(100% - (15px + 27.2px));
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    overflow: hidden;
+    overflow-y: scroll;
+    scrollbar-width: none;
+}
+
+.BudgetCardsList {
+    display: flex;
+    /* justify-content: space-between; */
+    gap: 18px;
+    align-items: center;
+    width: 100%;
+    margin-top: 15px;
+}
+
+.BudgetCardsList .BudgetCard {
+    background: url(/Images/BudgetCard\ BG1.png);
+    background-size: contain;
+    width: 14.7%;
+    /* height: 18.7%; */
+    transition: all 0.2s;
+    /* background-color: gray; */
+    aspect-ratio: 1;
+    border-radius: 28px;
+    padding: 20px;
+    font-family: 'Exo 2', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.2s ease-in-out;
+}
+
+.BudgetCardsList .BudgetCard:hover {
+    transform: translateY(-8px);
+}
+
+.IconAndPercentage {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9em;
+    font-weight: 500;
+    color: #ff1e00;
+}
+
+.IconAndPercentage .BudgetIcon {
+    background: linear-gradient(134deg, rgb(255 255 255 / 20%) 0%, rgb(153 153 153 / 20%) 100%);
+    aspect-ratio: 1;
+    width: 24%;
+    border-radius: 50%;
+    overflow: hidden;
+    box-sizing: border-box;
+    padding: 5px;
+}
+
+.NameAndAmount p:nth-child(1) {
+    font-weight: 600;
+    font-size: 1.1em;
+    margin-bottom: 8px;
+    background: linear-gradient(135deg, #ffffff 0%, #6b6b6b 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.NameAndAmount p:nth-child(2) {
+    color: #9198a1;
+    font-size: 0.87em;
+    font-weight: 500;
+}
+
+.addNewBudgetBox {
+    background: linear-gradient(227deg, rgb(255 255 255 / 5%) 40%, rgb(153 153 153 / 0.5%) 100%);
+    border: 2px dashed rgb(115 123 139 / 30%);
+    border-radius: 28px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+    width: 14.7%;
+    /* height: 55px; */
+    aspect-ratio: 1;
+    transition: all 0.3s ease-in-out;
+}
+
+.addBudgetIcon {
+    background: linear-gradient(134deg, rgb(255 255 255 / 20%) 0%, rgb(153 153 153 / 20%) 100%);
+    /* border: 2px solid white; */
+    border-radius: 50%;
+    /* height: 10%; */
+    width: 27%;
+    aspect-ratio: 1;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bolder;
+}
+
+#btnForAddNewCard {
+    background-color: none;
+    background: none;
+    border: none;
+    width: 26%;
+    transition: all 0.2s ease-in;
+    cursor: pointer;
+}
+
+.addNewBudgetBox:hover #btnForAddNewCard {
+    width: 30%;
+}
+
+#details-container {
+    margin-top: 20px;
+}
+
+.form-popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9;
+    background-color: #fff;
+    padding: 20px;
+    border: 2px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+    display: flex;
+    flex-direction: column;
+    height: 30vh;
+    width: 30vh;
+    background: linear-gradient(45deg, black, transparent);
+    backdrop-filter: blur(50px);
+}
+
+.formContainer {
+    display: flex;
+    flex-direction: column;
+    /* width: 15%; */
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    height: 30vh;
+    justify-content: space-around;
+}
+
+.formContainer p {
+    font-size: 1.5rem;
+}
+
+.formInputContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 40%;
+}
+
+.formInputContainer label,
+p {
+    color: white;
+    font-family: "Exo 2", serif;
+}
+
+.formInputContainer label {
+    width: 100%;
+}
+
+.categoryBox,
+.usedBox,
+.amtBox {
+    display: flex;
+}
+
+.btnBox {
+    display: flex;
+    justify-content: end;
+}
+
+
+.budgetsScrollBox {
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    height: 500px;
+}
+
+.BudgetCategoryBox {
+    margin-bottom: 20px;
+}
+
+.BudgetCardsList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.BudgetCard {
+    padding: 10px;
+    background-color: #e7f3ff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+    /* Ensure it takes only as much space as needed */
+    background-image: url('path/to/your/background-image.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+
+.form-popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9;
+    width: 17.5vw;
+    padding: 20px;
+    border: 2px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 30px;
+
+}
+
+
+.details-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.main-container {
+    margin: 20px;
+}
+
+.row-wrapper {
+    margin-top: 20px;
+}
+
+.row {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 10px;
+}
+
+.BudgetCategoryBox {
+    margin-bottom: 20px;
+}
+
+.BudgetCardsList {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 25px;
+    column-gap: 9px;
+}
+
+.BudgetCard {
+    padding: 10px;
+    background-color: #e7f3ff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+    background-image: url('path/to/your/background-image.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+.btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 10px;
+    border-radius: 8px;
+}
+
+.cancel {
+    background-color: red;
+}
+
+.details-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+
+.container {
+    display: flex;
+    width: 420px;
+    padding: 50px 0;
+    border-radius: 8px;
+    background: #0d0d0d;
+    row-gap: 30px;
+    flex-direction: column;
+    align-items: center;
+}
+
+.circular-progress-income,
+.circular-progress-expense {
+    position: relative;
+    height: 77%;
+    width: 82%;
+    border-radius: 50%;
+    background: conic-gradient(#0d0d 3.6deg, #0d0d0d 0deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.circular-progress-income::before,
+.circular-progress-expense::before {
+    content: "";
+    position: absolute;
+    height: 70%;
+    width: 70%;
+    border-radius: 50%;
+    background-color: #0d0d0d;
+}
+
+.progress-value-income,
+.progress-value-expense {
+    position: relative;
+    font-size: 15px;
+    font-weight: 600;
+    color: grey;
+}
+
+.cardsCointainer {
+    width: 37%;
+    height: 83%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    box-sizing: border-box;
+}
+
+.containerForCard1 {
+    position: relative;
+    padding: 25px;
+    border: 1px solid white;
+    border-radius: 16px;
+    width: 85%;
+    background: linear-gradient(to right, #000000, #434343);
+    /* justify-content: space-between; */
+    display: flex;
+    flex-direction: column;
+    height: 59%;
+    row-gap: 11px;
+}
+
+.containerForCard1 p {
+    color: white;
+    font-family: "Sarabun", serif;
+}
+
+.cardHeader {
+    display: flex;
+    justify-content: end;
+}
+
+.cardHeader p {
+    font-family: sans-serif;
+}
+
+.wifiContactAndChip {
+    padding-top: 12%;
+}
+
+.card-details {
+    display: flex;
+    justify-content: space-between;
+}
+
+.name-number {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 46px;
+}
+
+.name-number p:nth-child(1) {
+    font-size: 16px;
+}
+
+.name-number p:nth-child(2) {
+    font-size: 18px;
+}
+
+.valid-date {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 16px;
+    width: 80px;
+}
+
+.AddCardIcon {
+    width: 8%;
+    position: absolute;
+    top: 86%;
+    left: 2%;
+    cursor: pointer;
+    transition: all 0.2s ease-in;
+}
+
+.AddCardIcon:hover {
+    width: 9%;
+}
+
+/*
+header,
+.cardLogo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.cardLogo img {
+    width: 48px;
+    margin-right: 10px;
+}
+
+h5 {
+    font-size: 16px;
+    font-weight: 400;
+    color: #fff;
+}
+
+header .chip {
+    width: 60px;
+}
+
+h6 {
+    color: #fff;
+    font-size: 10px;
+    font-weight: 400;
+}
+
+h5.number {
+    margin-top: 4px;
+    font-size: 18px;
+    letter-spacing: 1px;
+}
+
+h5.name {
+    margin-top: 20px;
+}
+
+.container .card-details {
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}*/
+
+
+.cardsCointainer {
+    width: 37%;
+    height: 83%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    box-sizing: border-box;
+}
+
+.containerForCard1 {
+    position: absolute;
+    padding: 25px;
+    border: 1px solid #737b8b;
+    border-radius: 16px;
+    width: 85%;
+    background: linear-gradient(to right, #000000, #434343);
+    display: flex;
+    flex-direction: column;
+    height: 59%;
+    row-gap: 11px;
+    margin-bottom: 10px;
+    z-index: 1;
+    transform-origin: bottom left;
+}
+
+.fixedCard {
+    position: relative;
+    z-index: 0;
+}
+
+.rotated4deg {
+    transform: rotate(4deg);
+}
+
+.rotated8deg {
+    transform: rotate(8deg);
+}
+
+.containerForCard1 p {
+    color: white;
+    font-family: "Exo 2", serif;
+}
+
+.cardHeader {
+    display: flex;
+    justify-content: end;
+}
+
+.cardHeader p {
+    font-family: sans-serif;
+}
+
+.wifiContactAndChip {
+    padding-top: 12%;
+}
+
+.card-details {
+    display: flex;
+    justify-content: space-between;
+}
+
+.name-number {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 46px;
+}
+
+.name-number p {
+    margin: 0;
+}
+
+.name-number p:nth-child(1) {
+    font-size: 16px;
+}
+
+.name-number p:nth-child(2) {
+    font-size: 18px;
+}
+
+.valid-date {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 16px;
+    width: 80px;
+}
+
+.addCardButton {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #434343;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+
+.IncomeExpenseBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 48%;
+}
+
+
+.expenseTextAndPic {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 5.2vw;
+}
+
+.expenseTextAndPic p {
+    color: white;
+    font-family: "Exo 2", serif;
+}
+
+.expensePicAmdIncome {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.expenseExpenseBox img {
+    width: 100%;
+}
+
+.expensePicAndIncome {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.expensePicAndIncome p {
+    align-items: center;
+    display: flex;
+    font-size: larger;
+}
+
+.expenseText {
+    width: 55%;
+}
+
+.expenseText p {
+    font-size: 2em;
+    width: 59%;
+}
+
+.progressBar {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
+.progressBarOuter {
+    border: 1px solid white;
+    height: 77%;
+    width: 89%;
+    border-radius: 50%;
+    position: relative;
+    box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15) -6px -6px 10px -1px rgba(255, 255, 255, 0.7);
+}
+
+.progressBarInner {
+    width: 70%;
+    height: 70%;
+    border: 1px solid white;
+    border-radius: 50%;
+    position: absolute;
+    top: 8px;
+    left: 8.5px;
+
+}
+
+.form-container,
+.budget-form-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    /* background-color: rgba(0, 0, 0, 0.5); */
+    display: none;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(20px);
+    transition: all 0.7s ease-in;
+}
+
+#cardForm {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: #0d1117;
+    padding: 25px 20px 20px 20px;
+    border-radius: 30px;
+    width: 380px;
+    color: #9198a1;
+    box-sizing: border-box;
+    border: 1px solid rgb(115 123 139 / 30%);
+    font-weight: 400;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: smaller;
+    letter-spacing: 0.65px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+#cardForm h2 {
+    font-weight: 400;
+    font-size: larger;
+    margin-bottom: 10px;
+    color: white;
+}
+
+/* .hidden {
+    display: none;
+} */
+
+.formLabel {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* margin-top: 10px; */
+}
+
+select.formSelect {
+    background-color: #0d1117;
+    width: 60%;
+    height: 20px;
+    color: white;
+    box-sizing: content-box;
+    padding: 4px 10px;
+    border: 2px solid rgb(98 98 98 / 30%);
+    font-family: 'Ubuntu', sans-serif;
+    letter-spacing: 0.6px;
+    font-weight: 300;
+    border-radius: 10px;
+}
+
+#cardForm label .formInput {
+    width: 50%;
+    height: 20px;
+    color: white;
+    box-sizing: content-box;
+    padding: 4px 10px;
+    border: 2px solid rgb(98 98 98 / 30%);
+    font-family: 'Ubuntu', sans-serif;
+    letter-spacing: 0.6px;
+    font-weight: 300;
+    /* border: none; */
+    background: rgb(0 0 0 / 10%);
+    border-radius: 10px;
+}
+
+.formBtnsContainer {
+    display: flex;
+    justify-content: right;
+    margin-top: 10px;
+    gap: 10px;
+}
+
+.formBtnsContainer .formButton {
+    padding: 8px 10px;
+    border: none;
+    border-radius: 13px;
+    cursor: pointer;
+    font-weight: 400;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: smaller;
+    /* letter-spacing: 0.6px; */
+}
+
+.formBtnsContainer .cancelButton {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+.formButton:hover {
+    background-color: #ddd;
+    color: black;
+}

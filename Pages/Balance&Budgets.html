@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget</title>
+    <link rel="stylesheet" href="/Stylesheets/Balance&Budgets.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Londrina+Sketch&family=Pacifico&family=Sarabun:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <img id="CornerBlob" src="/Images/Corner Ellipse.svg" alt="">
+    <header>
+        <nav class="logo">
+            <a href="index.html"><img id="logo" src="/Images/Logo.png" alt="logo"></a>
+        </nav>
+        <div class="heading_searchboxContainer">
+            <div class="heading">
+                <h1>Balance & Budgets</h1>
+                <p>Ready for today's challenges?</p>
+            </div>
+            <div class="searchbar">
+                <label for="walletSearchBar"></label>
+                <input id="walletSearchBar" type="text" placeholder="Search for your wallet">
+            </div>
+        </div>
+
+
+    </header>
+    <section class="navandMainContainer">
+        <nav class="navbar">
+            <div class="iconBars sidebarTop">
+                <img id="iconSelector" src="/Images/active icon selector.svg" alt="">
+                <a href="#" class="navIcon"><img src="/Images/dashboard IMG active.svg" alt=""></a>
+                <a href="Transactions.html" class="navIcon"><img src="/Images/buy icon.svg" alt=""></a>
+                <!-- <a href="Balance&Budgets.html" class="navIcon" ><img src="/Images/Wallet icon active.svg"  alt=""></a> -->
+            </div>
+            <div class="iconBars sidebarBottom">
+                <a href="LoginPage.html" class="navIcon"><img src="/Images/signout_icon.svg" alt=""
+                        style="width: 85%;"></a>
+                <a href="#" class="navIcon profilePic"><img id="profileIcon" src="/Images/active icon profile.png"
+                        alt=""></a>
+            </div>
+        </nav>
+        <div id="userInfo">
+            <p>Nigga White</p>
+            <p>niggawhite@gmail.com</p>
+        </div>
+        <main>
+            <div class="mainContainer">
+                <div class="walletsContainer">
+                    <div class="wallet">
+                        <!-- <img src="/Images/Wallet background 1.png" alt=""> -->
+                        <div class="wallet-Info">
+                            <div class="imageContainer">
+                                <img src="/Images/State Bank of India Logo.svg" alt="">
+                            </div>
+                            <div class="TextInfoContainer">
+                                <p>Cash</p>
+                                <p>₹20,000</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="wallet">
+                        <!-- <img src="/Images/Wallet background 1.png" alt=""> -->
+                        <div class="wallet-Info">
+                            <div class="imageContainer">
+                                <img src="/Images/State Bank of India Logo.svg" alt="">
+                            </div>
+                            <div class="TextInfoContainer">
+                                <p>State Bank of India</p>
+                                <p>₹9,12,000</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="wallet">
+                        <!-- <img src="/Images/Wallet background 1.png" alt=""> -->
+                        <div class="wallet-Info">
+                            <div class="imageContainer">
+                                <img src="/Images/Union Bank of India Logo.svg" alt="">
+                            </div>
+                            <div class="TextInfoContainer">
+                                <p>Union Bank of India</p>
+                                <p>₹8,000</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="wallet">
+                        <!-- <img src="/Images/Wallet background 1.png" alt=""> -->
+                        <div class="wallet-Info">
+                            <div class="imageContainer">
+                                <img src="/Images/Axis Bank Logo.svg" alt="">
+                            </div>
+                            <div class="TextInfoContainer">
+                                <p>Axis Bank</p>
+                                <p>₹12,000</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <img src="/Images/Wallet 1.png" alt=""> -->
+                    <!-- <img src="/Images/Wallet 2.png" alt=""> -->
+                    <!-- <img src="/Images/Wallet 3.png" alt=""> -->
+                    <!-- <img src="/Images/Wallet 4.png" alt=""> -->
+                    <div class="addNewWalletBox">
+                        <div class="addIcon">
+                            <img src="/Images/AddWalletIcon.svg" style="width: 40%;" alt="">
+                        </div>
+                    </div>
+                    <!-- <img src="/Images/Add Wallet box.svg" style="width: 80%;" alt=""> -->
+                </div>
+                <div class="RightContentContainer ">
+                    <div class="WalletAndCardsBox">
+                        <div class="WalletInfoBox">
+                            <div id="WalletHeader">
+                                <h1>Cash</h1>
+                            </div>
+                            <div class="WalletContent">
+                                <div class="mainBalanceCard">
+                                    <div class="Balance">
+                                        <p>Total Balance</p>
+                                        <p>₹20,000</p>
+                                    </div>
+                                    <div class="depositAndSend">
+                                        <button id="DepositButton">Deposit
+                                            <img src="/Images/Deposit Icon.svg" alt="">
+                                        </button>
+                                        <button id="SendButton">Send
+                                            <img src="/Images/Send Icon.svg" alt="">
+                                        </button>
+                                    </div>
+                                </div>
+                                <!-- <img src="/Images/Total Balance Card.png" style="width: 60%;" alt=""> -->
+                                <div class="IncomeExpenseBox">
+                                    <div class="incomeCard">
+                                        <div class="TextAndPic">
+                                            <div class="PicAndAmount">
+                                                <img src="/Images/Icons income.svg" alt="" style="width: 30px;">
+                                                <p>Income</p>
+                                            </div>
+                                            <div class="amount">
+                                                <p>₹10,910</p>
+                                            </div>
+                                        </div>
+                                        <div class="progressBar">
+                                            <div class="circular-progress-income">
+                                                <span class="progress-value-income">0%</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="expenseCard">
+                                        <div class="TextAndPic">
+                                            <div class="PicAndAmount">
+                                                <img src="/Images/Icons expense.svg" alt="" style="width: 30px;">
+                                                <p>Expense</p>
+                                            </div>
+                                            <div class="amount">
+                                                <p>₹8,100</p>
+                                            </div>
+                                        </div>
+                                        <div class="progressBar">
+                                            <div class="circular-progress-expense">
+                                                <span class="progress-value-expense">0%</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <img src="/Images/black Credit Cards.svg" style="width: 37%;" alt=""> -->
+                        <!-- Card Container Section -->
+                        <div class="cardsCointainer" id="cardsCointainer">
+                            <div class="containerForCard1 fixedCard">
+                                <div class="cardHeader">
+                                    <img src="/Images/VISA Logo.svg" alt="">
+                                </div>
+                                <div class="wifiContactAndChip">
+                                    <img src="/Images/Wifi ContactCard.png" alt="" style="width:100%;">
+                                </div>
+                                <div class="card-details">
+                                    <div class="name-number">
+                                        <p class="name">Name</p>
+                                        <p class="number">**** **** **** 0000</p>
+                                    </div>
+                                    <div class="valid-date">
+                                        <p>00/00</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Add New Card Button Section -->
+                            <div id="addCardButtonSection">
+                                <button id="btnForAddNewCard" onclick="showCardForm()">
+                                    <div class="addBudgetIcon AddCardIcon">
+                                        <img src="/Images/AddWalletIcon.svg" style="width: 35%;" alt="">
+                                    </div>
+                                </button>
+                            </div>
+
+                        </div>
+
+
+                        <!-- Card Form Section -->
+                        <div class="form-container" id="formContainer">
+                            <form id="cardForm">
+                                <h2>Add Card</h2>
+                                <label class="formLabel" for="accountNumber">Account Number
+                                    <input class="formInput" type="number" id="accountNumber" name="accountNumber"
+                                        required></label>
+
+                                <label class="formLabel" for="name">Name
+                                    <input class="formInput" type="text" id="name" name="name" required></label>
+
+                                <label class="formLabel" for="validDate">Valid Thru (MM/YY)
+                                    <input class="formInput" type="number" id="validDate" name="validDate"
+                                        required></label>
+
+                                <label class="formLabel" for="cvv">CVV
+                                    <input class="formInput" type="number" id="cvv" name="cvv" required></label>
+                                <div class="formBtnsContainer">
+                                    <button class="formButton cancelButton" type="button"
+                                        onclick="hideCardForm()">Cancel</button>
+                                    <button class="formButton submitButton" type="submit">Add Card</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="BudgetsBox">
+                        <img id="BudgetsBlobImg" src="/Images/Budgets Card Blob.svg" alt="">
+                        <h1>My Budgets</h1>
+                        <div class="budgetsScrollBox">
+                            <div class="BudgetCategoryBox">
+                                <button class="buttonTopHeading">Entertainment</button>
+                                <div class="BudgetCardsList">
+                                    <div class="BudgetCard">
+                                        <div class="IconAndPercentage">
+                                            <div class="BudgetIcon"><img src="/Images/Budget Card Image.png"
+                                                    style="width: 100%; height: auto;" alt="">
+                                            </div>
+                                            <p style="color: rgb(4, 174, 4);">35%</p>
+                                        </div>
+                                        <div class="NameAndAmount">
+                                            <p>Movies</p>
+                                            <p>₹1000 out of ₹3500</p>
+                                        </div>
+                                    </div>
+                                    <div class="BudgetCard">
+                                        <div class="IconAndPercentage">
+                                            <div class="BudgetIcon"><img src="/Images/Budget Card Image.png"
+                                                    style="width: 100%; height: auto;" alt="">
+                                            </div>
+                                            <p style="color: rgb(4, 174, 4);">16%</p>
+                                        </div>
+                                        <div class="NameAndAmount">
+                                            <p>Subscriptions</p>
+                                            <p>₹500 out of ₹3000</p>
+                                        </div>
+                                    </div>
+                                    <div class="BudgetCard">
+                                        <div class="IconAndPercentage">
+                                            <div class="BudgetIcon"><img src="/Images/Budget Card Image.png"
+                                                    style="width: 100%; height: auto;" alt="">
+                                            </div>
+                                            <p style="color: rgb(4, 174, 4);">20%</p>
+                                        </div>
+                                        <div class="NameAndAmount">
+                                            <p>Food</p>
+                                            <p>₹500 out of ₹2500</p>
+                                        </div>
+                                    </div>
+                                    <div class="BudgetCard">
+                                        <div class="IconAndPercentage">
+                                            <div class="BudgetIcon"><img src="/Images/Budget Card Image.png"
+                                                    style="width: 100%; height: auto;" alt="">
+                                            </div>
+                                            <p style="color: yellow;">58%</p>
+                                        </div>
+                                        <div class="NameAndAmount">
+                                            <p>Shopping</p>
+                                            <p>₹2000 out of ₹3500</p>
+                                        </div>
+                                    </div>
+                                    <!-- Add New Budget Button Section -->
+                                    <div class="addNewBudgetBox">
+                                        <button id="btnForAddNewCard" onclick="showBudgetForm()">
+                                            <div class="addBudgetIcon" style="width: 100%;">
+                                                <img src="/Images/AddWalletIcon.svg" style="width: 35%;" alt="">
+                                            </div>
+                                        </button>
+                                    </div>
+
+
+
+                                    <!-- Budget Form Popup Section -->
+
+                                    <div class="budget-form-container">
+                                        <div id="cardForm">
+                                            <h2>Add Budget Card</h2>
+
+                                            <label class="formLabel" for="category">Category
+                                                <input class="formInput" type="text" id="category" name="category"
+                                                    required></label>
+
+                                            <label class="formLabel" for="amount">Amount
+                                                <input class="formInput" type="number" id="amount" name="amount"
+                                                    required></label>
+
+                                            <label class="formLabel" for="Used">Used
+                                                <input class="formInput" type="number" id="Used" name="Used"
+                                                    required></label>
+
+                                            <div class="formBtnsContainer">
+                                                <button class="formButton cancelButton" id="addDetaisMiniCard"
+                                                    type="button" onclick="hideBudgetForm()">Cancel</button>
+                                                <button class="formButton submitButton" id="addDetaisMiniCard"
+                                                    type="button" onclick="addDetails()">Add
+                                                    Details</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+
+                            </div>
+                        </div>
+
+                        <!-- <div class="BudgetCategoryBox">
+                                <button class="buttonTopHeading">Entertainment</button>
+                                <div class="BudgetCardsList">
+                                    <img src="/Images/Budget card 1.png" alt="">
+                                    <img src="/Images/Budget card 2.png" alt="">
+                                    <img src="/Images/Budget card 1.png" alt="">
+                                    <img src="/Images/Budget card 3.png" alt="">
+                                    <img src="/Images/Add Budget Card.svg" style="width: 16.7%;" alt="">
+                                </div>
+                            </div>
+                            <div class="BudgetCategoryBox">
+                                <button class="buttonTopHeading">Entertainment</button>
+                                <div class="BudgetCardsList">
+                                    <img src="/Images/Budget card 1.png" alt="">
+                                    <img src="/Images/Budget card 2.png" alt="">
+                                    <img src="/Images/Budget card 1.png" alt="">
+                                    <img src="/Images/Budget card 3.png" alt="">
+                                    <img src="/Images/Add Budget Card.svg" style="width: 16.7%;" alt="">
+                                </div>
+                            </div>
+                            <div class="BudgetCategoryBox">
+                                <button class="buttonTopHeading">Entertainment</button>
+                                <div class="BudgetCardsList">
+                                    <img src="/Images/Budget card 1.png" alt="">
+                                    <img src="/Images/Budget card 2.png" alt="">
+                                    <img src="/Images/Budget card 1.png" alt="">
+                                    <img src="/Images/Budget card 3.png" alt="">
+                                    <img src="/Images/Add Budget Card.svg" style="width: 16.7%;" alt="">
+                                </div>
+                            </div> -->
+                    </div>
+                </div>
+            </div>
+            </div>
+        </main>
+    </section>
+
+
+    <script src="/Javascript/Balance&Budgets(Script-1).js"></script>
+    <script src="/Javascript/Balance&Budgets(Script-2).js"></script>
+</body>
+
+</html>

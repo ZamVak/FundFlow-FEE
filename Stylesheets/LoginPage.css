@@ -1,0 +1,275 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #0d1117;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#BlobTop_img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60%;
+}
+
+#BlobBottom_img {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    width: 50%;
+}
+
+.main_card {
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    width: fit-content;
+}
+
+.MainContentBox {
+    position: relative;
+    height: fit-content;
+    width: fit-content;
+}
+
+#MainCard_image {
+    width: 33vw;
+    margin: 5% 0px 0px 3.5%;
+}
+
+.btn_container {
+    position: absolute;
+    top: 10.5%;
+    left: 14%;
+    width: 74%;
+}
+
+.btn_container #containerImg {
+    width: 81%;
+}
+
+.btn_container #btn_borderImg {
+    position: absolute;
+    right: 59%;
+    top: 10.5%;
+    width: 39%;
+}
+
+.btn_container a {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1em;
+    font-weight: 600;
+    position: absolute;
+    top: 28.55%;
+    text-decoration: none;
+}
+
+#signupText {
+    color: white;
+    right: 31%;
+}
+
+#loginText {
+    left: 14%;
+    z-index: 3;
+    background: linear-gradient(135deg, #EE1313 0%, #F11F10 20%, #F31C0D 40%, #F62F0C 60%, #F94E15 80%, #FA5923 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent
+}
+
+.welcome {
+    position: absolute;
+    top: 22%;
+    left: 16.5%;
+    font-family: "Exo 2", sans-serif;
+    font-weight: 600;
+    color: white;
+    font-size: 1.8em;
+    text-shadow: 2px 2px 20px #ffffff59;
+}
+
+.welcome p:nth-child(2) {
+    font-size: 0.49em;
+    font-weight: 100;
+    margin-top: 0.2em;
+}
+
+.cross_btn {
+    text-decoration: none;
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    aspect-ratio: 1/1;
+    width: 11%;
+    position: absolute;
+    z-index: 4;
+    top: 10%;
+    border-radius: 50%;
+    border-color: #9B9B9B;
+    right: 9%;
+    background-image: linear-gradient(135deg, #EA000069 0%, #F50000D9 90%, #F000 100%);
+}
+
+.cross_btn img {
+    width: 40%;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 29%;
+    left: 16.5%;
+    width: 69.5%;
+}
+
+.formRow {
+    position: relative;
+    margin-top: 7%;
+}
+
+#InputTag_image {
+    width: 100%;
+}
+
+.labelInput_container {
+    position: absolute;
+    top: 35%;
+    left: 7%;
+}
+
+input:focus {
+    outline: none;
+}
+
+form input {
+    background: transparent;
+    border: transparent;
+    color: #969191;
+    font-size: 1.1em;
+    font-family: "Exo 2";
+    font-weight: 300;
+
+}
+
+input::placeholder {
+    color: #969191;
+    font-family: "Exo 2", sans-serif;
+    font-weight: 200;
+}
+
+.forgotpass_container {
+    display: flex;
+    justify-content: space-between;
+    color: #969191;
+    font-size: 1em;
+    font-family: "Exo 2";
+    font-weight: 300;
+}
+
+.forgotpass_container {
+    margin: 6% 0%;
+    line-height: 1em;
+}
+
+.forgotpass_container p {
+    margin-left: 2%;
+}
+
+.RememberLabel {
+    display: flex;
+    justify-content: space-between;
+    width: 40%;
+}
+
+.Breakline {
+    margin: 9% 0%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #969191;
+    font-size: 1em;
+    font-family: "Exo 2";
+    font-weight: 300;
+}
+
+.Breakline .thinLine {
+    background-color: #3d444d;
+    height: 1px;
+    width: 40%;
+    margin: 0px 4px;
+}
+
+#SwipeCard_container {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+#SwipeCard_image {
+    width: 90%;
+}
+
+#SwipeBtn {
+    position: absolute;
+    top: 7%;
+    left: 6.5%;
+    height: fit-content;
+    width: fit-content;
+    width: 12%;
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+    background: transparent;
+    text-decoration: none;
+    border: transparent;
+    z-index: 4;
+}
+
+#SwipeBtn_image {
+    position: absolute;
+    top: -14%;
+    left: -15.5%;
+    width: 158%;
+    border-radius: 50%;
+}
+
+#swipeText {
+    font-size: 1.1em;
+    position: absolute;
+    top: 25%;
+    color: #969191;
+    font-family: "Exo 2", sans-serif;
+    font-weight: 200;
+}
+
+.socialMediaIcon {
+    display: flex;
+    justify-content: space-between;
+    width: 87%;
+    justify-self: center;
+    margin: auto;
+}
+
+.socialMediaIcon a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+
+}
+
+.socialMediaIcon a img {
+    width: 83%;
+}

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transaction History</title>
+    <link rel="stylesheet" href="/Stylesheets/Transactions.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+        rel="stylesheet">
+    <style>
+        
+    </style>
+</head>
+
+<body>
+    <img id="CornerBlob" src="/Images/Corner Ellipse.svg" alt="">
+    <header>
+        <nav class="logo">
+            <a href="index.html"><img id="logo" src="/Images/Logo.png" alt="logo"></a>
+        </nav>
+        <div class="heading_searchboxContainer">
+            <div class="heading">
+                <h1>Transaction History</h1>
+                <p>Ready for today's challenges?</p>
+            </div>
+            <div class="search">
+                <!-- <label for="searchBar"></label> -->
+                <input id="searchBar" type="text" placeholder="Search for your transaction">
+            </div>
+        </div>
+
+
+    </header>
+    <section class="navandMainContainer">
+        <nav class="navbar">
+            <div class="iconBars sidebarTop">
+                <img id="iconSelector" src="/Images/active icon selector.svg" alt="">
+                <a href="Balance&Budgets.html" class="navIcon"><img src="/Images/dashboardimg.svg" alt=""></a>
+                <a href="#" class="navIcon"><img src="/Images/buy icon active.svg" alt=""></a>
+                <!-- <a href="Balance&Budgets.html" class="navIcon"><img src="/Images/Wallet icon.svg" alt=""></a> -->
+            </div>
+            <div class="iconBars sidebarBottom">
+                <a href="LoginPage.html" class="navIcon"><img src="/Images/signout_icon.svg" style="width: 85%;"
+                        alt=""></a>
+                <a href="#" class="navIcon profilePic"><img id="profileIcon" src="/Images/active icon profile.png" alt=""></a>
+            </div>
+        </nav>
+        <div id="userInfo"><p>Nigga White</p><p>niggawhite@gmail.com</p></div>
+        <main>
+            <div class="transacAndPreviewContainer">
+                <div class="mainContainer">
+                    <div class="transactionListHeader">
+                        <p>1-9 of 18 transactions</p>
+                        <button id="addTransactionBtn">+ Add Transaction</button>
+                    </div>
+                    <div class="transactionTableHeader">
+                        <div class="transactionTop">
+                            <input type="checkbox">
+                            <p id="transaction" style="margin: 0px 0px 0px 27px;">Transaction</p>
+                        </div>
+                        <div class="headingTop transacHeadRight">
+                            <p class="amountTextHead">Amount</p>
+                            <p class="accountTextHead">Account</p>
+                            <p class="categoryTextHead">Category</p>
+                            <p class="modeTextHead">Mode</p>
+                            <p class="statusTextHead">Status</p>
+                        </div>
+                    </div>
+                    <div id="transacsContainer">
+                        <!-- <div class="transacLedger">
+
+                            <div class="transacName">
+                                <img id="transaclogImg" src="/Images/Transaction icon.svg" alt="">
+                                <div class="name">
+                                    <p id="nameText">Monthly Salary</p>
+                                    <p id="dateTimeText">2:30pm Sep 25</p>
+                                </div>
+                            </div>
+                            <div class="transacInfoRight">
+                                <div class="amountTextInfo">
+                                    <p>90,000</p>
+                                </div>
+                                <div class="accountTextInfo">
+                                    <p>State Bank of India</p>
+                                </div>
+                                <div class="categoryTextInfo">
+                                    <p>Salary</p>
+                                </div>
+                                <div class="modeTextInfo">
+                                    <p>Google Pay</p>
+                                </div>
+                                <div class="status statusTextInfo">
+                                    <p>•Done</p>
+                                </div>
+                            </div>
+                        </div> -->
+
+                    </div>
+                </div>
+
+                <div id="transactionPreview">
+                    <img id="previewCardBlob" src="/Images/Preview Card Blob.svg" alt="">
+                    <div class="previewHead">
+                        <img id="previewIcon" src="/Images/Transaction Icon.svg" alt="" style="width: 25%;">
+                        <div class="profileInfo previewHeadings">
+                            <p id="mainHeading">Monthly Salary</p>
+                            <p id="subHeading">2:30pm Sep,25</p>
+                        </div>
+                    </div>
+                    <div class="transacDetail">
+                        <div class="amount previewDetails">
+                            <p>Amount</p>
+                            <p>INR 90,000</p>
+                        </div>
+                        <div class="Type previewDetails">
+                            <p>Type</p>
+                            <p>Earning</p>
+                        </div>
+                        <div class="account previewDetails">
+                            <p>Account</p>
+                            <p>State Bank of India</p>
+                        </div>
+                        <div class="category previewDetails">
+                            <p>Category</p>
+                            <p>Food</p>
+                        </div>
+                        <div class="mode previewDetails">
+                            <p>Mode</p>
+                            <p>Google Pay</p>
+                        </div>
+                        <div class="status previewDetails">
+                            <p>Status</p>
+                            <p>Done</p>
+                        </div>
+                        <div class="description previewDetails">
+                            <p>Description</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        </div>
+                    </div>
+                    <div class="lentBorrowed transacDetail">
+                        <h2 class="lentAndBorrowed previewHeadings">Lent / Borrowed</h2>
+                        <div class="toFrom previewDetails">
+                            <p>To / From</p>
+                            <p>Nigga white</p>
+                        </div>
+                        <div class="setteledOn previewDetails">
+                            <p>Settled On</p>
+                            <p>Not Yet</p>
+                        </div>
+                        <div class="dueDate previewDetails">
+                            <p>Due Date</p>
+                            <p>Sep 25</p>
+                        </div>
+                        <div class="phoneNo previewDetails">
+                            <p>Mobile</p>
+                            <p>+91 6283418139</p>
+                        </div>
+                        <div class="address previewDetails">
+                            <p>Address</p>
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </section>
+
+    <!-- Transaction Form (Initially Hidden) -->
+    <div id="transactionFormContainer" style="display: none;">
+        <div id="transactionForm">
+            <h2>Add Transaction</h2>
+            <label class="formLabel" for="name">Name:<input class="formInput" type="text" id="name" required></label>
+
+            <label class="formLabel" for="amount">Amount:<input class="formInput" type="number" id="amount"
+                    required></label>
+
+
+            <label class="formLabel" for="bank">Bank:
+                <select class="formSelect" id="bank" required>
+                    <option value="" disabled selected>Select Bank</option>
+                    <option value="State Bank of India">State Bank of India</option>
+                    <option value="Union Bank of India">Union Bank of India</option>
+                    <option value="Axis Bank">Axis Bank</option>
+                    <option value="Punjab National Bank">Punjab National Bank</option>
+                </select>
+            </label>
+
+            <label class="formLabel" for="category">Category:
+                <select class="formSelect" id="category" required>
+                    <option value="" disabled selected>Select Category</option>
+                    <option value="Food">Food</option>
+                    <option value="Shopping">Shopping</option>
+                    <option value="Gifts">Gifts</option>
+                    <option value="Trips">Trips</option>
+                    <option value="Movies">Movies</option>
+                    <option value="Subscriptions">Subscriptions</option>
+                </select>
+            </label>
+
+            <label class="formLabel" for="mode">Mode:
+                <select class="formSelect" id="mode" required>
+                    <option value="" disabled selected>Select Mode</option>
+                    <option value="PhonePe">PhonePe</option>
+                    <option value="Google Pay">Google Pay</option>
+                    <option value="Paytm">Paytm</option>
+                    <option value="Fampay">Fampay</option>
+                </select>
+            </label>
+
+
+            <label class="formLabel" for="status">Status:
+                <select class="formSelect" id="status" required>
+                    <option value="" disabled selected>Select Status</option>
+                    <option value="Done" style="color: #00D181;">Done</option>
+                    <option value="Pending" style="color:#FAB823">Pending</option>
+                    <option value="Failed" style="color: red;">Failed</option>
+                </select>
+            </label>
+
+
+            <div class="formBtnsContainer">
+                <button class="formButton cancelButton" id="cancelTransactionBtn">Cancel</button>
+                <button class="formButton submitButton" id="submitTransactionBtn">Add</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="/Javascript/Transactions.js"></script>
+
+</body>
+
+</html>
